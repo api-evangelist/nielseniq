@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/nielseniq/main/json-schema/nielseniq-image-generations-request-schema.json",
+  "title": "imageGenerationsRequest",
+  "x-generated": "2026-10-18",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/imageGenerationsRequest",
+  "required": [
+    "prompt"
+  ],
+  "type": "object",
+  "properties": {
+    "prompt": {
+      "minLength": 1,
+      "type": "string",
+      "description": "A text description of the desired image(s). The maximum length is 4000 characters.",
+      "format": "string"
+    },
+    "n": {
+      "maximum": 1.0,
+      "minimum": 1.0,
+      "type": "integer",
+      "description": "The number of images to generate.",
+      "default": 1
+    },
+    "size": {
+      "$ref": "#/$defs/imageSize"
+    },
+    "response_format": {
+      "$ref": "#/$defs/imagesResponseFormat"
+    },
+    "user": {
+      "type": "string",
+      "description": "A unique identifier representing your end-user, which can help to monitor and detect abuse.",
+      "format": "string"
+    },
+    "quality": {
+      "$ref": "#/$defs/imageQuality"
+    },
+    "style": {
+      "$ref": "#/$defs/imageStyle"
+    }
+  },
+  "$defs": {
+    "imageQuality": {
+      "enum": [
+        "standard",
+        "hd"
+      ],
+      "type": "string",
+      "description": "The quality of the image that will be generated.",
+      "default": "standard",
+      "x-ms-enum": {
+        "name": "Quality",
+        "modelAsString": true,
+        "values": [
+          {
+            "value": "standard",
+            "description": "Standard quality creates images with standard quality.",
+            "name": "Standard"
+          },
+          {
+            "value": "hd",
+            "description": "HD quality creates images with finer details and greater consistency across the image.",
+            "name": "HD"
+          }
+        ]
+      }
+    },
+    "imageSize": {
+      "enum": [
+        "1792x1024",
+        "1024x1792",
+        "1024x1024"
+      ],
+      "type": "string",
+      "description": "The size of the generated images.",
+      "default": "1024x1024",
+      "x-ms-enum": {
+        "name": "Size",
+        "modelAsString": true,
+        "values": [
+          {
+            "value": "1792x1024",
+            "description": "The desired size of the generated image is 1792x1024 pixels.",
+            "name": "Size1792x1024"
+          },
+          {
+            "value": "1024x1792",
+            "description": "The desired size of the generated image is 1024x1792 pixels.",
+            "name": "Size1024x1792"
+          },
+          {
+            "value": "1024x1024",
+            "description": "The desired size of the generated image is 1024x1024 pixels.",
+            "name": "Size1024x1024"
+          }
+        ]
+      }
+    },
+    "imageStyle": {
+      "enum": [
+        "vivid",
+        "natural"
+      ],
+      "type": "string",
+      "description": "The style of the generated images.",
+      "default": "vivid",
+      "x-ms-enum": {
+        "name": "Style",
+        "modelAsString": true,
+        "values": [
+          {
+            "value": "vivid",
+            "description": "Vivid creates images that are hyper-realistic and dramatic.",
+            "name": "Vivid"
+          },
+          {
+            "value": "natural",
+            "description": "Natural creates images that are more natural and less hyper-realistic.",
+            "name": "Natural"
+          }
+        ]
+      }
+    },
+    "imagesResponseFormat": {
+      "enum": [
+        "url",
+        "b64_json"
+      ],
+      "type": "string",
+      "description": "The format in which the generated images are returned.",
+      "default": "url",
+      "x-ms-enum": {
+        "name": "ImagesResponseFormat",
+        "modelAsString": true,
+        "values": [
+          {
+            "value": "url",
+            "description": "The URL that provides temporary access to download the generated images.",
+            "name": "Url"
+          },
+          {
+            "value": "b64_json",
+            "description": "The generated images are returned as base64 encoded string.",
+            "name": "Base64Json"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/nielseniq/main/json-schema/nielseniq-batch-store-availability-request-schema.json",
+  "title": "BatchStoreAvailabilityRequest",
+  "x-generated": "2026-10-18",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/nielseniq-store-availability-bulk-openapi.yml#/components/schemas/BatchStoreAvailabilityRequest",
+  "type": "object",
+  "properties": {
+    "criteria": {
+      "type": "object",
+      "items": {
+        "$ref": "#/$defs/product"
+      }
+    }
+  },
+  "$defs": {
+    "characteristic": {
+      "title": "characteristic",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "operator": {
+          "type": "string"
+        },
+        "value": {
+          "type": "array",
+          "properties": {
+            "name": null,
+            "type": null
+          }
+        }
+      }
+    },
+    "filter": {
+      "title": "filter",
+      "type": "object",
+      "properties": {
+        "characteristic": {
+          "type": "object",
+          "items": {
+            "$ref": "#/$defs/characteristic"
+          }
+        }
+      }
+    },
+    "product": {
+      "title": "product",
+      "type": "object",
+      "properties": {
+        "filter": {
+          "type": "object",
+          "items": {
+            "$ref": "#/$defs/filter"
+          }
+        }
+      }
+    }
+  }
+}

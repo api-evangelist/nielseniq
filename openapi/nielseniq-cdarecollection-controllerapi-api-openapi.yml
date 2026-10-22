@@ -1,0 +1,94 @@
+openapi: 3.2.0
+info:
+  title: CDAR ECOLLECTION Cdarecollection Controllerapi API
+  description: ECOLLECTIONAPI
+  version: '1.0'
+servers:
+- url: https://api.developer.nielseniq.com/Ecollectionapi
+security:
+- apiKeyHeader: []
+- apiKeyQuery: []
+tags:
+- name: cdarecollection-controllerapi
+  description: CDARECOLLECTION ControllerApi
+paths:
+  /na/vendor-report-api/*:
+    get:
+      tags:
+      - cdarecollection-controllerapi
+      summary: getEcollectionRespApi
+      operationId: getEcollectionRespUsingGETApi
+      parameters:
+      - name: vendorId
+        in: header
+        description: vendorId
+        required: true
+        schema:
+          type: string
+      - name: applicationName
+        in: header
+        description: applicationName
+        required: true
+        schema:
+          type: string
+      - name: clientEmail
+        in: header
+        description: clientEmail
+        required: true
+        schema:
+          type: string
+      - name: apiKey
+        in: header
+        description: apiKey
+        required: true
+        schema:
+          type: string
+      - name: content-type
+        in: header
+        description: content-type
+        required: true
+        schema:
+          type: string
+      - name: subscription-key
+        in: header
+        description: subscription-key
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EcollectionRespApi'
+        '401':
+          description: Unauthorized
+          content:
+            application/json: {}
+        '403':
+          description: Forbidden
+          content:
+            application/json: {}
+        '404':
+          description: Not found
+          content:
+            application/json: {}
+        '500':
+          description: Failure
+          content:
+            application/json: {}
+components:
+  schemas:
+    EcollectionRespApi:
+      title: EcollectionRespApi
+      type: object
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: subscription-key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: subscription-key
+      in: query

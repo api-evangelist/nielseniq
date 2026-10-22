@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/nielseniq/main/json-schema/nielseniq-batch-store-availability-schema.json",
+  "title": "BatchStoreAvailability",
+  "x-generated": "2026-10-18",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/nielseniq-store-availability-bulk-openapi.yml#/components/schemas/BatchStoreAvailability",
+  "type": "object",
+  "properties": {
+    "summary": {
+      "type": "object",
+      "items": {
+        "$ref": "#/$defs/summary"
+      }
+    }
+  },
+  "$defs": {
+    "locale": {
+      "title": "locale",
+      "type": "object",
+      "properties": {
+        "country": {
+          "type": "string"
+        },
+        "language": {
+          "type": "string"
+        }
+      }
+    },
+    "summary": {
+      "title": "summary",
+      "type": "object",
+      "properties": {
+        "API-Version": {
+          "type": "string"
+        },
+        "API-Name": {
+          "type": "string"
+        },
+        "Date": {
+          "type": "string"
+        },
+        "locale": {
+          "type": "object",
+          "items": {
+            "$ref": "#/$defs/locale"
+          }
+        },
+        "JobId": {
+          "type": "string"
+        },
+        "Start Time": {
+          "type": "string"
+        },
+        "Status": {
+          "type": "string"
+        },
+        "Delivery": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

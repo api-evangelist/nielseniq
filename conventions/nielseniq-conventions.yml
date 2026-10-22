@@ -1,0 +1,18 @@
+generated: '2026-10-18'
+method: derived
+source: openapi/nielseniq-buy-data-access-catalogues-api-openapi.yml, openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml
+auth_style: API key in header or query parameter
+idempotency:
+  coverage: none
+  note: No idempotency mechanism documented in OpenAPI specs
+pagination:
+  style: Not documented in OpenAPI specs
+error_envelope:
+  shape: Varies by API. Some APIs use simple error responses, others like docusearch use structured errorResponse schema with error.param, error.type, error.inner_error fields.
+  format: application/json
+request_id_tracing: Not documented
+versioning: Not documented in OpenAPI specs
+reversibility:
+  coverage: na
+  note: APIs appear to be read-only data retrieval APIs
+note: Based on analysis of OpenAPI specifications. Most APIs use API key authentication (subscription-key header). Error formats vary between simple JSON responses and structured error objects.

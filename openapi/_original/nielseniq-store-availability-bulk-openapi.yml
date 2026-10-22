@@ -1,0 +1,353 @@
+# x-archived-from: nielseniq-store-availability-bulk-openapi.yml
+# x-archived-on: 2026-10-18
+openapi: 3.0.1
+info:
+  title: Store Availability Bulk
+  description: Store Availability API provides the estimated availability of given products in retailer locations for a given distance based on the consumer location asynchronously/synchronously. It accepts up to 9K UPCs and the API response will return the availability for the provided 9k UPCs in a CSV file for asynchronous requests. Client receives a job id for asynchronous requests which can be used to track the requests and download the completed file through mft.
+  version: '1.0'
+servers:
+  - url: https://api.developer.nielseniq.com/StoreAvailability/v3
+paths:
+  /batchStoreAvailability:
+    post:
+      tags:
+        - storeavailabilitybulk-controller
+      summary: getBatchStoreAvailabilityResp
+      description: getBatchStoreAvailabilityResp
+      operationId: getBatchStoreAvailabilityRespUsingPOST
+      parameters:
+        - name: lat
+          in: query
+          description: lat
+          schema:
+            type: float
+        - name: long
+          in: query
+          description: long
+          schema:
+            type: float
+        - name: distance
+          in: query
+          description: distance
+          schema:
+            type: string
+        - name: country
+          in: query
+          description: country
+          schema:
+            type: string
+        - name: language
+          in: query
+          description: language
+          schema:
+            type: string
+        - name: X-NIQ-API-KEY
+          in: header
+          description: X-NIQ-API-KEY
+          required: true
+          schema:
+            type: string
+        - name: subscription-key
+          in: header
+          description: subscription-key
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BatchStoreAvailabilityRequest'
+            examples:
+              default:
+                value: 
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BatchStoreAvailability'
+              example:
+                summary: { }
+        '401':
+          description: Unauthorized
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '404':
+          description: Not found
+          content:
+            application/json: { }
+        '500':
+          description: Failure
+          content:
+            application/json: { }
+  /addCheckDigit:
+    post:
+      tags:
+        - storeavailabilitybulk-controller
+      summary: getAddCheckDigitResp
+      description: getAddCheckDigitResponse
+      operationId: getAddCheckDigitRespUsingPOST
+      parameters:
+        - name: X-NIQ-API-KEY
+          in: header
+          description: X-NIQ-API-KEY
+          required: true
+          schema:
+            type: string
+        - name: subscription-key
+          in: header
+          description: subscription-key
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: request
+        content:
+          Text/plain:
+            schema:
+              type: string
+            examples:
+              default:
+                value: 
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AddCheckDigit'
+              examples:
+                default:
+                  value: 
+        '401':
+          description: Unauthorized
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '404':
+          description: Not found
+          content:
+            application/json: { }
+        '500':
+          description: Failure
+          content:
+            application/json: { }
+  /getJobStatus:
+    get:
+      tags:
+        - storeavailabilitybulk-controller
+      summary: getJobStatusResp
+      description: getJobStatusResp
+      operationId: getJobStatusRespUsingGET
+      parameters:
+        - name: jobId
+          in: query
+          description: jobId
+          required: true
+          schema:
+            type: string
+        - name: X-NIQ-API-KEY
+          in: header
+          description: X-NIQ-API-KEY
+          required: true
+          schema:
+            type: string
+        - name: subscription-key
+          in: header
+          description: subscription-key
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobStatus'
+              example:
+                API-Version: string
+                API-Name: string
+                Date: string
+                locale: { }
+                JobId: string
+                Status: string
+        '401':
+          description: Unauthorized
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '404':
+          description: Not found
+          content:
+            application/json: { }
+        '500':
+          description: Failure
+          content:
+            application/json: { }
+components:
+  schemas:
+    BatchStoreAvailability:
+      title: BatchStoreAvailability
+      type: object
+      properties:
+        summary:
+          type: object
+          items:
+            $ref: '#/components/schemas/summary'
+    summary:
+      title: summary
+      type: object
+      properties:
+        API-Version:
+          type: string
+        API-Name:
+          type: string
+        Date:
+          type: string
+        locale:
+          type: object
+          items:
+            $ref: '#/components/schemas/locale'
+        JobId:
+          type: string
+        Start Time:
+          type: string
+        Status:
+          type: string
+        Delivery:
+          type: string
+    locale:
+      title: locale
+      type: object
+      properties:
+        country:
+          type: string
+        language:
+          type: string
+    BatchStoreAvailabilityRequest:
+      title: BatchStoreAvailabilityRequest
+      type: object
+      properties:
+        criteria:
+          type: object
+          items:
+            $ref: '#/components/schemas/product'
+    product:
+      title: product
+      type: object
+      properties:
+        filter:
+          type: object
+          items:
+            $ref: '#/components/schemas/filter'
+    filter:
+      title: filter
+      type: object
+      properties:
+        characteristic:
+          type: object
+          items:
+            $ref: '#/components/schemas/characteristic'
+    characteristic:
+      title: characteristic
+      type: object
+      properties:
+        name:
+          type: string
+        operator:
+          type: string
+        value:
+          type: array
+          properties:
+            name: 
+            type: 
+    JobStatus:
+      title: JobStatus
+      type: object
+      properties:
+        API-Version:
+          type: string
+        API-Name:
+          type: string
+        Date:
+          type: string
+        locale:
+          type: object
+          items:
+            $ref: '#/components/schemas/locale'
+        JobId:
+          type: string
+        Status:
+          type: string
+    AddCheckDigit:
+      title: AddCheckDigit
+      type: object
+      properties:
+        summary:
+          type: object
+          items:
+            $ref: '#/components/schemas/checkdigitsummary'
+        Data:
+          type: object
+          items:
+            $ref: '#/components/schemas/checkdigitdata'
+    checkdigitsummary:
+      title: checkdigitsummary
+      type: object
+      properties:
+        API-Version:
+          type: string
+        API-Name:
+          type: string
+        Date:
+          type: string
+        rowCount:
+          type: string
+    checkdigitdata:
+      title: checkdigitdata
+      type: object
+      properties:
+        Header:
+          type: array
+          properties:
+            name: 
+            type: 
+        Record:
+          type: array
+          items:
+            $ref: '#/components/schemas/recordval'
+    recordval:
+      title: recordval
+      type: array
+      properties:
+        rec:
+          type: string
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: subscription-key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: subscription-key
+      in: query
+security:
+  - apiKeyHeader: [ ]
+  - apiKeyQuery: [ ]
+tags:
+  - name: storeavailabilitybulk-controller
+    description: Store Availability Bulk Controller

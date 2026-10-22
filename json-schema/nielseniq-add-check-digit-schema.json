@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/nielseniq/main/json-schema/nielseniq-add-check-digit-schema.json",
+  "title": "AddCheckDigit",
+  "x-generated": "2026-10-18",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/nielseniq-store-availability-bulk-openapi.yml#/components/schemas/AddCheckDigit",
+  "type": "object",
+  "properties": {
+    "summary": {
+      "type": "object",
+      "items": {
+        "$ref": "#/$defs/checkdigitsummary"
+      }
+    },
+    "Data": {
+      "type": "object",
+      "items": {
+        "$ref": "#/$defs/checkdigitdata"
+      }
+    }
+  },
+  "$defs": {
+    "checkdigitdata": {
+      "title": "checkdigitdata",
+      "type": "object",
+      "properties": {
+        "Header": {
+          "type": "array",
+          "properties": {
+            "name": null,
+            "type": null
+          }
+        },
+        "Record": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/recordval"
+          }
+        }
+      }
+    },
+    "checkdigitsummary": {
+      "title": "checkdigitsummary",
+      "type": "object",
+      "properties": {
+        "API-Version": {
+          "type": "string"
+        },
+        "API-Name": {
+          "type": "string"
+        },
+        "Date": {
+          "type": "string"
+        },
+        "rowCount": {
+          "type": "string"
+        }
+      }
+    },
+    "recordval": {
+      "title": "recordval",
+      "type": "array",
+      "properties": {
+        "rec": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

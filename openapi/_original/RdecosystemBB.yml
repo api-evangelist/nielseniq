@@ -1,0 +1,447 @@
+openapi: 3.0.1
+info:
+  title: RdecosystemBB
+  description: API proxy for brandbank
+  version: '1.0'
+servers:
+  - url: https://api.developer.nielseniq.com/rdecosystem-bb
+paths:
+  /rdfoundationalfeed:
+    get:
+      tags:
+        - rdecosystembb-controller
+      summary: getRdFoundationalFeedResp
+      description: getRdFoundationalFeedResp
+      operationId: getRdFoundationalFeedRespUsingGET
+      parameters:
+        - name: page
+          in: query
+          description: page
+          schema:
+            type: string
+        - name: size
+          in: query
+          description: size
+          schema:
+            type: string
+        - name: limit
+          in: query
+          description: limit
+          schema:
+            type: string
+        - name: provider
+          in: query
+          description: provider
+          schema:
+            type: string
+        - name: country
+          in: query
+          description: country
+          schema:
+            type: string
+        - name: fromDate
+          in: query
+          description: fromDate
+          schema:
+            type: string
+        - name: endDate
+          in: query
+          description: endDate
+          schema:
+            type: string
+        - name: productType
+          in: query
+          description: productType
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          schema:
+            type: string
+        - name: subscription-key
+          in: header
+          description: subscription-key
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RdFoundationalFeedResp'
+              example: ''
+        '401':
+          description: Unauthorized
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '404':
+          description: Not found
+          content:
+            application/json: { }
+        '500':
+          description: Failure
+          content:
+            application/json: { }
+  /updateBbProcessingStatus:
+    post:
+      tags:
+        - rdecosystembb-controller
+      summary: updateBbProcessingStatusResp
+      description: updateBbProcessingStatusResp
+      operationId: updateBbProcessingStatusRespUsingPOST
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          schema:
+            type: string
+        - name: subscription-key
+          in: header
+          description: subscription-key
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateBbProcessingStatusRequest'
+            example:
+              id: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/updateBbProcessingStatusResp'
+              example:
+                id: string
+                updatedStatus: string
+        '401':
+          description: Unauthorized
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '404':
+          description: Not found
+          content:
+            application/json: { }
+        '500':
+          description: Failure
+          content:
+            application/json: { }
+  /resetBbProcessingStatus:
+    post:
+      tags:
+        - rdecosystembb-controller
+      summary: resetBbProcessingStatusResp
+      description: resetBbProcessingStatusResp
+      operationId: resetBbProcessingStatusRespUsingPOST
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          schema:
+            type: string
+        - name: subscription-key
+          in: header
+          description: subscription-key
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/resetBbProcessingStatusRequest'
+            example:
+              id: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/resetBbProcessingStatusResp'
+              example:
+                id: string
+                updatedStatus: string
+        '401':
+          description: Unauthorized
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '404':
+          description: Not found
+          content:
+            application/json: { }
+        '500':
+          description: Failure
+          content:
+            application/json: { }
+  /rdimagedispatch:
+    get:
+      tags:
+        - rdecosystembb-controller
+      summary: getRdimageDispatchResp
+      description: getRdimageDispatchResp
+      operationId: getRdimageDispatchRespUsingGET
+      parameters:
+        - name: imgId
+          in: query
+          description: imgId
+          schema:
+            type: string
+        - name: subscription-key
+          in: header
+          description: subscription-key
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            image/png:
+              schema:
+                $ref: '#/components/schemas/RdecosystembbRdimagedispatchGet200ImagePngResponse'
+              example: ''
+        '401':
+          description: Unauthorized
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '404':
+          description: Not found
+          content:
+            application/json: { }
+        '500':
+          description: Failure
+          content:
+            application/json: { }
+components:
+  schemas:
+    updateBbProcessingStatusRequest:
+      title: Content
+      type: object
+      properties:
+        id:
+          type: string
+    updateBbProcessingStatusResp:
+      title: Content
+      type: object
+      properties:
+        id:
+          type: string
+        updatedStatus:
+          type: string
+    resetBbProcessingStatusRequest:
+      title: Content
+      type: object
+      properties:
+        id:
+          type: string
+    resetBbProcessingStatusResp:
+      title: Content
+      type: object
+      properties:
+        id:
+          type: string
+        updatedStatus:
+          type: string
+    RdFoundationalFeedResp:
+      title: Content
+      type: object
+      properties:
+        user:
+          type: array
+          items:
+            $ref: '#/components/schemas/RdFoundationalFeed'
+    RdFoundationalFeed:
+      title: RdFoundationalFeed
+      type: object
+      properties:
+        id:
+          type: string
+        dispatchId:
+          type: string
+        country:
+          type: string
+        dateReceived:
+          type: string
+        dateUpdated:
+          type: string
+        extrnCode:
+          type: string
+        isPremovement:
+          type: string
+        upc:
+          type: string
+        provider:
+          type: string
+        version:
+          type: string
+        images:
+          type: array
+          items:
+            $ref: '#/components/schemas/DetImages'
+        fndtnRaw:
+          type: object
+          items:
+            $ref: '#/components/schemas/FndtnRaw'
+        bbProcessingStatus:
+          type: string
+    IngredientDeclaration:
+      title: IngredientDeclaration
+      type: object
+      properties:
+        ingredients:
+          type: string
+    ProductCategorization:
+      title: ProductCategorization
+      type: object
+      properties:
+        aisle:
+          type: string
+        category:
+          type: string
+        shelf:
+          type: string
+    FndtnRaw:
+      title: FndtnRaw
+      type: object
+      properties:
+        productSizeTextOnPack:
+          type: string
+        productSize:
+          type: string
+        dispatchId:
+          type: string
+        importedBy:
+          type: string
+        manufacturer:
+          type: string
+        specs:
+          type: array
+          items:
+            $ref: '#/components/schemas/Specs'
+        dateCreated:
+          type: string
+        nielsenUpc:
+          type: string
+        noProductSize:
+          type: boolean
+        brand:
+          type: string
+        productCategorization:
+          type: object
+          items:
+            $ref: '#/components/schemas/ProductCategorization'
+        productType:
+          type: string
+        productId:
+          type: string
+        productSize3:
+          type: string
+        productSize2:
+          type: string
+        upc:
+          type: string
+        dateAttributesModified:
+          type: string
+        dateModified:
+          type: string
+        dateLive:
+          type: string
+        distributor:
+          type: string
+        productTitle:
+          type: string
+        multiPackagingType:
+          type: string
+        netWeight3:
+          type: string
+        netWeight1:
+          type: string
+        countryOfOrigin:
+          type: string
+        netWeight2:
+          type: string
+        ingredientDeclaration:
+          type: object
+          items:
+            $ref: '#/components/schemas/IngredientDeclaration'
+    Specs:
+      title: Specs
+      type: object
+      properties:
+        certification:
+          type: array
+          items:
+            $ref: '#/components/schemas/Certification'
+    Certification:
+      title: Certification
+      type: object
+      properties:
+        value:
+          type: string
+        characteristic:
+          type: string
+        segment:
+          type: string
+    DetImages:
+      title: DetImages
+      type: object
+      properties:
+        imgId:
+          type: string
+        imgUrl:
+          type: string
+        imgSourcedDate:
+          type: string
+        imgRawUrl:
+          type: string
+        vignette:
+          type: string
+        rating:
+          type: int32
+    RdecosystembbRdimagedispatchGet200ImagePngResponse:
+      type: string
+      format: binary
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: subscription-key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: subscription-key
+      in: query
+security:
+  - apiKeyHeader: [ ]
+  - apiKeyQuery: [ ]
+tags:
+  - name: rdecosystembb-controller
+    description: RDecoSystem BB Controller

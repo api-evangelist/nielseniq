@@ -1,0 +1,454 @@
+openapi: 3.2.0
+info:
+  title: Nielseniq Rdecosystembb Controller API
+  version: '1.0'
+  description: 'Operations tagged rdecosystembb-controller across 2 of this provider''s published API definitions: RdecosystemBB.yml, nielseniq-rdecosystembb-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://api.developer.nielseniq.com/rdecosystem-bb
+security:
+- apiKeyHeader: []
+- apiKeyQuery: []
+tags:
+- name: rdecosystembb-controller
+  description: RDecoSystem BB Controller
+paths:
+  /rdfoundationalfeed:
+    get:
+      tags:
+      - rdecosystembb-controller
+      summary: getRdFoundationalFeedResp
+      operationId: getRdFoundationalFeedRespUsingGET
+      parameters:
+      - name: page
+        in: query
+        description: page
+        schema:
+          type: string
+      - name: size
+        in: query
+        description: size
+        schema:
+          type: string
+      - name: limit
+        in: query
+        description: limit
+        schema:
+          type: string
+      - name: provider
+        in: query
+        description: provider
+        schema:
+          type: string
+      - name: country
+        in: query
+        description: country
+        schema:
+          type: string
+      - name: fromDate
+        in: query
+        description: fromDate
+        schema:
+          type: string
+      - name: endDate
+        in: query
+        description: endDate
+        schema:
+          type: string
+      - name: productType
+        in: query
+        description: productType
+        schema:
+          type: string
+      - name: Authorization
+        in: header
+        description: Authorization
+        required: true
+        schema:
+          type: string
+      - name: subscription-key
+        in: header
+        description: subscription-key
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RdFoundationalFeedResp'
+              example: ''
+        '401':
+          description: Unauthorized
+          content:
+            application/json: {}
+        '403':
+          description: Forbidden
+          content:
+            application/json: {}
+        '404':
+          description: Not found
+          content:
+            application/json: {}
+        '500':
+          description: Failure
+          content:
+            application/json: {}
+    servers:
+    - url: https://api.developer.nielseniq.com/rdecosystem-bb
+  /updateBbProcessingStatus:
+    post:
+      tags:
+      - rdecosystembb-controller
+      summary: updateBbProcessingStatusResp
+      operationId: updateBbProcessingStatusRespUsingPOST
+      parameters:
+      - name: Authorization
+        in: header
+        description: Authorization
+        required: true
+        schema:
+          type: string
+      - name: subscription-key
+        in: header
+        description: subscription-key
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateBbProcessingStatusRequest'
+            example:
+              id: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/updateBbProcessingStatusResp'
+              example:
+                id: string
+                updatedStatus: string
+        '401':
+          description: Unauthorized
+          content:
+            application/json: {}
+        '403':
+          description: Forbidden
+          content:
+            application/json: {}
+        '404':
+          description: Not found
+          content:
+            application/json: {}
+        '500':
+          description: Failure
+          content:
+            application/json: {}
+    servers:
+    - url: https://api.developer.nielseniq.com/rdecosystem-bb
+  /resetBbProcessingStatus:
+    post:
+      tags:
+      - rdecosystembb-controller
+      summary: resetBbProcessingStatusResp
+      operationId: resetBbProcessingStatusRespUsingPOST
+      parameters:
+      - name: Authorization
+        in: header
+        description: Authorization
+        required: true
+        schema:
+          type: string
+      - name: subscription-key
+        in: header
+        description: subscription-key
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/resetBbProcessingStatusRequest'
+            example:
+              id: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/resetBbProcessingStatusResp'
+              example:
+                id: string
+                updatedStatus: string
+        '401':
+          description: Unauthorized
+          content:
+            application/json: {}
+        '403':
+          description: Forbidden
+          content:
+            application/json: {}
+        '404':
+          description: Not found
+          content:
+            application/json: {}
+        '500':
+          description: Failure
+          content:
+            application/json: {}
+    servers:
+    - url: https://api.developer.nielseniq.com/rdecosystem-bb
+  /rdimagedispatch:
+    get:
+      tags:
+      - rdecosystembb-controller
+      summary: getRdimageDispatchResp
+      operationId: getRdimageDispatchRespUsingGET
+      parameters:
+      - name: imgId
+        in: query
+        description: imgId
+        schema:
+          type: string
+      - name: subscription-key
+        in: header
+        description: subscription-key
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            image/png:
+              schema:
+                $ref: '#/components/schemas/RdecosystembbRdimagedispatchGet200ImagePngResponse'
+              example: ''
+        '401':
+          description: Unauthorized
+          content:
+            application/json: {}
+        '403':
+          description: Forbidden
+          content:
+            application/json: {}
+        '404':
+          description: Not found
+          content:
+            application/json: {}
+        '500':
+          description: Failure
+          content:
+            application/json: {}
+    servers:
+    - url: https://api.developer.nielseniq.com/rdecosystem-bb
+components:
+  schemas:
+    RdecosystembbRdimagedispatchGet200ImagePngResponse:
+      type: string
+      format: binary
+    resetBbProcessingStatusResp:
+      title: Content
+      type: object
+      properties:
+        id:
+          type: string
+        updatedStatus:
+          type: string
+    updateBbProcessingStatusResp:
+      title: Content
+      type: object
+      properties:
+        id:
+          type: string
+        updatedStatus:
+          type: string
+    Specs:
+      title: Specs
+      type: object
+      properties:
+        certification:
+          type: array
+          items:
+            $ref: '#/components/schemas/Certification'
+    updateBbProcessingStatusRequest:
+      title: Content
+      type: object
+      properties:
+        id:
+          type: string
+    IngredientDeclaration:
+      title: IngredientDeclaration
+      type: object
+      properties:
+        ingredients:
+          type: string
+    Certification:
+      title: Certification
+      type: object
+      properties:
+        value:
+          type: string
+        characteristic:
+          type: string
+        segment:
+          type: string
+    resetBbProcessingStatusRequest:
+      title: Content
+      type: object
+      properties:
+        id:
+          type: string
+    FndtnRaw:
+      title: FndtnRaw
+      type: object
+      properties:
+        productSizeTextOnPack:
+          type: string
+        productSize:
+          type: string
+        dispatchId:
+          type: string
+        importedBy:
+          type: string
+        manufacturer:
+          type: string
+        specs:
+          type: array
+          items:
+            $ref: '#/components/schemas/Specs'
+        dateCreated:
+          type: string
+        nielsenUpc:
+          type: string
+        noProductSize:
+          type: boolean
+        brand:
+          type: string
+        productCategorization:
+          type: object
+          items:
+            $ref: '#/components/schemas/ProductCategorization'
+        productType:
+          type: string
+        productId:
+          type: string
+        productSize3:
+          type: string
+        productSize2:
+          type: string
+        upc:
+          type: string
+        dateAttributesModified:
+          type: string
+        dateModified:
+          type: string
+        dateLive:
+          type: string
+        distributor:
+          type: string
+        productTitle:
+          type: string
+        multiPackagingType:
+          type: string
+        netWeight3:
+          type: string
+        netWeight1:
+          type: string
+        countryOfOrigin:
+          type: string
+        netWeight2:
+          type: string
+        ingredientDeclaration:
+          type: object
+          items:
+            $ref: '#/components/schemas/IngredientDeclaration'
+    RdFoundationalFeed:
+      title: RdFoundationalFeed
+      type: object
+      properties:
+        id:
+          type: string
+        dispatchId:
+          type: string
+        country:
+          type: string
+        dateReceived:
+          type: string
+        dateUpdated:
+          type: string
+        extrnCode:
+          type: string
+        isPremovement:
+          type: string
+        upc:
+          type: string
+        provider:
+          type: string
+        version:
+          type: string
+        images:
+          type: array
+          items:
+            $ref: '#/components/schemas/DetImages'
+        fndtnRaw:
+          type: object
+          items:
+            $ref: '#/components/schemas/FndtnRaw'
+        bbProcessingStatus:
+          type: string
+    ProductCategorization:
+      title: ProductCategorization
+      type: object
+      properties:
+        aisle:
+          type: string
+        category:
+          type: string
+        shelf:
+          type: string
+    RdFoundationalFeedResp:
+      title: Content
+      type: object
+      properties:
+        user:
+          type: array
+          items:
+            $ref: '#/components/schemas/RdFoundationalFeed'
+    DetImages:
+      title: DetImages
+      type: object
+      properties:
+        imgId:
+          type: string
+        imgUrl:
+          type: string
+        imgSourcedDate:
+          type: string
+        imgRawUrl:
+          type: string
+        vignette:
+          type: string
+        rating:
+          type: int32
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: subscription-key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: subscription-key
+      in: query
+x-refined-from:
+- RdecosystemBB.yml
+- nielseniq-rdecosystembb-openapi.yml

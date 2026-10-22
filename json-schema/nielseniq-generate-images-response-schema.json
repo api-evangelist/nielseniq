@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/nielseniq/main/json-schema/nielseniq-generate-images-response-schema.json",
+  "title": "generateImagesResponse",
+  "x-generated": "2026-10-18",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/generateImagesResponse",
+  "required": [
+    "created",
+    "data"
+  ],
+  "type": "object",
+  "properties": {
+    "created": {
+      "type": "integer",
+      "description": "The unix timestamp when the operation was created.",
+      "format": "unixtime"
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/imageResult"
+      },
+      "description": "The result data of the operation, if successful"
+    }
+  },
+  "$defs": {
+    "contentFilterDetectedResult": {
+      "required": [
+        "detected",
+        "filtered"
+      ],
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/$defs/contentFilterResultBase"
+        },
+        {
+          "properties": {
+            "detected": {
+              "type": "boolean"
+            }
+          }
+        }
+      ]
+    },
+    "contentFilterResultBase": {
+      "required": [
+        "filtered"
+      ],
+      "type": "object",
+      "properties": {
+        "filtered": {
+          "type": "boolean"
+        }
+      }
+    },
+    "contentFilterSeverityResult": {
+      "required": [
+        "severity",
+        "filtered"
+      ],
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/$defs/contentFilterResultBase"
+        },
+        {
+          "properties": {
+            "severity": {
+              "enum": [
+                "safe",
+                "low",
+                "medium",
+                "high"
+              ],
+              "type": "string",
+              "x-ms-enum": {
+                "name": "ContentFilterSeverity",
+                "modelAsString": true,
+                "values": [
+                  {
+                    "value": "safe",
+                    "description": "General content or related content in generic or non-harmful contexts."
+                  },
+                  {
+                    "value": "low",
+                    "description": "Harmful content at a low intensity and risk level."
+                  },
+                  {
+                    "value": "medium",
+                    "description": "Harmful content at a medium intensity and risk level."
+                  },
+                  {
+                    "value": "high",
+                    "description": "Harmful content at a high intensity and risk level."
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "dalleContentFilterResults": {
+      "type": "object",
+      "properties": {
+        "sexual": {
+          "$ref": "#/$defs/contentFilterSeverityResult"
+        },
+        "violence": {
+          "$ref": "#/$defs/contentFilterSeverityResult"
+        },
+        "hate": {
+          "$ref": "#/$defs/contentFilterSeverityResult"
+        },
+        "self_harm": {
+          "$ref": "#/$defs/contentFilterSeverityResult"
+        }
+      },
+      "description": "Information about the content filtering results."
+    },
+    "dalleFilterResults": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/$defs/dalleContentFilterResults"
+        },
+        {
+          "properties": {
+            "profanity": {
+              "$ref": "#/$defs/contentFilterDetectedResult"
+            },
+            "jailbreak": {
+              "$ref": "#/$defs/contentFilterDetectedResult"
+            }
+          }
+        }
+      ],
+      "description": "Information about the content filtering category (hate, sexual, violence, self_harm), if it has been detected, as well as the severity level (very_low, low, medium, high-scale that determines the intensity and risk level of harmful content) and if it has been filtered or not. Information about jailbreak content and profanity, if it has been detected, and if it has been filtered or not. And information about customer block list, if it has been filtered and its id."
+    },
+    "imageResult": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "The image url."
+        },
+        "b64_json": {
+          "type": "string",
+          "description": "The base64 encoded image"
+        },
+        "content_filter_results": {
+          "$ref": "#/$defs/dalleContentFilterResults"
+        },
+        "revised_prompt": {
+          "type": "string",
+          "description": "The prompt that was used to generate the image, if there was any revision to the prompt."
+        },
+        "prompt_filter_results": {
+          "$ref": "#/$defs/dalleFilterResults"
+        }
+      },
+      "description": "The image url or encoded image if successful, and an error otherwise."
+    }
+  }
+}

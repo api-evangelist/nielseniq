@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/nielseniq/main/json-schema/nielseniq-audio-verbose-response-schema.json",
+  "title": "audioVerboseResponse",
+  "description": "Translation or transcription response when response_format was verbose_json",
+  "x-generated": "2026-10-18",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/audioVerboseResponse",
+  "required": [
+    "text"
+  ],
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "#/$defs/audioResponse"
+    },
+    {
+      "properties": {
+        "task": {
+          "enum": [
+            "transcribe",
+            "translate"
+          ],
+          "type": "string",
+          "description": "Type of audio task.",
+          "x-ms-enum": {
+            "modelAsString": true
+          }
+        },
+        "language": {
+          "type": "string",
+          "description": "Language."
+        },
+        "duration": {
+          "type": "number",
+          "description": "Duration."
+        },
+        "segments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/audioSegment"
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "audioResponse": {
+      "required": [
+        "text"
+      ],
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "Translated or transcribed text."
+        }
+      },
+      "description": "Translation or transcription response when response_format was json"
+    },
+    "audioSegment": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "Segment identifier."
+        },
+        "seek": {
+          "type": "number",
+          "description": "Offset of the segment."
+        },
+        "start": {
+          "type": "number",
+          "description": "Segment start offset."
+        },
+        "end": {
+          "type": "number",
+          "description": "Segment end offset."
+        },
+        "text": {
+          "type": "string",
+          "description": "Segment text."
+        },
+        "tokens": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "description": "Tokens of the text."
+        },
+        "temperature": {
+          "type": "number",
+          "description": "Temperature."
+        },
+        "avg_logprob": {
+          "type": "number",
+          "description": "Average log probability."
+        },
+        "compression_ratio": {
+          "type": "number",
+          "description": "Compression ratio."
+        },
+        "no_speech_prob": {
+          "type": "number",
+          "description": "Probability of 'no speech'."
+        }
+      },
+      "description": "Transcription or translation segment."
+    }
+  }
+}

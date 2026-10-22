@@ -1,0 +1,285 @@
+# x-archived-from: nielseniq-cip-galaxy-proxy-openapi.yml
+# x-archived-on: 2026-10-18
+openapi: 3.0.1
+info:
+  title: CIP Galaxy Proxy
+  description: CIP Galaxy Proxy
+  version: '1.0'
+servers:
+  - url: https://api.developer.nielseniq.com/cipgalaxy
+paths:
+  /*:
+    get:
+      tags:
+        - cipgalaxy-controller
+      summary: getFunctionResp
+      description: getFunctionResp
+      operationId: getFunctionRespUsingGET
+      parameters:
+        - name: cipinstance
+          in: query
+          description: cipinstance
+          schema:
+            type: string
+        - name: subscription-key
+          in: header
+          description: subscription-key
+          required: true
+          schema:
+            type: string
+        - name: X-NIQ-CLIENT-TOKEN
+          in: header
+          description: X-NIQ-CLIENT-TOKEN
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FunctionResp'
+        '401':
+          description: Unauthorized
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '404':
+          description: Not found
+          content:
+            application/json: { }
+        '500':
+          description: Failure
+          content:
+            application/json: { }
+    put:
+      tags:
+        - cipgalaxy-controller
+      summary: putFunctionResp
+      description: putFunctionResp
+      operationId: putFunctionRespUsingPUT
+      parameters:
+        - name: cipinstance
+          in: query
+          description: cipinstance
+          required: true
+          schema:
+            type: string
+        - name: subscription-key
+          in: header
+          description: subscription-key
+          required: true
+          schema:
+            type: string
+        - name: X-NIQ-CLIENT-TOKEN
+          in: header
+          description: X-NIQ-CLIENT-TOKEN
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FunctionRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FunctionResp'
+        '401':
+          description: Unauthorized
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '404':
+          description: Not found
+          content:
+            application/json: { }
+        '500':
+          description: Failure
+          content:
+            application/json: { }
+    post:
+      tags:
+        - cipgalaxy-controller
+      summary: postFunctionResp
+      description: postFunctionResp
+      operationId: postFunctionRespUsingPOST
+      parameters:
+        - name: cipinstance
+          in: query
+          description: cipinstance
+          required: true
+          schema:
+            type: string
+        - name: subscription-key
+          in: header
+          description: subscription-key
+          required: true
+          schema:
+            type: string
+        - name: X-NIQ-CLIENT-TOKEN
+          in: header
+          description: X-NIQ-CLIENT-TOKEN
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FunctionRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FunctionResp'
+        '401':
+          description: Unauthorized
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '404':
+          description: Not found
+          content:
+            application/json: { }
+        '500':
+          description: Failure
+          content:
+            application/json: { }
+    delete:
+      tags:
+        - cipgalaxy-controller
+      summary: delFunctionResp
+      description: delFunctionResp
+      operationId: delFunctionRespUsingDELETE
+      parameters:
+        - name: cipinstance
+          in: query
+          description: cipinstance
+          required: true
+          schema:
+            type: string
+        - name: subscription-key
+          in: header
+          description: subscription-key
+          required: true
+          schema:
+            type: string
+        - name: X-NIQ-CLIENT-TOKEN
+          in: header
+          description: X-NIQ-CLIENT-TOKEN
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FunctionResp'
+        '401':
+          description: Unauthorized
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '404':
+          description: Not found
+          content:
+            application/json: { }
+        '500':
+          description: Failure
+          content:
+            application/json: { }
+    patch:
+      tags:
+        - cipgalaxy-controller
+      summary: patchFunctionResp
+      description: patchFunctionResp
+      operationId: patchFunctionRespUsingPATCH
+      parameters:
+        - name: cipinstance
+          in: query
+          description: cipinstance
+          required: true
+          schema:
+            type: string
+        - name: subscription-key
+          in: header
+          description: subscription-key
+          required: true
+          schema:
+            type: string
+        - name: X-NIQ-CLIENT-TOKEN
+          in: header
+          description: X-NIQ-CLIENT-TOKEN
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FunctionResp'
+        '401':
+          description: Unauthorized
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '404':
+          description: Not found
+          content:
+            application/json: { }
+        '500':
+          description: Failure
+          content:
+            application/json: { }
+components:
+  schemas:
+    FunctionResp:
+      title: FunctionResp
+      type: object
+    FunctionRequest:
+      title: FunctionRequest
+      type: object
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: subscription-key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: subscription-key
+      in: query
+security:
+  - apiKeyHeader: [ ]
+  - apiKeyQuery: [ ]
+tags:
+  - name: cipgalaxy-controller
+    description: CIP GALAXY Controller

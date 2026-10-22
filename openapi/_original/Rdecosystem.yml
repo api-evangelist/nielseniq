@@ -1,0 +1,710 @@
+openapi: 3.0.1
+info:
+  title: Rdecosystem
+  description: Rdecosystem
+  version: '1.0'
+servers:
+  - url: https://api.developer.nielseniq.com/rdecosystem
+paths:
+  /rddispatch:
+    get:
+      tags:
+        - rdecosystem-controller
+      summary: getRdDispatchResp
+      description: getRdDispatchResp
+      operationId: getRdDispatchRespUsingGET
+      parameters:
+        - name: page
+          in: query
+          description: page
+          schema:
+            type: string
+        - name: size
+          in: query
+          description: size
+          schema:
+            type: string
+        - name: fromDate
+          in: query
+          description: fromDate
+          schema:
+            type: string
+        - name: endDate
+          in: query
+          description: endDate
+          schema:
+            type: string
+        - name: provider
+          in: query
+          description: provider
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          schema:
+            type: string
+        - name: subscription-key
+          in: header
+          description: subscription-key
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RdDispatchResp'
+              example:
+                user:
+                  - nielsenExternalCode: string
+                    dispatchDate: string
+                    dispatchId: string
+                    commodityGroup: string
+                    images:
+                      - imgId: string
+                        imgUrl: string
+                        imgSourcedDate: string
+                    imageSource: string
+        '401':
+          description: Unauthorized
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '404':
+          description: Not found
+          content:
+            application/json: { }
+        '500':
+          description: Failure
+          content:
+            application/json: { }
+  /rdimagedispatch:
+    get:
+      tags:
+        - rdecosystem-controller
+      summary: getRdimageDispatchResp
+      description: getRdimageDispatchResp
+      operationId: getRdimageDispatchRespUsingGET
+      parameters:
+        - name: imgId
+          in: query
+          description: imgId
+          schema:
+            type: string
+        - name: subscription-key
+          in: header
+          description: subscription-key
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            image/png:
+              schema:
+                $ref: '#/components/schemas/RdecosystemRdimagedispatchGet200ImagePngResponse'
+              example: ''
+        '401':
+          description: Unauthorized
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '404':
+          description: Not found
+          content:
+            application/json: { }
+        '500':
+          description: Failure
+          content:
+            application/json: { }
+  /rejectImage:
+    post:
+      tags:
+        - rdecosystem-controller
+      summary: rejectImageResp
+      description: rejectImageResp
+      operationId: rejectImageRespUsingPOST
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          schema:
+            type: string
+        - name: subscription-key
+          in: header
+          description: subscription-key
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/rejectImageRequest'
+            example:
+              dispatchStatus: string
+              dateEntered: string
+              dispatchId: string
+              nielsenExternalCode: string
+              rejectedReason: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rejectImageResp'
+              example: string
+        '401':
+          description: Unauthorized
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '404':
+          description: Not found
+          content:
+            application/json: { }
+        '500':
+          description: Failure
+          content:
+            application/json: { }
+  '/rddispatch/icv/nankey/{id}':
+    get:
+      tags:
+        - rdecosystem-controller
+      summary: getRdICVDispatchforNanKeyResp
+      description: getRdICVDispatchforNanKeyResp
+      operationId: getRdICVDispatchforNanKeyRespUsingGET
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          schema:
+            type: string
+        - name: size
+          in: query
+          description: Page Size
+          schema:
+            type: integer
+            default: 20
+        - name: provider
+          in: query
+          description: Data provider
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          description: Auth Token
+          required: true
+          schema:
+            type: string
+        - name: subscription-key
+          in: header
+          description: API Subscription key
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json: { }
+        '401':
+          description: Unauthorized
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '404':
+          description: Not found
+          content:
+            application/json: { }
+        '500':
+          description: Failure
+          content:
+            application/json: { }
+  '/rddispatch/icv/extrncd/{id}':
+    get:
+      tags:
+        - rdecosystem-controller
+      summary: getRdICVDispatchforExtrncodeResp
+      description: getRdICVDispatchforExtrncodeResp
+      operationId: getRdICVDispatchforExtrncodeRespUsingGET
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          schema:
+            type: string
+        - name: size
+          in: query
+          description: Page Size
+          schema:
+            type: integer
+            default: 20
+        - name: provider
+          in: query
+          description: Data provider
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          description: Auth Token
+          required: true
+          schema:
+            type: string
+        - name: subscription-key
+          in: header
+          description: API Subscription key
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            image/png:
+              schema:
+                $ref: '#/components/schemas/RdecosystemRdICVdispatchResponse'
+              example: ''
+        '401':
+          description: Unauthorized
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '404':
+          description: Not found
+          content:
+            application/json: { }
+        '500':
+          description: Failure
+          content:
+            application/json: { }
+  '/rddispatch/icv/ack/id/{id}':
+    post:
+      tags:
+        - rdecosystem-controller
+      summary: postackRdICVDispatchforIDResp
+      description: postackRdICVDispatchforIDResp
+      operationId: postackRdICVDispatchforIDRespUsingPOST
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          description: Auth Token
+          required: true
+          schema:
+            type: string
+        - name: subscription-key
+          in: header
+          description: API Subscription key
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json: { }
+        '401':
+          description: Unauthorized
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '404':
+          description: Not found
+          content:
+            application/json: { }
+        '500':
+          description: Failure
+          content:
+            application/json: { }
+  /rddispatch/icv/ack:
+    post:
+      tags:
+        - rdecosystem-controller
+      summary: postackRdICVDispatchResp
+      description: postackRdICVDispatchResp
+      operationId: postackRdICVDispatchRespUsingPOST
+      parameters:
+        - name: Authorization
+          in: header
+          description: Auth Token
+          required: true
+          schema:
+            type: string
+        - name: subscription-key
+          in: header
+          description: API Subscription key
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            image/png:
+              schema:
+                $ref: '#/components/schemas/RdecosystemAckRdICVdispatchResponse'
+              example: ''
+        '401':
+          description: Unauthorized
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '404':
+          description: Not found
+          content:
+            application/json: { }
+        '500':
+          description: Failure
+          content:
+            application/json: { }
+  /rddispatch/icv:
+    get:
+      tags:
+        - rdecosystem-controller
+      summary: getRdICVDispatchResp
+      description: getRdICVDispatchResp
+      operationId: getRdICVDispatchRespUsingGET
+      parameters:
+        - name: size
+          in: query
+          description: Page Size
+          schema:
+            type: integer
+            default: 20
+        - name: provider
+          in: query
+          description: Data provider
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          description: Auth Token
+          required: true
+          schema:
+            type: string
+        - name: subscription-key
+          in: header
+          description: API Subscription key
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            image/png:
+              schema:
+                $ref: '#/components/schemas/RdecosystemRdICVdispatchResponse'
+              example: ''
+        '401':
+          description: Unauthorized
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '404':
+          description: Not found
+          content:
+            application/json: { }
+        '500':
+          description: Failure
+          content:
+            application/json: { }
+  /rddispatch/product/create:
+    post:
+      tags:
+        - rdecosystem-controller
+      summary: postCreateProductResp
+      description: postCreateProductResp
+      operationId: postCreateProductRespUsingPOST
+      parameters:
+        - name: Authorization
+          in: header
+          description: Auth Token
+          required: true
+          schema:
+            type: string
+        - name: subscription-key
+          in: header
+          description: API Subscription key
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/postCreateProductRequest'
+            example:
+              data: { }
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json: { }
+        '401':
+          description: Unauthorized
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '404':
+          description: Not found
+          content:
+            application/json: { }
+        '500':
+          description: Failure
+          content:
+            application/json: { }
+components:
+  schemas:
+    postCreateProductRequest:
+      title: Content
+      type: object
+      properties:
+        data:
+          type: object
+          items:
+            $ref: '#/components/schemas/CreateProduct'
+    CreateProduct:
+      title: Content
+      type: object
+      properties:
+        upc:
+          type: string
+        productId:
+          type: integer
+        gtinFormats:
+          type: object
+          items:
+            $ref: '#/components/schemas/GtinFormats'
+        syndicatedChars:
+          type: array
+          items:
+            $ref: '#/components/schemas/SyndicatedChars'
+    GtinFormats:
+      title: GtinFormats
+      type: object
+      properties:
+        UPC_A:
+          type: string
+        ON_PACK:
+          type: string
+        NO_CHECK_DIGIT:
+          type: string
+        GTIN_14:
+          type: string
+    SyndicatedChars:
+      title: SyndicatedChars
+      type: object
+      properties:
+        SyndicatedCharsObj:
+          type: object
+          items:
+            $ref: '#/components/schemas/SyndicatedCharsObj'
+    SyndicatedCharsObj:
+      title: SyndicatedCharsObj
+      type: object
+      properties:
+        characteristic:
+          type: string
+        value:
+          type: string
+    rejectImageRequest:
+      title: Content
+      type: object
+      properties:
+        dispatchStatus:
+          type: string
+        dateEntered:
+          type: string
+        dispatchId:
+          type: string
+        nielsenExternalCode:
+          type: string
+        rejectedReason:
+          type: string
+    rejectImageResp:
+      title: Content
+      type: string
+    RdecosystemRdICVdispatchResponse:
+      title: Content
+      type: object
+      properties:
+        user:
+          type: array
+          items:
+            $ref: '#/components/schemas/RdecosystemRdICVdispatch'
+        hasMoreRecords:
+          type: boolean
+        size:
+          type: integer
+    RdecosystemAckRdICVdispatchResponse:
+      title: Content
+      type: object
+      properties:
+        ids:
+          type: array
+          items:
+            $ref: '#/components/schemas/RdecosystemAckRdICVdispatch'
+    RdDispatchResp:
+      title: Content
+      type: object
+      properties:
+        user:
+          type: array
+          items:
+            $ref: '#/components/schemas/RdDispatch'
+    RdecosystemAckRdICVdispatch:
+      title: RdecosystemAckRdICVdispatch
+      type: string
+    RdecosystemRdICVdispatch:
+      title: RdecosystemRdICVdispatch
+      type: object
+      properties:
+        id:
+          type: string
+        country:
+          type: string
+        extrnCode:
+          type: string
+        nanKey:
+          type: string
+        gic:
+          type: integer
+        cntlChr:
+          type: object
+          items:
+            $ref: '#/components/schemas/CntlChr'
+        chrs:
+          type: array
+          items:
+            $ref: '#/components/schemas/Chrs'
+        itmCrtDttm:
+          type: string
+        itmUpdDttm:
+          type: string
+        updDttm:
+          type: string
+    CntlChr:
+      title: CntlChr
+      type: object
+      properties:
+        chrCd:
+          type: integer
+        chrLclCd:
+          type: string
+        chrDscr:
+          type: string
+        chrVal:
+          type: object
+          items:
+            $ref: '#/components/schemas/ChrVal'
+    ChrVal:
+      title: ChrVal
+      type: object
+      properties:
+        chrValCd:
+          type: integer
+        chrValLclCd:
+          type: string
+        chrValDscr:
+          type: string
+        seq:
+          type: integer
+    Chrs:
+      title: Chrs
+      type: object
+      properties:
+        ChrsContent:
+          type: object
+          items:
+            $ref: '#/components/schemas/CntlChr'
+    RdDispatch:
+      title: RdDispatch
+      type: object
+      properties:
+        nielsenExternalCode:
+          type: string
+        dispatchDate:
+          type: string
+        dispatchId:
+          type: string
+        commodityGroup:
+          type: string
+        images:
+          type: array
+          items:
+            $ref: '#/components/schemas/Images'
+        imageSource:
+          type: string
+    Images:
+      title: Images
+      type: object
+      properties:
+        imgId:
+          type: string
+        imgUrl:
+          type: string
+        imgSourcedDate:
+          type: string
+    RdecosystemRdimagedispatchGet200ImagePngResponse:
+      type: string
+      format: binary
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: subscription-key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: subscription-key
+      in: query
+security:
+  - apiKeyHeader: [ ]
+  - apiKeyQuery: [ ]
+tags:
+  - name: rdecosystem-controller
+    description: RDecoSystem Controller

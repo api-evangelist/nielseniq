@@ -1,0 +1,49 @@
+name: NielsenIQ agent skills
+generated: '2026-10-18'
+method: generated
+source: openapi/
+published_by_provider: 'none found: no AGENTS.md, skills or llms.txt on portal.developer.nielseniq.com (404, 2026-10-18)'
+skills:
+- name: nielseniq-bulk-store-availability-processing
+  path: skills/nielseniq-bulk-store-availability-processing.md
+  description: Submit bulk store availability data for processing and monitor job status.
+  api: openapi/nielseniq-store-availability-bulk-openapi.yml
+  operations:
+  - getBatchStoreAvailabilityRespUsingPOST
+  - getAddCheckDigitRespUsingPOST
+  - getJobStatusRespUsingGET
+- name: nielseniq-create-chat-completion
+  path: skills/nielseniq-create-chat-completion.md
+  description: Creates a completion for a chat message using a specified deployment model.
+  api: openapi/nielseniq-crmcasetrackapi-openapi.yml
+  operations:
+  - postChatCompletionsCreateRespUsingPOST
+  - 688cd23dbe4114127cd8747d
+  - postEmbeddingsCreateRespUsingPOST
+  - postImageGenerationsCreateDalleRespUsingPOST
+- name: nielseniq-data-access-catalogues
+  path: skills/nielseniq-data-access-catalogues.md
+  description: Query NielsenIQ Buy Data Access metadata catalogues.
+  api: openapi/nielseniq-buy-data-access-catalogues-api-openapi.yml
+  operations:
+  - getCataloguesRespUsingPOST
+- name: nielseniq-rd-foundational-feed
+  path: skills/nielseniq-rd-foundational-feed.md
+  description: Read the NielsenIQ RD foundational product feed page by page and record or reset processing status.
+  api: openapi/nielseniq-rdecosystembb-openapi.yml
+  operations:
+  - getRdFoundationalFeedRespUsingGET
+  - updateBbProcessingStatusRespUsingPOST
+  - resetBbProcessingStatusRespUsingPOST
+  - getRdimageDispatchRespUsingGET
+- name: nielseniq-rd-icv-dispatch
+  path: skills/nielseniq-rd-icv-dispatch.md
+  description: Pull Retail Data ecosystem ICV dispatch records from NielsenIQ, look them up by NAN key or external code, and
+    acknowledge them.
+  api: openapi/nielseniq-rdecosystem-openapi.yml
+  operations:
+  - getRdICVDispatchRespUsingGET
+  - getRdICVDispatchforNanKeyRespUsingGET
+  - getRdICVDispatchforExtrncodeRespUsingGET
+  - postackRdICVDispatchforIDRespUsingPOST
+  - postackRdICVDispatchRespUsingPOST

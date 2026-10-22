@@ -1,0 +1,56 @@
+overlay: 1.0.0
+info:
+  title: NielsenIQ Docusearch US Azure OpenAI Service API overlay
+  version: 1.0.0
+extends: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml
+x-generated: '2026-10-18'
+x-method: generated
+actions:
+- target: $.info
+  description: Provider context added by API Evangelist
+  update:
+    x-provider: NielsenIQ
+    x-apis-json: https://raw.githubusercontent.com/api-evangelist/nielseniq/refs/heads/main/apis.yml
+    x-developer-portal: https://portal.developer.nielseniq.com/
+- target: $.paths['/deployments/{deployment-id}/completions'].post
+  description: Agent hints for postChatCompletionsCreatePromptRespUsingPOST
+  update:
+    x-agent-hints:
+      safe: false
+      idempotent: false
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/deployments/{deployment-id}/embeddings'].post
+  description: Agent hints for postEmbeddingsCreateRespUsingPOST
+  update:
+    x-agent-hints:
+      safe: false
+      idempotent: false
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/deployments/{deployment-id}/chat/completions'].post
+  description: Agent hints for postChatCompletionsCreateRespUsingPOST
+  update:
+    x-agent-hints:
+      safe: false
+      idempotent: false
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/deployments/{deployment-id}/audio/transcriptions'].post
+  description: Agent hints for postTranscriptionsCreateRespUsingPOST
+  update:
+    x-agent-hints:
+      safe: false
+      idempotent: false
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/deployments/{deployment-id}/audio/translations'].post
+  description: Agent hints for postTranslationsCreateRespUsingPOST
+  update:
+    x-agent-hints:
+      safe: false
+      idempotent: false
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/deployments/{deployment-id}/images/generations'].post
+  description: Agent hints for postImageGenerationsCreateDalleRespUsingPOST
+  update:
+    x-agent-hints:
+      safe: false
+      idempotent: false
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency

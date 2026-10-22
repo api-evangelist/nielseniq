@@ -1,0 +1,421 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/nielseniq/main/json-schema/nielseniq-create-chat-completion-request-schema.json",
+  "title": "createChatCompletionRequest",
+  "x-generated": "2026-10-18",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/createChatCompletionRequest",
+  "required": [
+    "messages"
+  ],
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "#/$defs/chatCompletionsRequestCommon"
+    },
+    {
+      "properties": {
+        "messages": {
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/chatCompletionRequestMessage"
+          },
+          "description": "A list of messages comprising the conversation so far. [Example Python code](https://github.com/openai/openai-cookbook/blob/main/examples/How_to_format_inputs_to_ChatGPT_models.ipynb)."
+        },
+        "data_sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/azureChatExtensionConfiguration"
+          },
+          "description": "  The configuration entries for Azure OpenAI chat extensions that use them.\n  This additional specification is only compatible with Azure OpenAI."
+        },
+        "n": {
+          "maximum": 128.0,
+          "minimum": 1.0,
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "How many chat completion choices to generate for each input message.",
+          "default": 1
+        },
+        "seed": {
+          "maximum": 9223372036854775800,
+          "minimum": -9223372036854775800,
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same `seed` and parameters should return the same result.Determinism is not guaranteed, and you should refer to the `system_fingerprint` response parameter to monitor changes in the backend.",
+          "default": 0
+        },
+        "response_format": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "$ref": "#/$defs/chatCompletionResponseFormat"
+            }
+          },
+          "description": "An object specifying the format that the model must output. Used to enable JSON mode."
+        },
+        "tools": {
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/chatCompletionTool"
+          },
+          "description": "A list of tools the model may call. Currently, only functions are supported as a tool. Use this to provide a list of functions the model may generate JSON inputs for."
+        },
+        "tool_choice": {
+          "$ref": "#/$defs/chatCompletionToolChoiceOption"
+        },
+        "functions": {
+          "maxItems": 128,
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/chatCompletionFunction"
+          },
+          "description": "Deprecated in favor of `tools`. A list of functions the model may generate JSON inputs for."
+        },
+        "function_call": {
+          "oneOf": [
+            {
+              "enum": [
+                "none",
+                "auto"
+              ],
+              "type": "string",
+              "description": "`none` means the model will not call a function and instead generates a message. `auto` means the model can pick between generating a message or calling a function."
+            },
+            {
+              "required": [
+                "name"
+              ],
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "The name of the function to call."
+                }
+              },
+              "description": "Specifying a particular function via `{\"name\": \"my_function\"}` forces the model to call that function."
+            }
+          ],
+          "description": "Deprecated in favor of `tool_choice`. Controls how the model responds to function calls. \"none\" means the model does not call a function, and responds to the end-user. \"auto\" means the model can pick between an end-user or calling a function.  Specifying a particular function via `{\"name\":\\ \"my_function\"}` forces the model to call that function. \"none\" is the default when no functions are present. \"auto\" is the default if functions are present."
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "azureChatExtensionConfiguration": {
+      "required": [
+        "type"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/$defs/azureChatExtensionType"
+        }
+      },
+      "description": "  A representation of configuration data for a single Azure OpenAI chat extension. This will be used by a chat\n  completions request that should use Azure OpenAI chat extensions to augment the response behavior.\n  The use of this configuration is compatible only with Azure OpenAI."
+    },
+    "azureChatExtensionType": {
+      "enum": [
+        "azure_search",
+        "azure_cosmos_db"
+      ],
+      "type": "string",
+      "description": "  A representation of configuration data for a single Azure OpenAI chat extension. This will be used by a chat\n  completions request that should use Azure OpenAI chat extensions to augment the response behavior.\n  The use of this configuration is compatible only with Azure OpenAI.",
+      "x-ms-enum": {
+        "name": "AzureChatExtensionType",
+        "modelAsString": true,
+        "values": [
+          {
+            "name": "azureSearch",
+            "value": "azure_search",
+            "description": "Represents the use of Azure Search as an Azure OpenAI chat extension."
+          },
+          {
+            "name": "azureCosmosDB",
+            "value": "azure_cosmos_db",
+            "description": "Represents the use of Azure Cosmos DB as an Azure OpenAI chat extension."
+          }
+        ]
+      }
+    },
+    "chatCompletionFunction": {
+      "required": [
+        "name"
+      ],
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the function to be called. Must be a-z, A-Z, 0-9, or contain underscores and dashes, with a maximum length of 64."
+        },
+        "description": {
+          "type": "string",
+          "description": "The description of what the function does."
+        },
+        "parameters": {
+          "$ref": "#/$defs/chatCompletionFunctionParameters"
+        }
+      }
+    },
+    "chatCompletionFunctionParameters": {
+      "type": "object",
+      "description": "The parameters the functions accepts, described as a JSON Schema object. See the [guide](/docs/guides/gpt/function-calling) for examples, and the [JSON Schema reference](https://json-schema.org/understanding-json-schema/) for documentation about the format."
+    },
+    "chatCompletionNamedToolChoice": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "enum": [
+            "function"
+          ],
+          "type": "string",
+          "description": "The type of the tool. Currently, only `function` is supported."
+        },
+        "function": {
+          "required": [
+            "name"
+          ],
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "The name of the function to call."
+            }
+          }
+        }
+      },
+      "description": "Specifies a tool the model should use. Use to force the model to call a specific function."
+    },
+    "chatCompletionRequestMessage": {
+      "required": [
+        "role"
+      ],
+      "type": "object",
+      "properties": {
+        "role": {
+          "$ref": "#/$defs/chatCompletionRequestMessageRole"
+        }
+      }
+    },
+    "chatCompletionRequestMessageRole": {
+      "enum": [
+        "system",
+        "user",
+        "assistant",
+        "tool",
+        "function"
+      ],
+      "type": "string",
+      "description": "The role of the messages author.",
+      "x-ms-enum": {
+        "name": "ChatCompletionRequestMessageRole",
+        "modelAsString": true,
+        "values": [
+          {
+            "value": "system",
+            "description": "The message author role is system."
+          },
+          {
+            "value": "user",
+            "description": "The message author role is user."
+          },
+          {
+            "value": "assistant",
+            "description": "The message author role is assistant."
+          },
+          {
+            "value": "tool",
+            "description": "The message author role is tool."
+          },
+          {
+            "value": "function",
+            "description": "Deprecated. The message author role is function."
+          }
+        ]
+      }
+    },
+    "chatCompletionResponseFormat": {
+      "enum": [
+        "text",
+        "json_object"
+      ],
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Setting to `json_object` enables JSON mode. This guarantees that the message the model generates is valid JSON.",
+      "default": "text",
+      "x-ms-enum": {
+        "name": "ChatCompletionResponseFormat",
+        "modelAsString": true,
+        "values": [
+          {
+            "value": "text",
+            "description": "Response format is a plain text string."
+          },
+          {
+            "value": "json_object",
+            "description": "Response format is a JSON object."
+          }
+        ]
+      }
+    },
+    "chatCompletionTool": {
+      "required": [
+        "type",
+        "function"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/$defs/chatCompletionToolType"
+        },
+        "function": {
+          "required": [
+            "name",
+            "parameters"
+          ],
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string",
+              "description": "A description of what the function does, used by the model to choose when and how to call the function."
+            },
+            "name": {
+              "type": "string",
+              "description": "The name of the function to be called. Must be a-z, A-Z, 0-9, or contain underscores and dashes, with a maximum length of 64."
+            },
+            "parameters": {
+              "$ref": "#/$defs/chatCompletionFunctionParameters"
+            }
+          }
+        }
+      }
+    },
+    "chatCompletionToolChoiceOption": {
+      "oneOf": [
+        {
+          "enum": [
+            "none",
+            "auto"
+          ],
+          "type": "string",
+          "description": "`none` means the model will not call a function and instead generates a message. `auto` means the model can pick between generating a message or calling a function."
+        },
+        {
+          "$ref": "#/$defs/chatCompletionNamedToolChoice"
+        }
+      ],
+      "description": "Controls which (if any) function is called by the model. `none` means the model will not call a function and instead generates a message. `auto` means the model can pick between generating a message or calling a function. Specifying a particular function via `{\"type\": \"function\", \"function\": {\"name\": \"my_function\"}}` forces the model to call that function."
+    },
+    "chatCompletionToolType": {
+      "enum": [
+        "function"
+      ],
+      "type": "string",
+      "description": "The type of the tool. Currently, only `function` is supported.",
+      "x-ms-enum": {
+        "name": "ChatCompletionToolType",
+        "modelAsString": true,
+        "values": [
+          {
+            "value": "function",
+            "description": "The tool type is function."
+          }
+        ]
+      }
+    },
+    "chatCompletionsRequestCommon": {
+      "type": "object",
+      "properties": {
+        "temperature": {
+          "maximum": 2.0,
+          "minimum": 0.0,
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.\nWe generally recommend altering this or `top_p` but not both.",
+          "default": 1
+        },
+        "top_p": {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered.\nWe generally recommend altering this or `temperature` but not both.",
+          "default": 1
+        },
+        "stream": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "If set, partial message deltas will be sent, like in ChatGPT. Tokens will be sent as data-only server-sent events as they become available, with the stream terminated by a `data: [DONE]` message.",
+          "default": false
+        },
+        "stop": {
+          "oneOf": [
+            {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            {
+              "maxItems": 4,
+              "minItems": 1,
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Array minimum size of 1 and maximum of 4"
+            }
+          ],
+          "description": "Up to 4 sequences where the API will stop generating further tokens.",
+          "default": ""
+        },
+        "max_tokens": {
+          "type": "integer",
+          "description": "The maximum number of tokens allowed for the generated answer. By default, the number of tokens the model can return will be (4096 - prompt tokens).",
+          "default": 4096
+        },
+        "presence_penalty": {
+          "maximum": 2.0,
+          "minimum": -2.0,
+          "type": "number",
+          "description": "Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.",
+          "default": 0
+        },
+        "frequency_penalty": {
+          "maximum": 2.0,
+          "minimum": -2.0,
+          "type": "number",
+          "description": "Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.",
+          "default": 0
+        },
+        "logit_bias": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "description": "Modify the likelihood of specified tokens appearing in the completion. Accepts a json object that maps tokens (specified by their token ID in the tokenizer) to an associated bias value from -100 to 100. Mathematically, the bias is added to the logits generated by the model prior to sampling. The exact effect will vary per model, but values between -1 and 1 should decrease or increase likelihood of selection; values like -100 or 100 should result in a ban or exclusive selection of the relevant token."
+        },
+        "user": {
+          "type": "string",
+          "description": "A unique identifier representing your end-user, which can help Azure OpenAI to monitor and detect abuse."
+        }
+      }
+    }
+  }
+}

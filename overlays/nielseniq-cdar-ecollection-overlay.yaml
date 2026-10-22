@@ -1,0 +1,23 @@
+overlay: 1.0.0
+info:
+  title: NielsenIQ CDAR ECOLLECTION overlay
+  version: 1.0.0
+extends: ../openapi/_original/nielseniq-cdar-ecollection-openapi.yml
+x-generated: '2026-10-18'
+x-method: generated
+actions:
+- target: $.info
+  description: Provider context added by API Evangelist
+  update:
+    x-provider: NielsenIQ
+    x-apis-json: https://raw.githubusercontent.com/api-evangelist/nielseniq/refs/heads/main/apis.yml
+    x-developer-portal: https://portal.developer.nielseniq.com/
+- target: $.paths['/na/vendor-report-api/*'].get
+  description: Agent hints for getEcollectionRespUsingGET
+  update:
+    x-agent-hints:
+      safe: true
+      idempotent: true
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+      wildcard_path: true
+      note: 'The path is an Azure API Management wildcard ("*"): the backend route is forwarded verbatim and is not described by this contract.'

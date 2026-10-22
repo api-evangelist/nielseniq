@@ -1,0 +1,71 @@
+generated: '2026-10-18'
+method: derived
+source: openapi/nielseniq-buy-data-access-catalogues-api-openapi.yml, openapi/nielseniq-cdar-barter-openapi.yml,
+  openapi/nielseniq-cdar-barterapi-openapi.yml, openapi/nielseniq-cdar-ecollection-openapi.yml,
+  openapi/nielseniq-cdar-ecollectionapi-openapi.yml, openapi/nielseniq-cdar-gettoken-openapi.yml,
+  openapi/nielseniq-cdar-gettokenprodna-openapi.yml, openapi/nielseniq-cdar-gnic-openapi.yml,
+  openapi/nielseniq-cdar-gnicapi-openapi.yml, openapi/nielseniq-cdar-gnicus-openapi.yml, openapi/nielseniq-cdar-gnicusapi-openapi.yml,
+  openapi/nielseniq-cdar-vendor-reports-openapi.yml ...
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+  - query
+schemes:
+- name: apiKeyHeader
+  type: apiKey
+  in: header
+  parameter: apiKey
+  sources:
+  - openapi/nielseniq-buy-data-access-catalogues-api-openapi.yml
+- name: apiKeyQuery
+  type: apiKey
+  in: query
+  parameter: apiKey
+  sources:
+  - openapi/nielseniq-buy-data-access-catalogues-api-openapi.yml
+- name: apiKeyHeader
+  type: apiKey
+  in: header
+  parameter: subscription-key
+  sources:
+  - openapi/nielseniq-cdar-barter-openapi.yml
+  - openapi/nielseniq-cdar-barterapi-openapi.yml
+  - openapi/nielseniq-cdar-ecollection-openapi.yml
+  - openapi/nielseniq-cdar-ecollectionapi-openapi.yml
+  - openapi/nielseniq-cdar-gettoken-openapi.yml
+  - openapi/nielseniq-cdar-gettokenprodna-openapi.yml
+  - openapi/nielseniq-cdar-gnic-openapi.yml
+  - openapi/nielseniq-cdar-gnicapi-openapi.yml
+  - openapi/nielseniq-cdar-gnicus-openapi.yml
+  - openapi/nielseniq-cdar-gnicusapi-openapi.yml
+  - openapi/nielseniq-cdar-vendor-reports-openapi.yml
+  - openapi/nielseniq-cip-galaxy-form-proxy-openapi.yml
+  - openapi/nielseniq-cip-galaxy-proxy-openapi.yml
+  - openapi/nielseniq-crmcasetrackapi-openapi.yml
+  - openapi/nielseniq-rdecosystem-openapi.yml
+  - openapi/nielseniq-rdecosystembb-openapi.yml
+  - openapi/nielseniq-store-availability-bulk-openapi.yml
+- name: apiKeyQuery
+  type: apiKey
+  in: query
+  parameter: subscription-key
+  sources:
+  - openapi/nielseniq-cdar-barter-openapi.yml
+  - openapi/nielseniq-cdar-barterapi-openapi.yml
+  - openapi/nielseniq-cdar-ecollection-openapi.yml
+  - openapi/nielseniq-cdar-ecollectionapi-openapi.yml
+  - openapi/nielseniq-cdar-gettoken-openapi.yml
+  - openapi/nielseniq-cdar-gettokenprodna-openapi.yml
+  - openapi/nielseniq-cdar-gnic-openapi.yml
+  - openapi/nielseniq-cdar-gnicapi-openapi.yml
+  - openapi/nielseniq-cdar-gnicus-openapi.yml
+  - openapi/nielseniq-cdar-gnicusapi-openapi.yml
+  - openapi/nielseniq-cdar-vendor-reports-openapi.yml
+  - openapi/nielseniq-cip-galaxy-form-proxy-openapi.yml
+  - openapi/nielseniq-cip-galaxy-proxy-openapi.yml
+  - openapi/nielseniq-crmcasetrackapi-openapi.yml
+  - openapi/nielseniq-rdecosystem-openapi.yml
+  - openapi/nielseniq-rdecosystembb-openapi.yml
+  - openapi/nielseniq-store-availability-bulk-openapi.yml

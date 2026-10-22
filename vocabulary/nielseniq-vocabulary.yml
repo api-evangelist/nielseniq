@@ -1,0 +1,434 @@
+generated: '2026-10-18'
+method: derived
+generator: derive-vocabulary.py
+source:
+- openapi/nielseniq-buy-data-access-catalogues-api-openapi.yml
+- openapi/nielseniq-cdar-barter-openapi.yml
+- openapi/nielseniq-cdar-barterapi-openapi.yml
+- openapi/nielseniq-cdar-ecollection-openapi.yml
+- openapi/nielseniq-cdar-ecollectionapi-openapi.yml
+vocabulary:
+  name: NielsenIQ Domain Vocabulary
+  description: 'Terms declared by NielsenIQ''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions.
+    Derived, not authored.'
+  version: '2026-10-18'
+  terms:
+  - term: bdametadata-controller
+    definition: BDA Meta Data Controller
+    tags:
+    - Resource Group
+    source: openapi/nielseniq-buy-data-access-catalogues-api-openapi.yml
+  - term: cdarbarter-controller
+    definition: CDARBARTER Controller
+    tags:
+    - Resource Group
+    source: openapi/nielseniq-cdar-barter-openapi.yml
+  - term: cdarbarter-controllerapi
+    definition: CDARBARTER ControllerApi
+    tags:
+    - Resource Group
+    source: openapi/nielseniq-cdar-barterapi-openapi.yml
+  - term: cdarecollection-controller
+    definition: CDARECOLLECTION Controller
+    tags:
+    - Resource Group
+    source: openapi/nielseniq-cdar-ecollection-openapi.yml
+  - term: cdarecollection-controllerapi
+    definition: CDARECOLLECTION ControllerApi
+    tags:
+    - Resource Group
+    source: openapi/nielseniq-cdar-ecollectionapi-openapi.yml
+  - term: cdargettoken-controller
+    definition: CDARGETTOKEN Controller
+    tags:
+    - Resource Group
+    source: openapi/nielseniq-cdar-gettoken-openapi.yml
+  - term: cdargettokenprodna-controller
+    definition: CDARGETTOKENPRODNA Controller
+    tags:
+    - Resource Group
+    source: openapi/nielseniq-cdar-gettokenprodna-openapi.yml
+  - term: cdargnic-controller
+    definition: CDARGNIC Controller
+    tags:
+    - Resource Group
+    source: openapi/nielseniq-cdar-gnic-openapi.yml
+  - term: cdargnic-controllerapi
+    definition: CDARGNIC ControllerApi
+    tags:
+    - Resource Group
+    source: openapi/nielseniq-cdar-gnicapi-openapi.yml
+  - term: cdargnicus-controller
+    definition: CDARGNICUS Controller
+    tags:
+    - Resource Group
+    source: openapi/nielseniq-cdar-gnicus-openapi.yml
+  - term: cdargnicus-controllerapi
+    definition: CDARGNICUS ControllerApi
+    tags:
+    - Resource Group
+    source: openapi/nielseniq-cdar-gnicusapi-openapi.yml
+  - term: cdarvendorreports-controller
+    definition: CDARVendorReports Controller
+    tags:
+    - Resource Group
+    source: openapi/nielseniq-cdar-vendor-reports-openapi.yml
+  - term: cipgalaxyform-controller
+    definition: CIP GALAXY FORM Controller
+    tags:
+    - Resource Group
+    source: openapi/nielseniq-cip-galaxy-form-proxy-openapi.yml
+  - term: cipgalaxy-controller
+    definition: CIP GALAXY Controller
+    tags:
+    - Resource Group
+    source: openapi/nielseniq-cip-galaxy-proxy-openapi.yml
+  - term: rdecosystem-controller
+    definition: RDecoSystem Controller
+    tags:
+    - Resource Group
+    source: openapi/nielseniq-rdecosystem-openapi.yml
+  - term: rdecosystembb-controller
+    definition: RDecoSystem BB Controller
+    tags:
+    - Resource Group
+    source: openapi/nielseniq-rdecosystembb-openapi.yml
+  - term: storeavailabilitybulk-controller
+    definition: Store Availability Bulk Controller
+    tags:
+    - Resource Group
+    source: openapi/nielseniq-store-availability-bulk-openapi.yml
+  - term: errorResponse
+    definition: 'Object declared by the contract with fields: error.'
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/errorResponse
+  - term: errorBase
+    definition: 'Object declared by the contract with fields: code, message.'
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/errorBase
+  - term: error
+    definition: 'Object declared by the contract with fields: param, type, inner_error.'
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/error
+  - term: innerError
+    definition: Inner error with additional details.
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/innerError
+  - term: innerErrorCode
+    definition: Error codes for the inner error object.
+    tags:
+    - Enumeration
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/innerErrorCode
+  - term: dalleErrorResponse
+    definition: 'Object declared by the contract with fields: error.'
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/dalleErrorResponse
+  - term: dalleError
+    definition: 'Object declared by the contract with fields: param, type, inner_error.'
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/dalleError
+  - term: dalleInnerError
+    definition: Inner error with additional details.
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/dalleInnerError
+  - term: contentFilterResultBase
+    definition: 'Object declared by the contract with fields: filtered.'
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/contentFilterResultBase
+  - term: contentFilterResultsBase
+    definition: Information about the content filtering results.
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/contentFilterResultsBase
+  - term: contentFilterPromptResults
+    definition: Information about the content filtering category (hate, sexual, violence, self_harm), if it has been detected, as well as the
+      severity level (very_low, low, medium, high-scale that determines the intensity and risk level of harmful content) and if it has been filtered
+      or not. Information about jailbreak content and profanity, if it has been detected, and if it has been filtered or not. And informa
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/contentFilterPromptResults
+  - term: contentFilterChoiceResults
+    definition: Information about the content filtering category (hate, sexual, violence, self_harm), if it has been detected, as well as the
+      severity level (very_low, low, medium, high-scale that determines the intensity and risk level of harmful content) and if it has been filtered
+      or not. Information about third party text and profanity, if it has been detected, and if it has been filtered or not. And informat
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/contentFilterChoiceResults
+  - term: promptFilterResult
+    definition: Content filtering results for a single prompt in the request.
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/promptFilterResult
+  - term: promptFilterResults
+    definition: Content filtering results for zero or more prompts in the request. In a streaming request, results for different prompts may arrive
+      at different times or in different orders.
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/promptFilterResults
+  - term: dalleContentFilterResults
+    definition: Information about the content filtering results.
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/dalleContentFilterResults
+  - term: dalleFilterResults
+    definition: Information about the content filtering category (hate, sexual, violence, self_harm), if it has been detected, as well as the
+      severity level (very_low, low, medium, high-scale that determines the intensity and risk level of harmful content) and if it has been filtered
+      or not. Information about jailbreak content and profanity, if it has been detected, and if it has been filtered or not. And informa
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/dalleFilterResults
+  - term: chatCompletionsRequestCommon
+    definition: 'Object declared by the contract with fields: temperature, top_p, stream, stop, max_tokens, presence_penalty, frequency_penalty,
+      logit_bias, user.'
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/chatCompletionsRequestCommon
+  - term: chatCompletionResponseFormat
+    definition: Setting to `json_object` enables JSON mode. This guarantees that the message the model generates is valid JSON.
+    tags:
+    - Enumeration
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/chatCompletionResponseFormat
+  - term: chatCompletionFunction
+    definition: 'Object declared by the contract with fields: name, description, parameters.'
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/chatCompletionFunction
+  - term: chatCompletionFunctionParameters
+    definition: The parameters the functions accepts, described as a JSON Schema object. See the [guide](/docs/guides/gpt/function-calling) for
+      examples, and the [JSON Schema reference](https://json-schema.org/understanding-json-schema/) for documentation about the format.
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/chatCompletionFunctionParameters
+  - term: chatCompletionRequestMessage
+    definition: 'Object declared by the contract with fields: role.'
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/chatCompletionRequestMessage
+  - term: chatCompletionRequestMessageRole
+    definition: The role of the messages author.
+    tags:
+    - Enumeration
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/chatCompletionRequestMessageRole
+  - term: chatCompletionRequestMessageContentPart
+    definition: 'Object declared by the contract with fields: type.'
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/chatCompletionRequestMessageContentPart
+  - term: chatCompletionRequestMessageContentPartType
+    definition: The type of the content part.
+    tags:
+    - Enumeration
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/chatCompletionRequestMessageContentPartType
+  - term: imageDetailLevel
+    definition: Specifies the detail level of the image.
+    tags:
+    - Enumeration
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/imageDetailLevel
+  - term: azureChatExtensionConfiguration
+    definition: A representation of configuration data for a single Azure OpenAI chat extension. This will be used by a chat completions request
+      that should use Azure OpenAI chat extensions to augment the response behavior. The use of this configuration is compatible only with Azure
+      OpenAI.
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/azureChatExtensionConfiguration
+  - term: azureChatExtensionType
+    definition: A representation of configuration data for a single Azure OpenAI chat extension. This will be used by a chat completions request
+      that should use Azure OpenAI chat extensions to augment the response behavior. The use of this configuration is compatible only with Azure
+      OpenAI.
+    tags:
+    - Enumeration
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/azureChatExtensionType
+  - term: azureSearchChatExtensionConfiguration
+    definition: A specific representation of configurable options for Azure Search when using it as an Azure OpenAI chat extension.
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/azureSearchChatExtensionConfiguration
+  - term: azureSearchChatExtensionParameters
+    definition: Parameters for Azure Search when used as an Azure OpenAI chat extension.
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/azureSearchChatExtensionParameters
+  - term: azureSearchIndexFieldMappingOptions
+    definition: Optional settings to control how fields are processed when using a configured Azure Search resource.
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/azureSearchIndexFieldMappingOptions
+  - term: azureSearchQueryType
+    definition: The type of Azure Search retrieval query that should be executed when using it as an Azure OpenAI chat extension.
+    tags:
+    - Enumeration
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/azureSearchQueryType
+  - term: azureCosmosDBChatExtensionConfiguration
+    definition: A specific representation of configurable options for Azure Cosmos DB when using it as an Azure OpenAI chat extension.
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/azureCosmosDBChatExtensionConfiguration
+  - term: azureCosmosDBChatExtensionParameters
+    definition: Parameters to use when configuring Azure OpenAI On Your Data chat extensions when using Azure Cosmos DB for MongoDB vCore.
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/azureCosmosDBChatExtensionParameters
+  - term: azureCosmosDBFieldMappingOptions
+    definition: Optional settings to control how fields are processed when using a configured Azure Cosmos DB resource.
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/azureCosmosDBFieldMappingOptions
+  - term: onYourDataAuthenticationOptions
+    definition: The authentication options for Azure OpenAI On Your Data.
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/onYourDataAuthenticationOptions
+  - term: onYourDataAuthenticationType
+    definition: The authentication types supported with Azure OpenAI On Your Data.
+    tags:
+    - Enumeration
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/onYourDataAuthenticationType
+  - term: onYourDataApiKeyAuthenticationOptions
+    definition: The authentication options for Azure OpenAI On Your Data when using an API key.
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/onYourDataApiKeyAuthenticationOptions
+  - term: onYourDataConnectionStringAuthenticationOptions
+    definition: The authentication options for Azure OpenAI On Your Data when using a connection string.
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/onYourDataConnectionStringAuthenticationOptions
+  - term: onYourDataSystemAssignedManagedIdentityAuthenticationOptions
+    definition: The authentication options for Azure OpenAI On Your Data when using a system-assigned managed identity.
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/onYourDataSystemAssignedManagedIdentityAuthenticationOptions
+  - term: onYourDataUserAssignedManagedIdentityAuthenticationOptions
+    definition: The authentication options for Azure OpenAI On Your Data when using a user-assigned managed identity.
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/onYourDataUserAssignedManagedIdentityAuthenticationOptions
+  - term: onYourDataVectorizationSource
+    definition: An abstract representation of a vectorization source for Azure OpenAI On Your Data with vector search.
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/onYourDataVectorizationSource
+  - term: onYourDataVectorizationSourceType
+    definition: Represents the available sources Azure OpenAI On Your Data can use to configure vectorization of data for use with vector search.
+    tags:
+    - Enumeration
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/onYourDataVectorizationSourceType
+  - term: onYourDataDeploymentNameVectorizationSource
+    definition: The details of a a vectorization source, used by Azure OpenAI On Your Data when applying vector search, that is based on an internal
+      embeddings model deployment name in the same Azure OpenAI resource.
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/onYourDataDeploymentNameVectorizationSource
+  - term: onYourDataEndpointVectorizationSource
+    definition: The details of a a vectorization source, used by Azure OpenAI On Your Data when applying vector search, that is based on a public
+      Azure OpenAI endpoint call for embeddings.
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/onYourDataEndpointVectorizationSource
+  - term: azureChatExtensionsMessageContext
+    definition: A representation of the additional context information available when Azure OpenAI chat extensions are involved in the generation
+      of a corresponding chat completions response. This context information is only populated when using an Azure OpenAI request configured to
+      use a matching extension.
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/azureChatExtensionsMessageContext
+  - term: citation
+    definition: citation information for a chat completions response message.
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/citation
+  - term: chatCompletionMessageToolCall
+    definition: 'Object declared by the contract with fields: id, type, function.'
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/chatCompletionMessageToolCall
+  - term: toolCallType
+    definition: The type of the tool call, in this case `function`.
+    tags:
+    - Enumeration
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/toolCallType
+  - term: chatCompletionResponseMessage
+    definition: A chat completion message generated by the model.
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/chatCompletionResponseMessage
+  - term: chatCompletionResponseMessageRole
+    definition: The role of the author of the response message.
+    tags:
+    - Enumeration
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/chatCompletionResponseMessageRole
+  - term: chatCompletionToolChoiceOption
+    definition: 'Controls which (if any) function is called by the model. `none` means the model will not call a function and instead generates
+      a message. `auto` means the model can pick between generating a message or calling a function. Specifying a particular function via `{"type":
+      "function", "function": {"name": "my_function"}}` forces the model to call that function.'
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/chatCompletionToolChoiceOption
+  - term: chatCompletionNamedToolChoice
+    definition: Specifies a tool the model should use. Use to force the model to call a specific function.
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/chatCompletionNamedToolChoice
+  - term: chatCompletionFunctionCall
+    definition: Deprecated and replaced by `tool_calls`. The name and arguments of a function that should be called, as generated by the model.
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/chatCompletionFunctionCall
+  - term: chatCompletionsResponseCommon
+    definition: 'Object declared by the contract with fields: id, object, created, model, usage, system_fingerprint.'
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/chatCompletionsResponseCommon
+  - term: chatCompletionResponseObject
+    definition: The object type.
+    tags:
+    - Enumeration
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/chatCompletionResponseObject
+  - term: completionUsage
+    definition: Usage statistics for the completion request.
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/completionUsage
+  - term: chatCompletionTool
+    definition: 'Object declared by the contract with fields: type, function.'
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/chatCompletionTool
+  - term: chatCompletionToolType
+    definition: The type of the tool. Currently, only `function` is supported.
+    tags:
+    - Enumeration
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/chatCompletionToolType
+  - term: chatCompletionChoiceCommon
+    definition: 'Object declared by the contract with fields: index, finish_reason.'
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/chatCompletionChoiceCommon
+  - term: createTranslationRequest
+    definition: Translation request.
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/createTranslationRequest
+  - term: audioResponse
+    definition: Translation or transcription response when response_format was json
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/audioResponse
+  - term: audioVerboseResponse
+    definition: Translation or transcription response when response_format was verbose_json
+    tags:
+    - Object
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/audioVerboseResponse
+  - term: AudioResponseFormat
+    definition: Defines the format of the output.
+    tags:
+    - Enumeration
+    source: openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/audioResponseFormat

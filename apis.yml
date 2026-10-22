@@ -1,23 +1,3700 @@
 aid: nielseniq
+
 name: NielsenIQ
-description: 'NielsenIQ is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: NielsenIQ (NIQ) is a global consumer intelligence company that measures consumer purchasing and retail sales across markets, providing
+  retail measurement, consumer panel, e-commerce, pricing and promotion, brand health and analytics solutions to consumer packaged goods manufacturers
+  and retailers. Its website describes it as delivering "The Full View" of consumer intelligence; it is publicly listed, with investor relations
+  at investors.nielseniq.com.
+
 url: https://raw.githubusercontent.com/api-evangelist/nielseniq/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-18 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-18'
+
 modified: '2026-10-18'
+
 tags:
 - Company
-apis: []
+- Consumer Intelligence
+- Market Research
+- Retail Measurement
+- Data & Analytics
+- Consumer Packaged Goods
+tags_raw:
+- Company
+- Consumer Intelligence
+- Market Research
+- Retail Measurement
+- Data and Analytics
+- Consumer Packaged Goods
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
+image: https://nielseniq.com/wp-content/uploads/sites/4/2023/03/meta-image-new-brand.png
+
 common:
+- type: AgenticAccess
+  url: agentic-access/nielseniq-agentic-access.yml
+- type: RateLimits
+  url: rate-limits/nielseniq-rate-limits.yml
+- type: Plans
+  url: plans/nielseniq-plans-pricing.yml
+- type: Spectral
+  url: rules/nielseniq-rules.yml
+- type: JSONLD
+  url: json-ld/nielseniq-context.jsonld
+- type: Vocabulary
+  url: vocabulary/nielseniq-vocabulary.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: DataModel
+  url: data-model/nielseniq-data-model.yml
+- type: Conventions
+  url: conventions/nielseniq-conventions.yml
+- type: Security
+  url: https://nielseniq.com/global/en/legal/privacy-policy/
+- type: Lifecycle
+  url: lifecycle/nielseniq-lifecycle.yml
+- type: ErrorCatalog
+  url: errors/nielseniq-problem-types.yml
+- type: Conformance
+  url: conformance/nielseniq-conformance.yml
+- type: Overlay
+  url: overlays/nielseniq-buy-data-access-catalogues-api-overlay.yaml
+- type: LLMsTxt
+  url: llms/nielseniq-llms.txt
+- type: SecurityTxt
+  url: well-known/nielseniq-security.txt
+- type: WellKnown
+  url: well-known/nielseniq-well-known.yml
+- type: Hosts
+  url: hosts/nielseniq-hosts.yml
+- type: Pricing
+  url: https://nielseniq.com/global/en/insights/pricing-and-promotion/
+- type: Authentication
+  url: authentication/nielseniq-authentication.yml
 - type: Website
-  url: https://forgeglobal.com/nielseniq_stock/
+  url: https://nielseniq.com/global/en/
+- type: DeveloperPortal
+  url: https://portal.developer.nielseniq.com/
+- type: Documentation
+  url: https://portal.developer.nielseniq.com/apis
+- type: VulnerabilityDisclosure
+  url: security/nielseniq-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/nielseniq-domain-security.yml
+- type: Blog
+  url: https://nielseniq.com/global/en/insights/
+- type: Newsroom
+  url: https://nielseniq.com/global/en/news-center/
+- type: Support
+  url: https://nielseniq.com/global/en/about-us/contact-us/
+- type: Login
+  url: https://nielseniq.com/global/en/about-us/login/
+- type: About
+  url: https://nielseniq.com/global/en/about-us/
+- type: Leadership
+  url: https://nielseniq.com/global/en/about-us/leadership/
+- type: Careers
+  url: https://nielseniq.com/global/en/careers/
+- type: InvestorRelations
+  url: https://investors.nielseniq.com/overview/default.aspx
+- type: TermsOfService
+  url: https://nielseniq.com/global/en/legal/terms-of-use/
+- type: PrivacyPolicy
+  url: https://nielseniq.com/global/en/legal/privacy-policy/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/nielseniq/
+- type: X
+  url: https://www.x.com/nielseniq/
+- type: YouTube
+  url: https://www.youtube.com/@NielsenIQGlobal/
+
+apis:
+- aid: nielseniq:nielseniq-batches-api
+  name: NielsenIQ Batches API
+  description: The Batches API from NielsenIQ — 3 operation(s) for batches.
+  humanURL: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  baseURL: https://api.developer.nielseniq.com/data-access/v1
+  tags:
+  - Batches
+  properties:
+  - type: OpenAPI
+    url: openapi/nielseniq-batches-api-openapi.yml
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTER
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTERAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTION
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTIONAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKEN
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKENPRODNA
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNIC
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUS
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-us-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-us-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUSAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-usapi-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-usapi-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARVendorReports
+  - type: JSONSchema
+    url: json-schema/nielseniq-get-audit-summary-report-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyFormProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-request-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CRMCasetrackAPI
+  - type: Documentation
+    url: >-
+      https://portal.developer.nielseniq.com/api-details#api=docusearch-azure-openai-service-api
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-image-generations-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-content-filter-choice-results-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-audio-verbose-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-generate-images-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=Rdecosystem
+  - type: JSONSchema
+    url: json-schema/nielseniq-reject-image-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-ack-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-post-create-product-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-dispatch-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=RdecosystemBB
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-foundational-feed-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/nielseniq-rdecosystembb-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=StoreAvailabilityBulk
+  - type: JSONSchema
+    url: json-schema/nielseniq-job-status-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-add-check-digit-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=68af1bb26127b356b25adb0c
+- aid: nielseniq:nielseniq-bdametadata-controller-api
+  name: NielsenIQ Bdametadata Controller API
+  description: BDA Meta Data Controller
+  humanURL: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  baseURL: https://api.developer.nielseniq.com/data-access/v1
+  tags:
+  - bdametadata-controller
+  properties:
+  - type: OpenAPI
+    url: openapi/nielseniq-bdametadata-controller-api-openapi.yml
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTER
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTERAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTION
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTIONAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKEN
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKENPRODNA
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNIC
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUS
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-us-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-us-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUSAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-usapi-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-usapi-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARVendorReports
+  - type: JSONSchema
+    url: json-schema/nielseniq-get-audit-summary-report-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyFormProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-request-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CRMCasetrackAPI
+  - type: Documentation
+    url: >-
+      https://portal.developer.nielseniq.com/api-details#api=docusearch-azure-openai-service-api
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-image-generations-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-content-filter-choice-results-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-audio-verbose-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-generate-images-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=Rdecosystem
+  - type: JSONSchema
+    url: json-schema/nielseniq-reject-image-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-ack-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-post-create-product-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-dispatch-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=RdecosystemBB
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-foundational-feed-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/nielseniq-rdecosystembb-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=StoreAvailabilityBulk
+  - type: JSONSchema
+    url: json-schema/nielseniq-job-status-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-add-check-digit-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=68af1bb26127b356b25adb0c
+- aid: nielseniq:nielseniq-cdarbarter-controller-api
+  name: NielsenIQ Cdarbarter Controller API
+  description: CDARBARTER Controller
+  humanURL: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  baseURL: https://api.developer.nielseniq.com/data-access/v1
+  tags:
+  - cdarbarter-controller
+  properties:
+  - type: OpenAPI
+    url: openapi/nielseniq-cdarbarter-controller-api-openapi.yml
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTER
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTERAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTION
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTIONAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKEN
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKENPRODNA
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNIC
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUS
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-us-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-us-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUSAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-usapi-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-usapi-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARVendorReports
+  - type: JSONSchema
+    url: json-schema/nielseniq-get-audit-summary-report-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyFormProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-request-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CRMCasetrackAPI
+  - type: Documentation
+    url: >-
+      https://portal.developer.nielseniq.com/api-details#api=docusearch-azure-openai-service-api
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-image-generations-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-content-filter-choice-results-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-audio-verbose-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-generate-images-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=Rdecosystem
+  - type: JSONSchema
+    url: json-schema/nielseniq-reject-image-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-ack-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-post-create-product-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-dispatch-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=RdecosystemBB
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-foundational-feed-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/nielseniq-rdecosystembb-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=StoreAvailabilityBulk
+  - type: JSONSchema
+    url: json-schema/nielseniq-job-status-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-add-check-digit-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=68af1bb26127b356b25adb0c
+- aid: nielseniq:nielseniq-cdarbarter-controllerapi-api
+  name: NielsenIQ Cdarbarter Controllerapi API
+  description: CDARBARTER ControllerApi
+  humanURL: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  baseURL: https://api.developer.nielseniq.com/data-access/v1
+  tags:
+  - cdarbarter-controllerapi
+  properties:
+  - type: OpenAPI
+    url: openapi/nielseniq-cdarbarter-controllerapi-api-openapi.yml
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTER
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTERAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTION
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTIONAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKEN
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKENPRODNA
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNIC
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUS
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-us-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-us-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUSAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-usapi-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-usapi-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARVendorReports
+  - type: JSONSchema
+    url: json-schema/nielseniq-get-audit-summary-report-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyFormProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-request-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CRMCasetrackAPI
+  - type: Documentation
+    url: >-
+      https://portal.developer.nielseniq.com/api-details#api=docusearch-azure-openai-service-api
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-image-generations-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-content-filter-choice-results-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-audio-verbose-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-generate-images-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=Rdecosystem
+  - type: JSONSchema
+    url: json-schema/nielseniq-reject-image-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-ack-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-post-create-product-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-dispatch-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=RdecosystemBB
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-foundational-feed-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/nielseniq-rdecosystembb-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=StoreAvailabilityBulk
+  - type: JSONSchema
+    url: json-schema/nielseniq-job-status-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-add-check-digit-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=68af1bb26127b356b25adb0c
+- aid: nielseniq:nielseniq-cdarecollection-controller-api
+  name: NielsenIQ Cdarecollection Controller API
+  description: CDARECOLLECTION Controller
+  humanURL: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  baseURL: https://api.developer.nielseniq.com/data-access/v1
+  tags:
+  - cdarecollection-controller
+  properties:
+  - type: OpenAPI
+    url: openapi/nielseniq-cdarecollection-controller-api-openapi.yml
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTER
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTERAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTION
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTIONAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKEN
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKENPRODNA
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNIC
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUS
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-us-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-us-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUSAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-usapi-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-usapi-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARVendorReports
+  - type: JSONSchema
+    url: json-schema/nielseniq-get-audit-summary-report-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyFormProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-request-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CRMCasetrackAPI
+  - type: Documentation
+    url: >-
+      https://portal.developer.nielseniq.com/api-details#api=docusearch-azure-openai-service-api
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-image-generations-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-content-filter-choice-results-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-audio-verbose-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-generate-images-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=Rdecosystem
+  - type: JSONSchema
+    url: json-schema/nielseniq-reject-image-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-ack-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-post-create-product-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-dispatch-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=RdecosystemBB
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-foundational-feed-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/nielseniq-rdecosystembb-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=StoreAvailabilityBulk
+  - type: JSONSchema
+    url: json-schema/nielseniq-job-status-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-add-check-digit-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=68af1bb26127b356b25adb0c
+- aid: nielseniq:nielseniq-cdarecollection-controllerapi-api
+  name: NielsenIQ Cdarecollection Controllerapi API
+  description: CDARECOLLECTION ControllerApi
+  humanURL: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  baseURL: https://api.developer.nielseniq.com/data-access/v1
+  tags:
+  - cdarecollection-controllerapi
+  properties:
+  - type: OpenAPI
+    url: openapi/nielseniq-cdarecollection-controllerapi-api-openapi.yml
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTER
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTERAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTION
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTIONAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKEN
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKENPRODNA
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNIC
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUS
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-us-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-us-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUSAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-usapi-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-usapi-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARVendorReports
+  - type: JSONSchema
+    url: json-schema/nielseniq-get-audit-summary-report-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyFormProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-request-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CRMCasetrackAPI
+  - type: Documentation
+    url: >-
+      https://portal.developer.nielseniq.com/api-details#api=docusearch-azure-openai-service-api
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-image-generations-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-content-filter-choice-results-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-audio-verbose-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-generate-images-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=Rdecosystem
+  - type: JSONSchema
+    url: json-schema/nielseniq-reject-image-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-ack-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-post-create-product-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-dispatch-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=RdecosystemBB
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-foundational-feed-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/nielseniq-rdecosystembb-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=StoreAvailabilityBulk
+  - type: JSONSchema
+    url: json-schema/nielseniq-job-status-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-add-check-digit-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=68af1bb26127b356b25adb0c
+- aid: nielseniq:nielseniq-cdargettoken-controller-api
+  name: NielsenIQ Cdargettoken Controller API
+  description: CDARGETTOKEN Controller
+  humanURL: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  baseURL: https://api.developer.nielseniq.com/data-access/v1
+  tags:
+  - cdargettoken-controller
+  properties:
+  - type: OpenAPI
+    url: openapi/nielseniq-cdargettoken-controller-api-openapi.yml
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTER
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTERAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTION
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTIONAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKEN
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKENPRODNA
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNIC
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUS
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-us-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-us-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUSAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-usapi-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-usapi-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARVendorReports
+  - type: JSONSchema
+    url: json-schema/nielseniq-get-audit-summary-report-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyFormProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-request-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CRMCasetrackAPI
+  - type: Documentation
+    url: >-
+      https://portal.developer.nielseniq.com/api-details#api=docusearch-azure-openai-service-api
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-image-generations-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-content-filter-choice-results-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-audio-verbose-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-generate-images-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=Rdecosystem
+  - type: JSONSchema
+    url: json-schema/nielseniq-reject-image-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-ack-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-post-create-product-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-dispatch-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=RdecosystemBB
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-foundational-feed-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/nielseniq-rdecosystembb-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=StoreAvailabilityBulk
+  - type: JSONSchema
+    url: json-schema/nielseniq-job-status-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-add-check-digit-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=68af1bb26127b356b25adb0c
+- aid: nielseniq:nielseniq-cdargettokenprodna-controller-api
+  name: NielsenIQ Cdargettokenprodna Controller API
+  description: CDARGETTOKENPRODNA Controller
+  humanURL: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  baseURL: https://api.developer.nielseniq.com/data-access/v1
+  tags:
+  - cdargettokenprodna-controller
+  properties:
+  - type: OpenAPI
+    url: openapi/nielseniq-cdargettokenprodna-controller-api-openapi.yml
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTER
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTERAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTION
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTIONAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKEN
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKENPRODNA
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNIC
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUS
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-us-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-us-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUSAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-usapi-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-usapi-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARVendorReports
+  - type: JSONSchema
+    url: json-schema/nielseniq-get-audit-summary-report-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyFormProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-request-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CRMCasetrackAPI
+  - type: Documentation
+    url: >-
+      https://portal.developer.nielseniq.com/api-details#api=docusearch-azure-openai-service-api
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-image-generations-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-content-filter-choice-results-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-audio-verbose-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-generate-images-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=Rdecosystem
+  - type: JSONSchema
+    url: json-schema/nielseniq-reject-image-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-ack-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-post-create-product-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-dispatch-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=RdecosystemBB
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-foundational-feed-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/nielseniq-rdecosystembb-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=StoreAvailabilityBulk
+  - type: JSONSchema
+    url: json-schema/nielseniq-job-status-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-add-check-digit-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=68af1bb26127b356b25adb0c
+- aid: nielseniq:nielseniq-cdargnic-controller-api
+  name: NielsenIQ Cdargnic Controller API
+  description: CDARGNIC Controller
+  humanURL: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  baseURL: https://api.developer.nielseniq.com/data-access/v1
+  tags:
+  - cdargnic-controller
+  properties:
+  - type: OpenAPI
+    url: openapi/nielseniq-cdargnic-controller-api-openapi.yml
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTER
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTERAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTION
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTIONAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKEN
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKENPRODNA
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNIC
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUS
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-us-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-us-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUSAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-usapi-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-usapi-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARVendorReports
+  - type: JSONSchema
+    url: json-schema/nielseniq-get-audit-summary-report-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyFormProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-request-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CRMCasetrackAPI
+  - type: Documentation
+    url: >-
+      https://portal.developer.nielseniq.com/api-details#api=docusearch-azure-openai-service-api
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-image-generations-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-content-filter-choice-results-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-audio-verbose-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-generate-images-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=Rdecosystem
+  - type: JSONSchema
+    url: json-schema/nielseniq-reject-image-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-ack-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-post-create-product-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-dispatch-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=RdecosystemBB
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-foundational-feed-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/nielseniq-rdecosystembb-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=StoreAvailabilityBulk
+  - type: JSONSchema
+    url: json-schema/nielseniq-job-status-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-add-check-digit-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=68af1bb26127b356b25adb0c
+- aid: nielseniq:nielseniq-cdargnic-controllerapi-api
+  name: NielsenIQ Cdargnic Controllerapi API
+  description: CDARGNIC ControllerApi
+  humanURL: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  baseURL: https://api.developer.nielseniq.com/data-access/v1
+  tags:
+  - cdargnic-controllerapi
+  properties:
+  - type: OpenAPI
+    url: openapi/nielseniq-cdargnic-controllerapi-api-openapi.yml
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTER
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTERAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTION
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTIONAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKEN
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKENPRODNA
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNIC
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUS
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-us-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-us-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUSAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-usapi-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-usapi-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARVendorReports
+  - type: JSONSchema
+    url: json-schema/nielseniq-get-audit-summary-report-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyFormProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-request-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CRMCasetrackAPI
+  - type: Documentation
+    url: >-
+      https://portal.developer.nielseniq.com/api-details#api=docusearch-azure-openai-service-api
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-image-generations-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-content-filter-choice-results-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-audio-verbose-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-generate-images-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=Rdecosystem
+  - type: JSONSchema
+    url: json-schema/nielseniq-reject-image-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-ack-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-post-create-product-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-dispatch-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=RdecosystemBB
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-foundational-feed-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/nielseniq-rdecosystembb-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=StoreAvailabilityBulk
+  - type: JSONSchema
+    url: json-schema/nielseniq-job-status-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-add-check-digit-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=68af1bb26127b356b25adb0c
+- aid: nielseniq:nielseniq-cdargnicus-controller-api
+  name: NielsenIQ Cdargnicus Controller API
+  description: CDARGNICUS Controller
+  humanURL: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  baseURL: https://api.developer.nielseniq.com/data-access/v1
+  tags:
+  - cdargnicus-controller
+  properties:
+  - type: OpenAPI
+    url: openapi/nielseniq-cdargnicus-controller-api-openapi.yml
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTER
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTERAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTION
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTIONAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKEN
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKENPRODNA
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNIC
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUS
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-us-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-us-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUSAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-usapi-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-usapi-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARVendorReports
+  - type: JSONSchema
+    url: json-schema/nielseniq-get-audit-summary-report-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyFormProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-request-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CRMCasetrackAPI
+  - type: Documentation
+    url: >-
+      https://portal.developer.nielseniq.com/api-details#api=docusearch-azure-openai-service-api
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-image-generations-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-content-filter-choice-results-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-audio-verbose-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-generate-images-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=Rdecosystem
+  - type: JSONSchema
+    url: json-schema/nielseniq-reject-image-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-ack-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-post-create-product-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-dispatch-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=RdecosystemBB
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-foundational-feed-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/nielseniq-rdecosystembb-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=StoreAvailabilityBulk
+  - type: JSONSchema
+    url: json-schema/nielseniq-job-status-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-add-check-digit-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=68af1bb26127b356b25adb0c
+- aid: nielseniq:nielseniq-cdargnicus-controllerapi-api
+  name: NielsenIQ Cdargnicus Controllerapi API
+  description: CDARGNICUS ControllerApi
+  humanURL: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  baseURL: https://api.developer.nielseniq.com/data-access/v1
+  tags:
+  - cdargnicus-controllerapi
+  properties:
+  - type: OpenAPI
+    url: openapi/nielseniq-cdargnicus-controllerapi-api-openapi.yml
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTER
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTERAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTION
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTIONAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKEN
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKENPRODNA
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNIC
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUS
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-us-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-us-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUSAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-usapi-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-usapi-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARVendorReports
+  - type: JSONSchema
+    url: json-schema/nielseniq-get-audit-summary-report-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyFormProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-request-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CRMCasetrackAPI
+  - type: Documentation
+    url: >-
+      https://portal.developer.nielseniq.com/api-details#api=docusearch-azure-openai-service-api
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-image-generations-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-content-filter-choice-results-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-audio-verbose-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-generate-images-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=Rdecosystem
+  - type: JSONSchema
+    url: json-schema/nielseniq-reject-image-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-ack-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-post-create-product-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-dispatch-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=RdecosystemBB
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-foundational-feed-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/nielseniq-rdecosystembb-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=StoreAvailabilityBulk
+  - type: JSONSchema
+    url: json-schema/nielseniq-job-status-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-add-check-digit-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=68af1bb26127b356b25adb0c
+- aid: nielseniq:nielseniq-cdarvendorreports-controller-api
+  name: NielsenIQ Cdarvendorreports Controller API
+  description: CDARVendorReports Controller
+  humanURL: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  baseURL: https://api.developer.nielseniq.com/data-access/v1
+  tags:
+  - cdarvendorreports-controller
+  properties:
+  - type: OpenAPI
+    url: openapi/nielseniq-cdarvendorreports-controller-api-openapi.yml
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTER
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTERAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTION
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTIONAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKEN
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKENPRODNA
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNIC
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUS
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-us-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-us-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUSAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-usapi-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-usapi-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARVendorReports
+  - type: JSONSchema
+    url: json-schema/nielseniq-get-audit-summary-report-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyFormProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-request-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CRMCasetrackAPI
+  - type: Documentation
+    url: >-
+      https://portal.developer.nielseniq.com/api-details#api=docusearch-azure-openai-service-api
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-image-generations-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-content-filter-choice-results-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-audio-verbose-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-generate-images-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=Rdecosystem
+  - type: JSONSchema
+    url: json-schema/nielseniq-reject-image-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-ack-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-post-create-product-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-dispatch-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=RdecosystemBB
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-foundational-feed-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/nielseniq-rdecosystembb-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=StoreAvailabilityBulk
+  - type: JSONSchema
+    url: json-schema/nielseniq-job-status-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-add-check-digit-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=68af1bb26127b356b25adb0c
+- aid: nielseniq:nielseniq-cipgalaxy-controller-api
+  name: NielsenIQ Cipgalaxy Controller API
+  description: CIP GALAXY Controller
+  humanURL: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  baseURL: https://api.developer.nielseniq.com/data-access/v1
+  tags:
+  - cipgalaxy-controller
+  properties:
+  - type: OpenAPI
+    url: openapi/nielseniq-cipgalaxy-controller-api-openapi.yml
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTER
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTERAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTION
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTIONAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKEN
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKENPRODNA
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNIC
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUS
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-us-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-us-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUSAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-usapi-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-usapi-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARVendorReports
+  - type: JSONSchema
+    url: json-schema/nielseniq-get-audit-summary-report-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyFormProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-request-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CRMCasetrackAPI
+  - type: Documentation
+    url: >-
+      https://portal.developer.nielseniq.com/api-details#api=docusearch-azure-openai-service-api
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-image-generations-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-content-filter-choice-results-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-audio-verbose-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-generate-images-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=Rdecosystem
+  - type: JSONSchema
+    url: json-schema/nielseniq-reject-image-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-ack-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-post-create-product-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-dispatch-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=RdecosystemBB
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-foundational-feed-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/nielseniq-rdecosystembb-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=StoreAvailabilityBulk
+  - type: JSONSchema
+    url: json-schema/nielseniq-job-status-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-add-check-digit-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=68af1bb26127b356b25adb0c
+- aid: nielseniq:nielseniq-cipgalaxyform-controller-api
+  name: NielsenIQ Cipgalaxyform Controller API
+  description: CIP GALAXY FORM Controller
+  humanURL: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  baseURL: https://api.developer.nielseniq.com/data-access/v1
+  tags:
+  - cipgalaxyform-controller
+  properties:
+  - type: OpenAPI
+    url: openapi/nielseniq-cipgalaxyform-controller-api-openapi.yml
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTER
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTERAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTION
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTIONAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKEN
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKENPRODNA
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNIC
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUS
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-us-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-us-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUSAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-usapi-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-usapi-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARVendorReports
+  - type: JSONSchema
+    url: json-schema/nielseniq-get-audit-summary-report-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyFormProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-request-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CRMCasetrackAPI
+  - type: Documentation
+    url: >-
+      https://portal.developer.nielseniq.com/api-details#api=docusearch-azure-openai-service-api
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-image-generations-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-content-filter-choice-results-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-audio-verbose-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-generate-images-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=Rdecosystem
+  - type: JSONSchema
+    url: json-schema/nielseniq-reject-image-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-ack-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-post-create-product-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-dispatch-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=RdecosystemBB
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-foundational-feed-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/nielseniq-rdecosystembb-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=StoreAvailabilityBulk
+  - type: JSONSchema
+    url: json-schema/nielseniq-job-status-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-add-check-digit-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=68af1bb26127b356b25adb0c
+- aid: nielseniq:nielseniq-deployments-api
+  name: NielsenIQ Deployments API
+  description: The Deployments API from NielsenIQ — 6 operation(s) for deployments.
+  humanURL: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  baseURL: https://api.developer.nielseniq.com/data-access/v1
+  tags:
+  - Deployments
+  properties:
+  - type: OpenAPI
+    url: openapi/nielseniq-deployments-api-openapi.yml
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTER
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTERAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTION
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTIONAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKEN
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKENPRODNA
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNIC
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUS
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-us-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-us-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUSAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-usapi-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-usapi-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARVendorReports
+  - type: JSONSchema
+    url: json-schema/nielseniq-get-audit-summary-report-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyFormProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-request-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CRMCasetrackAPI
+  - type: Documentation
+    url: >-
+      https://portal.developer.nielseniq.com/api-details#api=docusearch-azure-openai-service-api
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-image-generations-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-content-filter-choice-results-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-audio-verbose-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-generate-images-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=Rdecosystem
+  - type: JSONSchema
+    url: json-schema/nielseniq-reject-image-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-ack-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-post-create-product-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-dispatch-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=RdecosystemBB
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-foundational-feed-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/nielseniq-rdecosystembb-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=StoreAvailabilityBulk
+  - type: JSONSchema
+    url: json-schema/nielseniq-job-status-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-add-check-digit-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=68af1bb26127b356b25adb0c
+- aid: nielseniq:nielseniq-discoverdmevents-api
+  name: NielsenIQ Discoverdmevents API
+  description: The Discoverdmevents API from NielsenIQ — 1 operation(s) for discoverdmevents.
+  humanURL: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  baseURL: https://api.developer.nielseniq.com/data-access/v1
+  tags:
+  - Discoverdmevents
+  properties:
+  - type: OpenAPI
+    url: openapi/nielseniq-discoverdmevents-api-openapi.yml
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTER
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTERAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTION
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTIONAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKEN
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKENPRODNA
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNIC
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUS
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-us-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-us-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUSAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-usapi-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-usapi-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARVendorReports
+  - type: JSONSchema
+    url: json-schema/nielseniq-get-audit-summary-report-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyFormProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-request-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CRMCasetrackAPI
+  - type: Documentation
+    url: >-
+      https://portal.developer.nielseniq.com/api-details#api=docusearch-azure-openai-service-api
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-image-generations-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-content-filter-choice-results-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-audio-verbose-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-generate-images-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=Rdecosystem
+  - type: JSONSchema
+    url: json-schema/nielseniq-reject-image-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-ack-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-post-create-product-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-dispatch-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=RdecosystemBB
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-foundational-feed-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/nielseniq-rdecosystembb-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=StoreAvailabilityBulk
+  - type: JSONSchema
+    url: json-schema/nielseniq-job-status-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-add-check-digit-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=68af1bb26127b356b25adb0c
+- aid: nielseniq:nielseniq-files-api
+  name: NielsenIQ Files API
+  description: The Files API from NielsenIQ — 4 operation(s) for files.
+  humanURL: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  baseURL: https://api.developer.nielseniq.com/data-access/v1
+  tags:
+  - Files
+  properties:
+  - type: OpenAPI
+    url: openapi/nielseniq-files-api-openapi.yml
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTER
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTERAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTION
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTIONAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKEN
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKENPRODNA
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNIC
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUS
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-us-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-us-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUSAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-usapi-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-usapi-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARVendorReports
+  - type: JSONSchema
+    url: json-schema/nielseniq-get-audit-summary-report-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyFormProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-request-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CRMCasetrackAPI
+  - type: Documentation
+    url: >-
+      https://portal.developer.nielseniq.com/api-details#api=docusearch-azure-openai-service-api
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-image-generations-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-content-filter-choice-results-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-audio-verbose-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-generate-images-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=Rdecosystem
+  - type: JSONSchema
+    url: json-schema/nielseniq-reject-image-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-ack-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-post-create-product-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-dispatch-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=RdecosystemBB
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-foundational-feed-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/nielseniq-rdecosystembb-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=StoreAvailabilityBulk
+  - type: JSONSchema
+    url: json-schema/nielseniq-job-status-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-add-check-digit-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=68af1bb26127b356b25adb0c
+- aid: nielseniq:nielseniq-fine-tuning-api
+  name: NielsenIQ Fine Tuning API
+  description: The Fine Tuning API from NielsenIQ — 5 operation(s) for fine tuning.
+  humanURL: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  baseURL: https://api.developer.nielseniq.com/data-access/v1
+  tags:
+  - Fine Tuning
+  properties:
+  - type: OpenAPI
+    url: openapi/nielseniq-fine-tuning-api-openapi.yml
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTER
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTERAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTION
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTIONAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKEN
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKENPRODNA
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNIC
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUS
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-us-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-us-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUSAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-usapi-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-usapi-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARVendorReports
+  - type: JSONSchema
+    url: json-schema/nielseniq-get-audit-summary-report-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyFormProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-request-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CRMCasetrackAPI
+  - type: Documentation
+    url: >-
+      https://portal.developer.nielseniq.com/api-details#api=docusearch-azure-openai-service-api
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-image-generations-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-content-filter-choice-results-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-audio-verbose-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-generate-images-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=Rdecosystem
+  - type: JSONSchema
+    url: json-schema/nielseniq-reject-image-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-ack-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-post-create-product-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-dispatch-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=RdecosystemBB
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-foundational-feed-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/nielseniq-rdecosystembb-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=StoreAvailabilityBulk
+  - type: JSONSchema
+    url: json-schema/nielseniq-job-status-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-add-check-digit-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=68af1bb26127b356b25adb0c
+- aid: nielseniq:nielseniq-jiraevents-api
+  name: NielsenIQ Jiraevents API
+  description: The Jiraevents API from NielsenIQ — 1 operation(s) for jiraevents.
+  humanURL: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  baseURL: https://api.developer.nielseniq.com/data-access/v1
+  tags:
+  - Jiraevents
+  properties:
+  - type: OpenAPI
+    url: openapi/nielseniq-jiraevents-api-openapi.yml
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTER
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTERAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTION
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTIONAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKEN
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKENPRODNA
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNIC
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUS
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-us-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-us-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUSAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-usapi-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-usapi-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARVendorReports
+  - type: JSONSchema
+    url: json-schema/nielseniq-get-audit-summary-report-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyFormProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-request-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CRMCasetrackAPI
+  - type: Documentation
+    url: >-
+      https://portal.developer.nielseniq.com/api-details#api=docusearch-azure-openai-service-api
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-image-generations-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-content-filter-choice-results-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-audio-verbose-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-generate-images-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=Rdecosystem
+  - type: JSONSchema
+    url: json-schema/nielseniq-reject-image-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-ack-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-post-create-product-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-dispatch-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=RdecosystemBB
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-foundational-feed-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/nielseniq-rdecosystembb-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=StoreAvailabilityBulk
+  - type: JSONSchema
+    url: json-schema/nielseniq-job-status-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-add-check-digit-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=68af1bb26127b356b25adb0c
+- aid: nielseniq:nielseniq-models-api
+  name: NielsenIQ Models API
+  description: The Models API from NielsenIQ — 2 operation(s) for models.
+  humanURL: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  baseURL: https://api.developer.nielseniq.com/data-access/v1
+  tags:
+  - Models
+  properties:
+  - type: OpenAPI
+    url: openapi/nielseniq-models-api-openapi.yml
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTER
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTERAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTION
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTIONAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKEN
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKENPRODNA
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNIC
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUS
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-us-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-us-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUSAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-usapi-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-usapi-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARVendorReports
+  - type: JSONSchema
+    url: json-schema/nielseniq-get-audit-summary-report-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyFormProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-request-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CRMCasetrackAPI
+  - type: Documentation
+    url: >-
+      https://portal.developer.nielseniq.com/api-details#api=docusearch-azure-openai-service-api
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-image-generations-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-content-filter-choice-results-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-audio-verbose-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-generate-images-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=Rdecosystem
+  - type: JSONSchema
+    url: json-schema/nielseniq-reject-image-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-ack-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-post-create-product-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-dispatch-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=RdecosystemBB
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-foundational-feed-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/nielseniq-rdecosystembb-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=StoreAvailabilityBulk
+  - type: JSONSchema
+    url: json-schema/nielseniq-job-status-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-add-check-digit-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=68af1bb26127b356b25adb0c
+- aid: nielseniq:nielseniq-rdecosystem-controller-api
+  name: NielsenIQ Rdecosystem Controller API
+  description: RDecoSystem Controller
+  humanURL: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  baseURL: https://api.developer.nielseniq.com/data-access/v1
+  tags:
+  - rdecosystem-controller
+  properties:
+  - type: OpenAPI
+    url: openapi/nielseniq-rdecosystem-controller-api-openapi.yml
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTER
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTERAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTION
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTIONAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKEN
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKENPRODNA
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNIC
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUS
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-us-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-us-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUSAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-usapi-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-usapi-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARVendorReports
+  - type: JSONSchema
+    url: json-schema/nielseniq-get-audit-summary-report-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyFormProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-request-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CRMCasetrackAPI
+  - type: Documentation
+    url: >-
+      https://portal.developer.nielseniq.com/api-details#api=docusearch-azure-openai-service-api
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-image-generations-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-content-filter-choice-results-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-audio-verbose-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-generate-images-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=Rdecosystem
+  - type: JSONSchema
+    url: json-schema/nielseniq-reject-image-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-ack-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-post-create-product-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-dispatch-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=RdecosystemBB
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-foundational-feed-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/nielseniq-rdecosystembb-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=StoreAvailabilityBulk
+  - type: JSONSchema
+    url: json-schema/nielseniq-job-status-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-add-check-digit-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=68af1bb26127b356b25adb0c
+- aid: nielseniq:nielseniq-rdecosystembb-controller-api
+  name: NielsenIQ Rdecosystembb Controller API
+  description: RDecoSystem BB Controller
+  humanURL: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  baseURL: https://api.developer.nielseniq.com/data-access/v1
+  tags:
+  - rdecosystembb-controller
+  properties:
+  - type: OpenAPI
+    url: openapi/nielseniq-rdecosystembb-controller-api-openapi.yml
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTER
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTERAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTION
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTIONAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKEN
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKENPRODNA
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNIC
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUS
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-us-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-us-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUSAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-usapi-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-usapi-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARVendorReports
+  - type: JSONSchema
+    url: json-schema/nielseniq-get-audit-summary-report-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyFormProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-request-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CRMCasetrackAPI
+  - type: Documentation
+    url: >-
+      https://portal.developer.nielseniq.com/api-details#api=docusearch-azure-openai-service-api
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-image-generations-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-content-filter-choice-results-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-audio-verbose-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-generate-images-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=Rdecosystem
+  - type: JSONSchema
+    url: json-schema/nielseniq-reject-image-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-ack-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-post-create-product-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-dispatch-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=RdecosystemBB
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-foundational-feed-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/nielseniq-rdecosystembb-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=StoreAvailabilityBulk
+  - type: JSONSchema
+    url: json-schema/nielseniq-job-status-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-add-check-digit-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=68af1bb26127b356b25adb0c
+- aid: nielseniq:nielseniq-storeavailabilitybulk-controller-api
+  name: NielsenIQ Storeavailabilitybulk Controller API
+  description: Store Availability Bulk Controller
+  humanURL: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  baseURL: https://api.developer.nielseniq.com/data-access/v1
+  tags:
+  - storeavailabilitybulk-controller
+  properties:
+  - type: OpenAPI
+    url: openapi/nielseniq-storeavailabilitybulk-controller-api-openapi.yml
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTER
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTERAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTION
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTIONAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKEN
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKENPRODNA
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNIC
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUS
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-us-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-us-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUSAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-usapi-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-usapi-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARVendorReports
+  - type: JSONSchema
+    url: json-schema/nielseniq-get-audit-summary-report-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyFormProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-request-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CRMCasetrackAPI
+  - type: Documentation
+    url: >-
+      https://portal.developer.nielseniq.com/api-details#api=docusearch-azure-openai-service-api
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-image-generations-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-content-filter-choice-results-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-audio-verbose-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-generate-images-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=Rdecosystem
+  - type: JSONSchema
+    url: json-schema/nielseniq-reject-image-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-ack-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-post-create-product-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-dispatch-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=RdecosystemBB
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-foundational-feed-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/nielseniq-rdecosystembb-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=StoreAvailabilityBulk
+  - type: JSONSchema
+    url: json-schema/nielseniq-job-status-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-add-check-digit-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=68af1bb26127b356b25adb0c
+- aid: nielseniq:nielseniq-uploads-api
+  name: NielsenIQ Uploads API
+  description: The Uploads API from NielsenIQ — 4 operation(s) for uploads.
+  humanURL: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  baseURL: https://api.developer.nielseniq.com/data-access/v1
+  tags:
+  - Uploads
+  properties:
+  - type: OpenAPI
+    url: openapi/nielseniq-uploads-api-openapi.yml
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=BDAMetaDataCatalogues
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-catalogues-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTER
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARBARTERAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-barter-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTION
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARECOLLECTIONAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-ecollection-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKEN
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettoken-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGETTOKENPRODNA
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gettokenprodna-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNIC
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-api-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-api-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUS
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-us-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-us-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARGNICUSAPI
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-request-usapi-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-gnic-resp-usapi-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CDARVendorReports
+  - type: JSONSchema
+    url: json-schema/nielseniq-get-audit-summary-report-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyFormProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-resp-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CIPGalaxyProxy
+  - type: JSONSchema
+    url: json-schema/nielseniq-function-request-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=CRMCasetrackAPI
+  - type: Documentation
+    url: >-
+      https://portal.developer.nielseniq.com/api-details#api=docusearch-azure-openai-service-api
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-image-generations-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-content-filter-choice-results-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-create-chat-completion-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-audio-verbose-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-generate-images-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=Rdecosystem
+  - type: JSONSchema
+    url: json-schema/nielseniq-reject-image-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-ack-rd-icvdispatch-response-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-post-create-product-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-dispatch-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-rdecosystem-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=RdecosystemBB
+  - type: JSONSchema
+    url: json-schema/nielseniq-rd-foundational-feed-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-resp-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-reset-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-update-bb-processing-status-request-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/nielseniq-rdecosystembb-rdimagedispatch-get200-image-png-response-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=StoreAvailabilityBulk
+  - type: JSONSchema
+    url: json-schema/nielseniq-job-status-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-add-check-digit-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-request-schema.json
+  - type: JSONSchema
+    url: json-schema/nielseniq-batch-store-availability-schema.json
+  - type: Documentation
+    url: https://portal.developer.nielseniq.com/api-details#api=68af1bb26127b356b25adb0c
+x-coverage:
+  state: covered
+  reason: identity-verified
+  detail: Website and link pointers taken from links on nielseniq.com/global/en/ (title "NIQ - The Full View of Consumer Intelligence"); no public
+    developer portal, API docs, GitHub org link or pricing page found on the site.
+  evidence:
+  - url: https://nielseniq.com/global/en/
+    status: 200
+  - url: https://nielseniq.com/global/en/news-center/
+    status: 200
+  - url: https://nielseniq.com/global/en/about-us/contact-us/
+    status: 200
+  - url: https://nielseniq.com/global/en/legal/terms-of-use/
+    status: 200
+  - url: https://nielseniq.com/global/en/legal/privacy-policy/
+    status: 200
+  - url: https://investors.nielseniq.com/overview/default.aspx
+    status: 200
+x-enrichment:
+  date: '2026-10-18'
+  status: enriched
+  artifacts_added: 143
+  pass: modular-v1
+  engine: identity=anthropic,contract=anthropic,surfaces=anthropic,docs=deepseek,regulatory=anthropic

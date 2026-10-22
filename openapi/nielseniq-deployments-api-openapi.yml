@@ -1,0 +1,603 @@
+openapi: 3.2.0
+info:
+  title: Translation Service US Azure OpenAI Service Deployments API
+  description: Azure OpenAI APIs for completions and search
+  version: '1.0'
+servers:
+- url: https://api.developer.nielseniq.com/cis/us/translation/openai
+tags:
+- name: Deployments
+paths:
+  /deployments/{deployment-id}/chat/completions:
+    post:
+      summary: Creates a completion for the chat message
+      operationId: 688cd23dbe4114127cd8747c
+      parameters:
+      - name: deployment-id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: api-version
+        in: query
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            example:
+              temperature: 1
+              top_p: 1
+              stream: false
+              stop: ''
+              max_tokens: 4096
+              presence_penalty: 0
+              frequency_penalty: 0
+              logit_bias: {}
+              user: user-1234
+              messages:
+              - role: system
+              data_sources:
+              - type: azure_search
+              n: 1
+              seed: 0
+              response_format:
+                type: text
+              tools:
+              - type: function
+                function:
+                  description: string
+                  name: string
+                  parameters: {}
+              tool_choice: {}
+              functions:
+              - name: string
+                description: string
+                parameters: {}
+              function_call: {}
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                id: string
+                object: chat.completion
+                created: 0
+                model: string
+                usage:
+                  prompt_tokens: 0
+                  completion_tokens: 0
+                  total_tokens: 0
+                system_fingerprint: string
+                prompt_filter_results:
+                - prompt_index: 0
+                  content_filter_results:
+                    sexual:
+                      filtered: true
+                      severity: safe
+                    violence:
+                      filtered: true
+                      severity: safe
+                    hate:
+                      filtered: true
+                      severity: safe
+                    self_harm:
+                      filtered: true
+                      severity: safe
+                    profanity:
+                      filtered: true
+                      detected: true
+                    error:
+                      code: string
+                      message: string
+                    jailbreak:
+                      filtered: true
+                      detected: true
+                choices:
+                - index: 0
+                  finish_reason: string
+                  message:
+                    role: assistant
+                    content: string
+                    tool_calls:
+                    - id: string
+                      type: function
+                      function:
+                        name: string
+                        arguments: string
+                    function_call:
+                      name: string
+                      arguments: string
+                    context:
+                      citations:
+                      - content: string
+                        title: string
+                        url: string
+                        filepath: string
+                        chunk_id: string
+                      intent: string
+                  content_filter_results:
+                    sexual:
+                      filtered: true
+                      severity: safe
+                    violence:
+                      filtered: true
+                      severity: safe
+                    hate:
+                      filtered: true
+                      severity: safe
+                    self_harm:
+                      filtered: true
+                      severity: safe
+                    profanity:
+                      filtered: true
+                      detected: true
+                    error:
+                      code: string
+                      message: string
+                    protected_material_text:
+                      filtered: true
+                      detected: true
+                    protected_material_code:
+                      filtered: true
+                      detected: true
+                      citation:
+                        URL: string
+                        license: string
+        '400':
+          description: Service unavailable
+          content:
+            application/json:
+              example:
+                error:
+                  param: string
+                  type: string
+                  inner_error:
+                    code: ResponsibleAIPolicyViolation
+                    content_filter_results:
+                      sexual:
+                        filtered: true
+                        severity: safe
+                      violence:
+                        filtered: true
+                        severity: safe
+                      hate:
+                        filtered: true
+                        severity: safe
+                      self_harm:
+                        filtered: true
+                        severity: safe
+                      profanity:
+                        filtered: true
+                        detected: true
+                      error:
+                        code: string
+                        message: string
+                      jailbreak:
+                        filtered: true
+                        detected: true
+                  code: string
+                  message: string
+        '500':
+          description: Service unavailable
+          content:
+            application/json:
+              example:
+                error:
+                  param: string
+                  type: string
+                  inner_error:
+                    code: ResponsibleAIPolicyViolation
+                    content_filter_results:
+                      sexual:
+                        filtered: true
+                        severity: safe
+                      violence:
+                        filtered: true
+                        severity: safe
+                      hate:
+                        filtered: true
+                        severity: safe
+                      self_harm:
+                        filtered: true
+                        severity: safe
+                      profanity:
+                        filtered: true
+                        detected: true
+                      error:
+                        code: string
+                        message: string
+                      jailbreak:
+                        filtered: true
+                        detected: true
+                  code: string
+                  message: string
+      tags:
+      - Deployments
+  /deployments/{deployment-id}/completions:
+    post:
+      summary: Creates a completion for the provided prompt, parameters and chosen model
+      description: Creates a completion for the provided prompt, parameters and chosen model.
+      operationId: 688cd23dbe4114127cd8747d
+      parameters:
+      - name: deployment-id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: api-version
+        in: query
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            example:
+              prompt: "Negate the following sentence.The price for bubblegum increased on thursday.\n\n Negated Sentence:"
+              max_tokens: 50
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                model: davinci
+                object: text_completion
+                id: cmpl-4509KAos68kxOqpE2uYGw81j6m7uo
+                created: 1637097562
+                choices:
+                - index: 0
+                  text: The price for bubblegum decreased on thursday.
+                  logprobs: ''
+                  finish_reason: stop
+        '400':
+          description: Service unavailable
+          content:
+            application/json:
+              example:
+                error:
+                  param: string
+                  type: string
+                  inner_error:
+                    code: ResponsibleAIPolicyViolation
+                    content_filter_results:
+                      sexual:
+                        filtered: true
+                        severity: safe
+                      violence:
+                        filtered: true
+                        severity: safe
+                      hate:
+                        filtered: true
+                        severity: safe
+                      self_harm:
+                        filtered: true
+                        severity: safe
+                      profanity:
+                        filtered: true
+                        detected: true
+                      error:
+                        code: string
+                        message: string
+                      jailbreak:
+                        filtered: true
+                        detected: true
+                  code: string
+                  message: string
+        '500':
+          description: Service unavailable
+          content:
+            application/json:
+              example:
+                error:
+                  param: string
+                  type: string
+                  inner_error:
+                    code: ResponsibleAIPolicyViolation
+                    content_filter_results:
+                      sexual:
+                        filtered: true
+                        severity: safe
+                      violence:
+                        filtered: true
+                        severity: safe
+                      hate:
+                        filtered: true
+                        severity: safe
+                      self_harm:
+                        filtered: true
+                        severity: safe
+                      profanity:
+                        filtered: true
+                        detected: true
+                      error:
+                        code: string
+                        message: string
+                      jailbreak:
+                        filtered: true
+                        detected: true
+                  code: string
+                  message: string
+      tags:
+      - Deployments
+  /deployments/{deployment-id}/embeddings:
+    post:
+      summary: Get a vector representation of a given input that can be easily consumed by…
+      description: Get a vector representation of a given input that can be easily consumed by machine learning models and algorithms.
+      operationId: 688cd23dbe4114127cd8747e
+      parameters:
+      - name: deployment-id
+        in: path
+        description: The deployment id of the model which was deployed.
+        required: true
+        schema:
+          type: string
+      - name: api-version
+        in: query
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            example:
+              input: {}
+              user: string
+              input_type: query
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                object: string
+                model: string
+                data:
+                - index: 0
+                  object: string
+                  embedding:
+                  - 0
+                usage:
+                  prompt_tokens: 0
+                  total_tokens: 0
+      tags:
+      - Deployments
+  /deployments/{deployment-id}/images/generations:
+    post:
+      summary: Generates a batch of images from a text caption on a given DALLE model…
+      description: Generates a batch of images from a text caption on a given DALLE model deployment
+      operationId: 688cd23dbe4114127cd87494
+      parameters:
+      - name: deployment-id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: api-version
+        in: query
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            example:
+              prompt: a corgi in a field
+              n: 1
+              size: 1024x1024
+              response_format: url
+              user: user123456
+              quality: standard
+              style: vivid
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              example:
+                created: '1676540381'
+                data:
+                - url: https://www.contoso.com
+                  b64_json: string
+                  content_filter_results:
+                    sexual:
+                      filtered: true
+                      severity: safe
+                    violence:
+                      filtered: true
+                      severity: safe
+                    hate:
+                      filtered: true
+                      severity: safe
+                    self_harm:
+                      filtered: true
+                      severity: safe
+                  revised_prompt: string
+                  prompt_filter_results:
+                    sexual:
+                      filtered: true
+                      severity: safe
+                    violence:
+                      filtered: true
+                      severity: safe
+                    hate:
+                      filtered: true
+                      severity: safe
+                    self_harm:
+                      filtered: true
+                      severity: safe
+                    profanity:
+                      filtered: true
+                      detected: true
+                    jailbreak:
+                      filtered: true
+                      detected: true
+        '400':
+          description: An error occurred.
+          content:
+            application/json:
+              example:
+                error:
+                  param: string
+                  type: string
+                  inner_error:
+                    code: ResponsibleAIPolicyViolation
+                    content_filter_results:
+                      sexual:
+                        filtered: true
+                        severity: safe
+                      violence:
+                        filtered: true
+                        severity: safe
+                      hate:
+                        filtered: true
+                        severity: safe
+                      self_harm:
+                        filtered: true
+                        severity: safe
+                      profanity:
+                        filtered: true
+                        detected: true
+                      jailbreak:
+                        filtered: true
+                        detected: true
+                    revised_prompt: string
+                  code: string
+                  message: string
+        '500':
+          description: An error occurred.
+          content:
+            application/json:
+              example:
+                error:
+                  param: string
+                  type: string
+                  inner_error:
+                    code: ResponsibleAIPolicyViolation
+                    content_filter_results:
+                      sexual:
+                        filtered: true
+                        severity: safe
+                      violence:
+                        filtered: true
+                        severity: safe
+                      hate:
+                        filtered: true
+                        severity: safe
+                      self_harm:
+                        filtered: true
+                        severity: safe
+                      profanity:
+                        filtered: true
+                        detected: true
+                      jailbreak:
+                        filtered: true
+                        detected: true
+                    revised_prompt: string
+                  code: string
+                  message: string
+      tags:
+      - Deployments
+  /deployments/{deployment-id}/audio/translations:
+    post:
+      summary: Transcribes and translates input audio into English text
+      description: Transcribes and translates input audio into English text.
+      operationId: 688cd23dbe4114127cd87495
+      parameters:
+      - name: deployment-id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: api-version
+        in: query
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              properties:
+                file:
+                  type: string
+                prompt:
+                  type: string
+                response_format:
+                  enum:
+                  - json
+                  - text
+                  - srt
+                  - verbose_json
+                  - vtt
+                  type: string
+                  description: AudioResponseFormat
+                temperature:
+                  enum:
+                  - '0'
+                  type: string
+                  default: '0'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                text: string
+            text/plain: {}
+      tags:
+      - Deployments
+  /deployments/{deployment-id}/audio/transcriptions:
+    post:
+      summary: Transcribes audio into the input language
+      description: Transcribes audio into the input language.
+      operationId: 688cd23dbe4114127cd87496
+      parameters:
+      - name: deployment-id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: api-version
+        in: query
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              properties:
+                file:
+                  type: string
+                prompt:
+                  type: string
+                response_format:
+                  enum:
+                  - json
+                  - text
+                  - srt
+                  - verbose_json
+                  - vtt
+                  type: string
+                  description: AudioResponseFormat
+                temperature:
+                  enum:
+                  - '0'
+                  type: string
+                  default: '0'
+                language:
+                  type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                text: string
+            text/plain: {}
+      tags:
+      - Deployments

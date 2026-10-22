@@ -1,0 +1,60 @@
+openapi: 3.2.0
+info:
+  title: Translation Service US Azure OpenAI Service Models API
+  description: Azure OpenAI APIs for completions and search
+  version: '1.0'
+servers:
+- url: https://api.developer.nielseniq.com/cis/us/translation/openai
+tags:
+- name: Models
+paths:
+  /models:
+    get:
+      summary: Gets a list of all models that are accessible by the Azure OpenAI resource.
+      operationId: 688cd23dbe4114127cd8748e
+      parameters:
+      - name: api-version
+        in: query
+        description: The requested API version.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json: {}
+        '400':
+          description: An error occurred.
+          content:
+            application/json: {}
+      tags:
+      - Models
+  /models/{model-id}:
+    get:
+      summary: Gets details for the model specified by the given modelId
+      operationId: 688cd23dbe4114127cd8748f
+      parameters:
+      - name: model-id
+        in: path
+        description: The identifier of the model.
+        required: true
+        schema:
+          type: string
+      - name: api-version
+        in: query
+        description: The requested API version.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json: {}
+        '400':
+          description: An error occurred.
+          content:
+            application/json: {}
+      tags:
+      - Models

@@ -1,0 +1,90 @@
+generated: '2026-10-18'
+method: searched
+source: https://portal.developer.nielseniq.com/products
+name: NielsenIQ rate limits
+note: Rate limits are defined per plan tier on the products page. No information about rate limit headers or exhaustion responses.
+limits:
+  - name: BDA Fact Data Plan 1 rate
+    limit_text: 1 calls/second and 1000 calls/day
+    scope: per API key
+    plan: BDA Fact Data - Plan 1
+  - name: BDA Fact Data Plan 2 rate
+    limit_text: 1 calls/second and 100 calls/day
+    scope: per API key
+    plan: BDA Fact Data - Plan 2
+  - name: BDA Fact Data Plan 3 rate
+    limit_text: 1 calls/second and 50 calls/day
+    scope: per API key
+    plan: BDA Fact Data - Plan 3
+  - name: BDA Meta Data Plan 1 rate
+    limit_text: 5 call/second and 120 calls/day
+    scope: per API key
+    plan: BDA Meta Data - Plan 1
+  - name: BDA Meta Data Plan 2 rate
+    limit_text: 1 calls/second and 100 calls/day
+    scope: per API key
+    plan: BDA Meta Data - Plan 2
+  - name: BDA Meta Data Plan 3 rate
+    limit_text: 1 calls/second and 50 calls/day
+    scope: per API key
+    plan: BDA Meta Data - Plan 3
+  - name: BDA Meta Data Plan 4 rate
+    limit_text: 3 calls/second and 5,000 calls/day
+    scope: per API key
+    plan: BDA Meta Data - Plan 4
+  - name: BDA Meta Data Plan 5 rate
+    limit_text: 20 calls/second and 5,000 calls/day
+    scope: per API key
+    plan: BDA Meta Data - Plan 5
+  - name: BDA Meta Data Plan 6 rate
+    limit_text: 1 call/second and 200 calls/day
+    scope: per API key
+    plan: BDA Meta Data - Plan 6
+  - name: Buy Measures API Plan 1 rate
+    limit_text: 120 calls/minute and 1000 calls/day
+    scope: per API key
+    plan: Buy Measures API - Plan 1
+  - name: Buy Measures API Plan 2 rate
+    limit_text: 100 calls/minute and 250 calls/day
+    scope: per API key
+    plan: Buy Measures API - Plan 2
+  - name: Buy Measures API Plan 3 rate
+    limit_text: 120 calls/minute and 5000 calls/day
+    scope: per API key
+    plan: Buy Measures API - Plan 3
+  - name: Buy Measures API Plan 4 rate
+    limit_text: 300 calls/minute and 5000 calls/day
+    scope: per API key
+    plan: Buy Measures API - Plan 4
+  - name: Buy Measures API Plan 5 rate
+    limit_text: 300 calls/minute and 80000 calls/day
+    scope: per API key
+    plan: Buy Measures API - Plan 5
+  - name: Buy Measures API Plan 6 rate
+    limit_text: 6000 calls/minute and 100000 calls/day
+    scope: per API key
+    plan: Buy Measures API - Plan 6
+  - name: Buy Measures API Plan 7 rate
+    limit_text: 5 calls/minute and 200 calls/day
+    scope: per API key
+    plan: Buy Measures API - Plan 7
+  - name: Buy Measures API Plan 8 rate
+    limit_text: 150 calls/minute and 1500 calls/day
+    scope: per API key
+    plan: Buy Measures API - Plan 8
+  - name: Product Reference Plan 1 rate
+    limit_text: up to 4 concurrent calls per second and 24 calls per day
+    scope: per API key
+    plan: Prod Ref - Plan 1
+  - name: Product Reference Plan 2 rate
+    limit_text: up to 4 concurrent calls per second and up to 45 calls per day
+    scope: per API key
+    plan: Prod Ref - Plan 2
+  - name: Product Reference Plan 3 rate
+    limit_text: up to 10 concurrent calls per second and up to 90 calls per day
+    scope: per API key
+    plan: Prod Ref - Plan 3
+  - name: Product Reference Plan 4 rate
+    limit_text: up to 10 concurrent calls per second and up to 180 calls per day
+    scope: per API key
+    plan: Prod Ref - Plan 4

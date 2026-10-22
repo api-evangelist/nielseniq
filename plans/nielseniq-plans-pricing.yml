@@ -1,0 +1,310 @@
+generated: '2026-10-18'
+method: searched
+source: https://portal.developer.nielseniq.com/products
+name: NielsenIQ pricing
+audience: developer-api
+pricing_basis: tiered-subscription
+published: false
+delivery: managed
+plans:
+  - name: BDA Fact Data - Plan 1
+    description: This plan includes 1 calls/second and 1000 calls/day.
+    price_text: Not shown
+    features:
+      - API access to Buy Data Access Fact Data
+    limits:
+      - limit_text: 1 calls/second
+      - limit_text: 1000 calls/day
+  - name: BDA Fact Data - Plan 2
+    description: This plan includes 1 calls/second and 100 calls/day.
+    price_text: Not shown
+    features:
+      - API access to Buy Data Access Fact Data
+    limits:
+      - limit_text: 1 calls/second
+      - limit_text: 100 calls/day
+  - name: BDA Fact Data - Plan 3
+    description: This plan includes 1 calls/second and 50 calls/day.
+    price_text: Not shown
+    features:
+      - API access to Buy Data Access Fact Data
+    limits:
+      - limit_text: 1 calls/second
+      - limit_text: 50 calls/day
+  - name: BDA Meta Data - Plan 1
+    description: This plan includes 5 call/second and 120 calls/day.
+    price_text: Not shown
+    features:
+      - API access to Buy Data Access Meta Data
+    limits:
+      - limit_text: 5 calls/second
+      - limit_text: 120 calls/day
+  - name: BDA Meta Data - Plan 2
+    description: This plan includes 1 calls/second and 100 calls/day.
+    price_text: Not shown
+    features:
+      - API access to Buy Data Access Meta Data
+    limits:
+      - limit_text: 1 calls/second
+      - limit_text: 100 calls/day
+  - name: BDA Meta Data - Plan 3
+    description: This plan includes 1 calls/second and 50 calls/day.
+    price_text: Not shown
+    features:
+      - API access to Buy Data Access Meta Data
+    limits:
+      - limit_text: 1 calls/second
+      - limit_text: 50 calls/day
+  - name: BDA Meta Data - Plan 4
+    description: This plan includes 3 calls/second and 5,000 calls/day.
+    price_text: Not shown
+    features:
+      - API access to Buy Data Access Meta Data
+    limits:
+      - limit_text: 3 calls/second
+      - limit_text: 5,000 calls/day
+  - name: BDA Meta Data - Plan 5
+    description: This plan includes 20 calls/second and 5,000 calls/day.
+    price_text: Not shown
+    features:
+      - API access to Buy Data Access Meta Data
+    limits:
+      - limit_text: 20 calls/second
+      - limit_text: 5,000 calls/day
+  - name: BDA Meta Data - Plan 6
+    description: This plan includes 1 call/second and 200 calls/day.
+    price_text: Not shown
+    features:
+      - API access to Buy Data Access Meta Data
+    limits:
+      - limit_text: 1 call/second
+      - limit_text: 200 calls/day
+  - name: Buy Measures API - Plan 1
+    description: This plan includes 120 calls/minute and 1000 calls/day.
+    price_text: Not shown
+    features:
+      - API access to Buy Measures API
+    limits:
+      - limit_text: 120 calls/minute
+      - limit_text: 1000 calls/day
+  - name: Buy Measures API - Plan 2
+    description: This plan includes 100 calls/minute and 250 calls/day.
+    price_text: Not shown
+    features:
+      - API access to Buy Measures API
+    limits:
+      - limit_text: 100 calls/minute
+      - limit_text: 250 calls/day
+  - name: Buy Measures API - Plan 3
+    description: This plan includes 120 calls/minute and 5000 calls/day.
+    price_text: Not shown
+    features:
+      - API access to Buy Measures API
+    limits:
+      - limit_text: 120 calls/minute
+      - limit_text: 5000 calls/day
+  - name: Buy Measures API - Plan 4
+    description: This plan includes 300 calls/minute and 5000 calls/day.
+    price_text: Not shown
+    features:
+      - API access to Buy Measures API
+    limits:
+      - limit_text: 300 calls/minute
+      - limit_text: 5000 calls/day
+  - name: Buy Measures API - Plan 5
+    description: This plan includes 300 calls/minute and 80000 calls/day.
+    price_text: Not shown
+    features:
+      - API access to Buy Measures API
+    limits:
+      - limit_text: 300 calls/minute
+      - limit_text: 80000 calls/day
+  - name: Buy Measures API - Plan 6
+    description: Buy Measures API for NDX only. This plan includes 6000 calls/minute and 100000 calls/day.
+    price_text: Not shown
+    features:
+      - API access to Buy Measures API (NDX only)
+    limits:
+      - limit_text: 6000 calls/minute
+      - limit_text: 100000 calls/day
+  - name: Buy Measures API - Plan 7
+    description: This plan includes 5 calls/minute and 200 calls/day.
+    price_text: Not shown
+    features:
+      - API access to Buy Measures API
+    limits:
+      - limit_text: 5 calls/minute
+      - limit_text: 200 calls/day
+  - name: Buy Measures API - Plan 8
+    description: This plan includes 150 calls/minute and 1500 calls/day.
+    price_text: Not shown
+    features:
+      - API access to Buy Measures API
+    limits:
+      - limit_text: 150 calls/minute
+      - limit_text: 1500 calls/day
+  - name: Prod Ref - Plan 1
+    description: This plan includes up to 4 concurrent calls per second and 24 calls per day
+    price_text: Not shown
+    features:
+      - API access to Product Reference API
+    limits:
+      - limit_text: up to 4 concurrent calls per second
+      - limit_text: 24 calls per day
+  - name: Prod Ref - Plan 2
+    description: This plan includes up to 4 concurrent calls per second and up to 45 calls per day
+    price_text: Not shown
+    features:
+      - API access to Product Reference API
+    limits:
+      - limit_text: up to 4 concurrent calls per second
+      - limit_text: up to 45 calls per day
+  - name: Prod Ref - Plan 3
+    description: This plan includes up to 10 concurrent calls per second and up to 90 calls per day
+    price_text: Not shown
+    features:
+      - API access to Product Reference API
+    limits:
+      - limit_text: up to 10 concurrent calls per second
+      - limit_text: up to 90 calls per day
+  - name: Prod Ref - Plan 4
+    description: This plan includes up to 10 concurrent calls per second and up to 180 calls per day
+    price_text: Not shown
+    features:
+      - API access to Product Reference API
+    limits:
+      - limit_text: up to 10 concurrent calls per second
+      - limit_text: up to 180 calls per day
+note: Pricing not publicly displayed on portal; appears to be enterprise/contact sales model. Rate limits are shown per plan.
+x-canonical:
+  generated: '2026-10-18'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models: []
+  units: []
+  plans:
+  - name: BDA Fact Data - Plan 1
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: BDA Fact Data - Plan 2
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: BDA Fact Data - Plan 3
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: BDA Meta Data - Plan 1
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: BDA Meta Data - Plan 2
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: BDA Meta Data - Plan 3
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: BDA Meta Data - Plan 4
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: BDA Meta Data - Plan 5
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: BDA Meta Data - Plan 6
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Buy Measures API - Plan 1
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Buy Measures API - Plan 2
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Buy Measures API - Plan 3
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Buy Measures API - Plan 4
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Buy Measures API - Plan 5
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Buy Measures API - Plan 6
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Buy Measures API - Plan 7
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Buy Measures API - Plan 8
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Prod Ref - Plan 1
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Prod Ref - Plan 2
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Prod Ref - Plan 3
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Prod Ref - Plan 4
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []

@@ -1,0 +1,69 @@
+# x-archived-from: nielseniq-cdar-gettokenprodna-openapi.yml
+# x-archived-on: 2026-10-18
+openapi: 3.0.1
+info:
+  title: CDAR GETTOKENPRODNA
+  description: GETTOKENNA
+  version: '1.0'
+servers:
+  - url: https://api.developer.nielseniq.com/gettokenprodna
+paths:
+  /na/common-auth-service/externalVendors/getAuthToken:
+    post:
+      tags:
+        - cdargettokenprodna-controller
+      summary: postGettokenprodnaResp
+      description: postGettokenprodnaResp
+      operationId: postGettokenprodnaRespUsingPOST
+      requestBody:
+        description: request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GettokenprodnaRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GettokenprodnaResp'
+        '401':
+          description: Unauthorized
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '404':
+          description: Not found
+          content:
+            application/json: { }
+        '500':
+          description: Failure
+          content:
+            application/json: { }
+components:
+  schemas:
+    GettokenprodnaRequest:
+      title: GettokenprodnaRequest
+      type: object
+    GettokenprodnaResp:
+      title: GettokenprodnaResp
+      type: object
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: subscription-key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: subscription-key
+      in: query
+security:
+  - apiKeyHeader: [ ]
+  - apiKeyQuery: [ ]
+tags:
+  - name: cdargettokenprodna-controller
+    description: CDARGETTOKENPRODNA Controller

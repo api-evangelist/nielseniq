@@ -1,0 +1,62 @@
+openapi: 3.2.0
+info:
+  title: Nielseniq Discoverdmevents API
+  version: '1.0'
+  description: 'Operations tagged Discoverdmevents across 2 of this provider''s published API definitions: CRMCasetrackAPI.yml, nielseniq-crmcasetrackapi-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://api.developer.nielseniq.com/crmcasetrack
+security:
+- apiKeyHeader: []
+- apiKeyQuery: []
+tags:
+- name: Discoverdmevents
+paths:
+  /discoverdmevents/notification:
+    post:
+      summary: postDISCOVERNotificationResp
+      operationId: postDISCOVERNotificationRespUsingPOST
+      parameters:
+      - name: subscription-key
+        in: header
+        description: subscription-key
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Success
+          content:
+            application/json: {}
+        '401':
+          description: Unauthorized
+          content:
+            application/json: {}
+        '403':
+          description: Forbidden
+          content:
+            application/json: {}
+        '404':
+          description: Not found
+          content:
+            application/json: {}
+        '500':
+          description: Failure
+          content:
+            application/json: {}
+      tags:
+      - Discoverdmevents
+    servers:
+    - url: https://api.developer.nielseniq.com/crmcasetrack
+components:
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: subscription-key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: subscription-key
+      in: query
+x-refined-from:
+- CRMCasetrackAPI.yml
+- nielseniq-crmcasetrackapi-openapi.yml

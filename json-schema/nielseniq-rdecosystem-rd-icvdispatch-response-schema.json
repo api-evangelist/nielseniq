@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/nielseniq/main/json-schema/nielseniq-rdecosystem-rd-icvdispatch-response-schema.json",
+  "title": "Content",
+  "x-generated": "2026-10-18",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/nielseniq-rdecosystem-openapi.yml#/components/schemas/RdecosystemRdICVdispatchResponse",
+  "type": "object",
+  "properties": {
+    "user": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/RdecosystemRdICVdispatch"
+      }
+    },
+    "hasMoreRecords": {
+      "type": "boolean"
+    },
+    "size": {
+      "type": "integer"
+    }
+  },
+  "$defs": {
+    "ChrVal": {
+      "title": "ChrVal",
+      "type": "object",
+      "properties": {
+        "chrValCd": {
+          "type": "integer"
+        },
+        "chrValLclCd": {
+          "type": "string"
+        },
+        "chrValDscr": {
+          "type": "string"
+        },
+        "seq": {
+          "type": "integer"
+        }
+      }
+    },
+    "Chrs": {
+      "title": "Chrs",
+      "type": "object",
+      "properties": {
+        "ChrsContent": {
+          "type": "object",
+          "items": {
+            "$ref": "#/$defs/CntlChr"
+          }
+        }
+      }
+    },
+    "CntlChr": {
+      "title": "CntlChr",
+      "type": "object",
+      "properties": {
+        "chrCd": {
+          "type": "integer"
+        },
+        "chrLclCd": {
+          "type": "string"
+        },
+        "chrDscr": {
+          "type": "string"
+        },
+        "chrVal": {
+          "type": "object",
+          "items": {
+            "$ref": "#/$defs/ChrVal"
+          }
+        }
+      }
+    },
+    "RdecosystemRdICVdispatch": {
+      "title": "RdecosystemRdICVdispatch",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "extrnCode": {
+          "type": "string"
+        },
+        "nanKey": {
+          "type": "string"
+        },
+        "gic": {
+          "type": "integer"
+        },
+        "cntlChr": {
+          "type": "object",
+          "items": {
+            "$ref": "#/$defs/CntlChr"
+          }
+        },
+        "chrs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Chrs"
+          }
+        },
+        "itmCrtDttm": {
+          "type": "string"
+        },
+        "itmUpdDttm": {
+          "type": "string"
+        },
+        "updDttm": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

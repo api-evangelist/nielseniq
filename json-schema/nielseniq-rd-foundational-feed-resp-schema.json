@@ -1,0 +1,242 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/nielseniq/main/json-schema/nielseniq-rd-foundational-feed-resp-schema.json",
+  "title": "Content",
+  "x-generated": "2026-10-18",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/nielseniq-rdecosystembb-openapi.yml#/components/schemas/RdFoundationalFeedResp",
+  "type": "object",
+  "properties": {
+    "user": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/RdFoundationalFeed"
+      }
+    }
+  },
+  "$defs": {
+    "Certification": {
+      "title": "Certification",
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "characteristic": {
+          "type": "string"
+        },
+        "segment": {
+          "type": "string"
+        }
+      }
+    },
+    "DetImages": {
+      "title": "DetImages",
+      "type": "object",
+      "properties": {
+        "imgId": {
+          "type": "string"
+        },
+        "imgUrl": {
+          "type": "string"
+        },
+        "imgSourcedDate": {
+          "type": "string"
+        },
+        "imgRawUrl": {
+          "type": "string"
+        },
+        "vignette": {
+          "type": "string"
+        },
+        "rating": {
+          "type": "int32"
+        }
+      }
+    },
+    "FndtnRaw": {
+      "title": "FndtnRaw",
+      "type": "object",
+      "properties": {
+        "productSizeTextOnPack": {
+          "type": "string"
+        },
+        "productSize": {
+          "type": "string"
+        },
+        "dispatchId": {
+          "type": "string"
+        },
+        "importedBy": {
+          "type": "string"
+        },
+        "manufacturer": {
+          "type": "string"
+        },
+        "specs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Specs"
+          }
+        },
+        "dateCreated": {
+          "type": "string"
+        },
+        "nielsenUpc": {
+          "type": "string"
+        },
+        "noProductSize": {
+          "type": "boolean"
+        },
+        "brand": {
+          "type": "string"
+        },
+        "productCategorization": {
+          "type": "object",
+          "items": {
+            "$ref": "#/$defs/ProductCategorization"
+          }
+        },
+        "productType": {
+          "type": "string"
+        },
+        "productId": {
+          "type": "string"
+        },
+        "productSize3": {
+          "type": "string"
+        },
+        "productSize2": {
+          "type": "string"
+        },
+        "upc": {
+          "type": "string"
+        },
+        "dateAttributesModified": {
+          "type": "string"
+        },
+        "dateModified": {
+          "type": "string"
+        },
+        "dateLive": {
+          "type": "string"
+        },
+        "distributor": {
+          "type": "string"
+        },
+        "productTitle": {
+          "type": "string"
+        },
+        "multiPackagingType": {
+          "type": "string"
+        },
+        "netWeight3": {
+          "type": "string"
+        },
+        "netWeight1": {
+          "type": "string"
+        },
+        "countryOfOrigin": {
+          "type": "string"
+        },
+        "netWeight2": {
+          "type": "string"
+        },
+        "ingredientDeclaration": {
+          "type": "object",
+          "items": {
+            "$ref": "#/$defs/IngredientDeclaration"
+          }
+        }
+      }
+    },
+    "IngredientDeclaration": {
+      "title": "IngredientDeclaration",
+      "type": "object",
+      "properties": {
+        "ingredients": {
+          "type": "string"
+        }
+      }
+    },
+    "ProductCategorization": {
+      "title": "ProductCategorization",
+      "type": "object",
+      "properties": {
+        "aisle": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "shelf": {
+          "type": "string"
+        }
+      }
+    },
+    "RdFoundationalFeed": {
+      "title": "RdFoundationalFeed",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "dispatchId": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "dateReceived": {
+          "type": "string"
+        },
+        "dateUpdated": {
+          "type": "string"
+        },
+        "extrnCode": {
+          "type": "string"
+        },
+        "isPremovement": {
+          "type": "string"
+        },
+        "upc": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "images": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DetImages"
+          }
+        },
+        "fndtnRaw": {
+          "type": "object",
+          "items": {
+            "$ref": "#/$defs/FndtnRaw"
+          }
+        },
+        "bbProcessingStatus": {
+          "type": "string"
+        }
+      }
+    },
+    "Specs": {
+      "title": "Specs",
+      "type": "object",
+      "properties": {
+        "certification": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Certification"
+          }
+        }
+      }
+    }
+  }
+}

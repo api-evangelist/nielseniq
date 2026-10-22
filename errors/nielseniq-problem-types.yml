@@ -1,0 +1,60 @@
+generated: '2026-10-18'
+method: derived
+generator: derive-problem-types.py
+source:
+- openapi/nielseniq-buy-data-access-catalogues-api-openapi.yml
+- openapi/nielseniq-cdar-barter-openapi.yml
+- openapi/nielseniq-cdar-barterapi-openapi.yml
+- openapi/nielseniq-cdar-ecollection-openapi.yml
+- openapi/nielseniq-cdar-ecollectionapi-openapi.yml
+- openapi/nielseniq-cdar-gettoken-openapi.yml
+- openapi/nielseniq-cdar-gettokenprodna-openapi.yml
+- openapi/nielseniq-cdar-gnic-openapi.yml
+- openapi/nielseniq-cdar-gnicapi-openapi.yml
+- openapi/nielseniq-cdar-gnicus-openapi.yml
+- openapi/nielseniq-cdar-gnicusapi-openapi.yml
+- openapi/nielseniq-cdar-vendor-reports-openapi.yml
+format: custom
+envelope:
+  media_type: application/json
+  schema: errorResponse
+coverage:
+  operations: 69
+  statuses_declared: 5
+problems:
+- status: 400
+  title: Bad Request
+  description: An error occurred.
+  operations: 27
+  media_types:
+  - application/json
+  - application/octet-stream
+  schema: errorResponse
+- status: 401
+  title: Unauthorized
+  description: Unauthorized
+  operations: 36
+  media_types:
+  - application/json
+  schema: null
+- status: 403
+  title: Forbidden
+  description: Forbidden
+  operations: 36
+  media_types:
+  - application/json
+  schema: null
+- status: 404
+  title: Not Found
+  description: Not found
+  operations: 36
+  media_types:
+  - application/json
+  schema: null
+- status: 500
+  title: Internal Server Error
+  description: Failure
+  operations: 42
+  media_types:
+  - application/json
+  schema: errorResponse

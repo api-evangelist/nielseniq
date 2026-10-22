@@ -1,0 +1,77 @@
+overlay: 1.0.0
+info:
+  title: NielsenIQ Rdecosystem overlay
+  version: 1.0.0
+extends: ../openapi/_original/nielseniq-rdecosystem-openapi.yml
+x-generated: '2026-10-18'
+x-method: generated
+actions:
+- target: $.info
+  description: Provider context added by API Evangelist
+  update:
+    x-provider: NielsenIQ
+    x-apis-json: https://raw.githubusercontent.com/api-evangelist/nielseniq/refs/heads/main/apis.yml
+    x-developer-portal: https://portal.developer.nielseniq.com/
+- target: $.paths['/rddispatch'].get
+  description: Agent hints for getRdDispatchRespUsingGET
+  update:
+    x-agent-hints:
+      safe: true
+      idempotent: true
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/rdimagedispatch'].get
+  description: Agent hints for getRdimageDispatchRespUsingGET
+  update:
+    x-agent-hints:
+      safe: true
+      idempotent: true
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/rejectImage'].post
+  description: Agent hints for rejectImageRespUsingPOST
+  update:
+    x-agent-hints:
+      safe: false
+      idempotent: false
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/rddispatch/icv/nankey/{id}'].get
+  description: Agent hints for getRdICVDispatchforNanKeyRespUsingGET
+  update:
+    x-agent-hints:
+      safe: true
+      idempotent: true
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/rddispatch/icv/extrncd/{id}'].get
+  description: Agent hints for getRdICVDispatchforExtrncodeRespUsingGET
+  update:
+    x-agent-hints:
+      safe: true
+      idempotent: true
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/rddispatch/icv/ack/id/{id}'].post
+  description: Agent hints for postackRdICVDispatchforIDRespUsingPOST
+  update:
+    x-agent-hints:
+      safe: false
+      idempotent: false
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/rddispatch/icv/ack'].post
+  description: Agent hints for postackRdICVDispatchRespUsingPOST
+  update:
+    x-agent-hints:
+      safe: false
+      idempotent: false
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/rddispatch/icv'].get
+  description: Agent hints for getRdICVDispatchRespUsingGET
+  update:
+    x-agent-hints:
+      safe: true
+      idempotent: true
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/rddispatch/product/create'].post
+  description: Agent hints for postCreateProductRespUsingPOST
+  update:
+    x-agent-hints:
+      safe: false
+      idempotent: false
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency

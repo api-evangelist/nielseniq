@@ -1,0 +1,5 @@
+generated: '2026-10-18'
+method: none
+description: No sandbox or testing environment available
+docs: https://portal.developer.nielseniq.com/
+note: No sandbox or testing environment found in developer portal. API has "Try it" feature but requires authentication.

@@ -1,0 +1,147 @@
+openapi: 3.2.0
+info:
+  title: Translation Service US Azure OpenAI Service Files API
+  description: Azure OpenAI APIs for completions and search
+  version: '1.0'
+servers:
+- url: https://api.developer.nielseniq.com/cis/us/translation/openai
+tags:
+- name: Files
+paths:
+  /files:
+    get:
+      summary: Gets a list of all files owned by the Azure OpenAI resource.
+      operationId: 688cd23dbe4114127cd87483
+      parameters:
+      - name: api-version
+        in: query
+        description: The requested API version.
+        required: true
+        schema:
+          type: string
+      - name: purpose
+        in: query
+        description: Only return files with the given purpose.
+        schema:
+          enum:
+          - fine-tune
+          - fine-tune-results
+          - assistants
+          - assistants_output
+          - batch
+          - batch_output
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json: {}
+        '400':
+          description: An error occurred.
+          content:
+            application/json: {}
+      tags:
+      - Files
+    post:
+      summary: Creates a new file entity by uploading data from a local machine.
+      operationId: 688cd23dbe4114127cd87484
+      parameters:
+      - name: api-version
+        in: query
+        description: The requested API version.
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: The file has been successfully created.
+          content:
+            application/json: {}
+        '400':
+          description: An error occurred.
+          content:
+            application/json: {}
+      tags:
+      - Files
+  /files/{file-id}:
+    get:
+      summary: Gets details for a single file specified by the given file-id including status…
+      operationId: 688cd23dbe4114127cd87485
+      parameters:
+      - name: file-id
+        in: path
+        description: The identifier of the file.
+        required: true
+        schema:
+          type: string
+      - name: api-version
+        in: query
+        description: The requested API version.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json: {}
+        '400':
+          description: An error occurred.
+          content:
+            application/json: {}
+      tags:
+      - Files
+  /files/{file-id}/content:
+    get:
+      summary: Gets the content of the file specified by the given file-id.
+      operationId: 688cd23dbe4114127cd87486
+      parameters:
+      - name: file-id
+        in: path
+        description: The identifier of the file.
+        required: true
+        schema:
+          type: string
+      - name: api-version
+        in: query
+        description: The requested API version.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream: {}
+        '400':
+          description: An error occurred.
+          content:
+            application/octet-stream: {}
+      tags:
+      - Files
+  /files/import:
+    post:
+      summary: Creates a new file entity by importing data from a provided url.
+      operationId: 688cd23dbe4114127cd87487
+      parameters:
+      - name: api-version
+        in: query
+        description: The requested API version.
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: The definition of the file to create including its purpose, the file name and the url of the file location.
+        content:
+          application/json: {}
+      responses:
+        '201':
+          description: The file has been successfully created.
+          content:
+            application/json: {}
+        '400':
+          description: An error occurred.
+          content:
+            application/json: {}
+      tags:
+      - Files

@@ -1,0 +1,1001 @@
+generated: '2026-10-18'
+method: generated
+source: openapi/nielseniq-buy-data-access-catalogues-api-openapi.yml, openapi/nielseniq-cdar-barter-openapi.yml,
+  openapi/nielseniq-cdar-barterapi-openapi.yml, openapi/nielseniq-cdar-ecollection-openapi.yml,
+  openapi/nielseniq-cdar-ecollectionapi-openapi.yml, openapi/nielseniq-cdar-gettoken-openapi.yml,
+  openapi/nielseniq-cdar-gettokenprodna-openapi.yml, openapi/nielseniq-cdar-gnic-openapi.yml,
+  openapi/nielseniq-cdar-gnicapi-openapi.yml, openapi/nielseniq-cdar-gnicus-openapi.yml, openapi/nielseniq-cdar-gnicusapi-openapi.yml,
+  openapi/nielseniq-cdar-vendor-reports-openapi.yml, openapi/nielseniq-cip-galaxy-form-proxy-openapi.yml,
+  openapi/nielseniq-cip-galaxy-proxy-openapi.yml, openapi/nielseniq-crmcasetrackapi-openapi.yml,
+  openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml, openapi/nielseniq-rdecosystem-openapi.yml,
+  openapi/nielseniq-rdecosystembb-openapi.yml, openapi/nielseniq-store-availability-bulk-openapi.yml,
+  openapi/nielseniq-translation-service-us-azure-openai-service-api-openapi.yml
+description: Recommended x-agentic-access execution contracts, classified heuristically from
+  the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
+  audience per deployment. See research/curity/agentic-governance/.
+summary:
+  operations: 69
+  by_action_class:
+    connected: 26
+    acting: 43
+  by_consequence:
+    read: 26
+    safety-critical: 19
+    write: 11
+    physical: 13
+  human_in_the_loop_required: 19
+operations:
+- path: /Catalogues
+  method: post
+  operationId: getCataloguesRespUsingPOST
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /barter-backend-service/btr/api/*
+  method: post
+  operationId: postBarterRespUsingPOST
+  x-agentic-access:
+    action-class: acting
+    consequence: safety-critical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 120
+      exchange: true
+      purpose-required: true
+      proof-of-possession: true
+    escalation:
+      human-in-the-loop: required
+    audit: required
+- path: /barter-backend-service/btr/api/*
+  method: post
+  operationId: postBarterRespUsingPOSTApi
+  x-agentic-access:
+    action-class: acting
+    consequence: safety-critical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 120
+      exchange: true
+      purpose-required: true
+      proof-of-possession: true
+    escalation:
+      human-in-the-loop: required
+    audit: required
+- path: /na/vendor-report-api/*
+  method: get
+  operationId: getEcollectionRespUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /na/vendor-report-api/*
+  method: get
+  operationId: getEcollectionRespUsingGETApi
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /common-auth-service/externalVendors/getAuthToken
+  method: post
+  operationId: postGettokenRespUsingPOST
+  x-agentic-access:
+    action-class: acting
+    consequence: safety-critical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 120
+      exchange: true
+      purpose-required: true
+      proof-of-possession: true
+    escalation:
+      human-in-the-loop: required
+    audit: required
+- path: /na/common-auth-service/externalVendors/getAuthToken
+  method: post
+  operationId: postGettokenprodnaRespUsingPOST
+  x-agentic-access:
+    action-class: acting
+    consequence: safety-critical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 120
+      exchange: true
+      purpose-required: true
+      proof-of-possession: true
+    escalation:
+      human-in-the-loop: required
+    audit: required
+- path: /na/ext/extvendorservice/rest/*
+  method: post
+  operationId: postGnicRespUsingPOST
+  x-agentic-access:
+    action-class: acting
+    consequence: safety-critical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 120
+      exchange: true
+      purpose-required: true
+      proof-of-possession: true
+    escalation:
+      human-in-the-loop: required
+    audit: required
+- path: /na/ext/extvendorservice/rest/*
+  method: post
+  operationId: postGnicRespUsingPOSTApi
+  x-agentic-access:
+    action-class: acting
+    consequence: safety-critical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 120
+      exchange: true
+      purpose-required: true
+      proof-of-possession: true
+    escalation:
+      human-in-the-loop: required
+    audit: required
+- path: /extvendorservice/rest/*
+  method: post
+  operationId: postGnicUSRespUsingPOST
+  x-agentic-access:
+    action-class: acting
+    consequence: safety-critical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 120
+      exchange: true
+      purpose-required: true
+      proof-of-possession: true
+    escalation:
+      human-in-the-loop: required
+    audit: required
+- path: /extvendorservice/rest/*
+  method: post
+  operationId: postGnicUSRespUsingPOSTApi
+  x-agentic-access:
+    action-class: acting
+    consequence: safety-critical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 120
+      exchange: true
+      purpose-required: true
+      proof-of-possession: true
+    escalation:
+      human-in-the-loop: required
+    audit: required
+- path: /nso-scheduler/nso/fs/vendorReports/getAuditSummaryReport
+  method: get
+  operationId: getAuditSummaryReportRespUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /*
+  method: get
+  operationId: getFormFunctionRespUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /*
+  method: get
+  operationId: getFunctionRespUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /*
+  method: put
+  operationId: putFunctionRespUsingPUT
+  x-agentic-access:
+    action-class: acting
+    consequence: safety-critical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 120
+      exchange: true
+      purpose-required: true
+      proof-of-possession: true
+    escalation:
+      human-in-the-loop: required
+    audit: required
+- path: /*
+  method: post
+  operationId: postFunctionRespUsingPOST
+  x-agentic-access:
+    action-class: acting
+    consequence: safety-critical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 120
+      exchange: true
+      purpose-required: true
+      proof-of-possession: true
+    escalation:
+      human-in-the-loop: required
+    audit: required
+- path: /*
+  method: delete
+  operationId: delFunctionRespUsingDELETE
+  x-agentic-access:
+    action-class: acting
+    consequence: safety-critical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 120
+      exchange: true
+      purpose-required: true
+      proof-of-possession: true
+    escalation:
+      human-in-the-loop: required
+    audit: required
+- path: /*
+  method: patch
+  operationId: patchFunctionRespUsingPATCH
+  x-agentic-access:
+    action-class: acting
+    consequence: safety-critical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 120
+      exchange: true
+      purpose-required: true
+      proof-of-possession: true
+    escalation:
+      human-in-the-loop: required
+    audit: required
+- path: /jiraevents/jiraupdate
+  method: post
+  operationId: postJIRAUpdatesRespUsingPOST
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /discoverdmevents/notification
+  method: post
+  operationId: postDISCOVERNotificationRespUsingPOST
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /deployments/{deployment-id}/completions
+  method: post
+  operationId: postChatCompletionsCreatePromptRespUsingPOST
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /deployments/{deployment-id}/embeddings
+  method: post
+  operationId: postEmbeddingsCreateRespUsingPOST
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /deployments/{deployment-id}/chat/completions
+  method: post
+  operationId: postChatCompletionsCreateRespUsingPOST
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /deployments/{deployment-id}/audio/transcriptions
+  method: post
+  operationId: postTranscriptionsCreateRespUsingPOST
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /deployments/{deployment-id}/audio/translations
+  method: post
+  operationId: postTranslationsCreateRespUsingPOST
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /deployments/{deployment-id}/images/generations
+  method: post
+  operationId: postImageGenerationsCreateDalleRespUsingPOST
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /rddispatch
+  method: get
+  operationId: getRdDispatchRespUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /rdimagedispatch
+  method: get
+  operationId: getRdimageDispatchRespUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /rejectImage
+  method: post
+  operationId: rejectImageRespUsingPOST
+  x-agentic-access:
+    action-class: acting
+    consequence: safety-critical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 120
+      exchange: true
+      purpose-required: true
+      proof-of-possession: true
+    escalation:
+      human-in-the-loop: required
+    audit: required
+- path: /rddispatch/icv/nankey/{id}
+  method: get
+  operationId: getRdICVDispatchforNanKeyRespUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /rddispatch/icv/extrncd/{id}
+  method: get
+  operationId: getRdICVDispatchforExtrncodeRespUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /rddispatch/icv/ack/id/{id}
+  method: post
+  operationId: postackRdICVDispatchforIDRespUsingPOST
+  x-agentic-access:
+    action-class: acting
+    consequence: safety-critical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 120
+      exchange: true
+      purpose-required: true
+      proof-of-possession: true
+    escalation:
+      human-in-the-loop: required
+    audit: required
+- path: /rddispatch/icv/ack
+  method: post
+  operationId: postackRdICVDispatchRespUsingPOST
+  x-agentic-access:
+    action-class: acting
+    consequence: safety-critical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 120
+      exchange: true
+      purpose-required: true
+      proof-of-possession: true
+    escalation:
+      human-in-the-loop: required
+    audit: required
+- path: /rddispatch/icv
+  method: get
+  operationId: getRdICVDispatchRespUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /rddispatch/product/create
+  method: post
+  operationId: postCreateProductRespUsingPOST
+  x-agentic-access:
+    action-class: acting
+    consequence: safety-critical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 120
+      exchange: true
+      purpose-required: true
+      proof-of-possession: true
+    escalation:
+      human-in-the-loop: required
+    audit: required
+- path: /rdfoundationalfeed
+  method: get
+  operationId: getRdFoundationalFeedRespUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /updateBbProcessingStatus
+  method: post
+  operationId: updateBbProcessingStatusRespUsingPOST
+  x-agentic-access:
+    action-class: acting
+    consequence: safety-critical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 120
+      exchange: true
+      purpose-required: true
+      proof-of-possession: true
+    escalation:
+      human-in-the-loop: required
+    audit: required
+- path: /resetBbProcessingStatus
+  method: post
+  operationId: resetBbProcessingStatusRespUsingPOST
+  x-agentic-access:
+    action-class: acting
+    consequence: safety-critical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 120
+      exchange: true
+      purpose-required: true
+      proof-of-possession: true
+    escalation:
+      human-in-the-loop: required
+    audit: required
+- path: /rdimagedispatch
+  method: get
+  operationId: getRdimageDispatchRespUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /batchStoreAvailability
+  method: post
+  operationId: getBatchStoreAvailabilityRespUsingPOST
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /addCheckDigit
+  method: post
+  operationId: getAddCheckDigitRespUsingPOST
+  x-agentic-access:
+    action-class: acting
+    consequence: safety-critical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 120
+      exchange: true
+      purpose-required: true
+      proof-of-possession: true
+    escalation:
+      human-in-the-loop: required
+    audit: required
+- path: /getJobStatus
+  method: get
+  operationId: getJobStatusRespUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /deployments/{deployment-id}/chat/completions
+  method: post
+  operationId: 688cd23dbe4114127cd8747c
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /deployments/{deployment-id}/completions
+  method: post
+  operationId: 688cd23dbe4114127cd8747d
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /deployments/{deployment-id}/embeddings
+  method: post
+  operationId: 688cd23dbe4114127cd8747e
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /batches
+  method: get
+  operationId: 688cd23dbe4114127cd8747f
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /batches
+  method: post
+  operationId: 688cd23dbe4114127cd87480
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /batches/{batch-id}
+  method: get
+  operationId: 688cd23dbe4114127cd87481
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /batches/{batch-id}/cancel
+  method: post
+  operationId: 688cd23dbe4114127cd87482
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /files
+  method: get
+  operationId: 688cd23dbe4114127cd87483
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /files
+  method: post
+  operationId: 688cd23dbe4114127cd87484
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /files/{file-id}
+  method: get
+  operationId: 688cd23dbe4114127cd87485
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /files/{file-id}/content
+  method: get
+  operationId: 688cd23dbe4114127cd87486
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /files/import
+  method: post
+  operationId: 688cd23dbe4114127cd87487
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /fine_tuning/jobs
+  method: get
+  operationId: 688cd23dbe4114127cd87488
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fine_tuning/jobs/{fine-tuning-job-id}
+  method: get
+  operationId: 688cd23dbe4114127cd87489
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fine_tuning/jobs/{fine-tuning-job-id}
+  method: delete
+  operationId: 688cd23dbe4114127cd8748a
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /fine_tuning/jobs/{fine-tuning-job-id}/events
+  method: get
+  operationId: 688cd23dbe4114127cd8748b
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fine_tuning/jobs/{fine-tuning-job-id}/cancel
+  method: post
+  operationId: 688cd23dbe4114127cd8748c
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /fine_tuning/jobs/{fine-tuning-job-id}/checkpoints
+  method: get
+  operationId: 688cd23dbe4114127cd8748d
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /models
+  method: get
+  operationId: 688cd23dbe4114127cd8748e
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /models/{model-id}
+  method: get
+  operationId: 688cd23dbe4114127cd8748f
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /uploads
+  method: post
+  operationId: 688cd23dbe4114127cd87490
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /uploads/{upload-id}/parts
+  method: post
+  operationId: 688cd23dbe4114127cd87491
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /uploads/{upload-id}/complete
+  method: post
+  operationId: 688cd23dbe4114127cd87492
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /uploads/{upload-id}/cancel
+  method: post
+  operationId: 688cd23dbe4114127cd87493
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /deployments/{deployment-id}/images/generations
+  method: post
+  operationId: 688cd23dbe4114127cd87494
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /deployments/{deployment-id}/audio/translations
+  method: post
+  operationId: 688cd23dbe4114127cd87495
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /deployments/{deployment-id}/audio/transcriptions
+  method: post
+  operationId: 688cd23dbe4114127cd87496
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required

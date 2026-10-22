@@ -1,0 +1,131 @@
+generated: '2026-10-18'
+method: searched
+source:
+- https://nielseniq.com/global/en/legal/privacy-policy/
+- https://nielseniq.com/global/en/legal/product-platforms-privacy-notice/
+- https://nielseniq.com/global/en/legal/cookies-and-other-tracking-technologies/
+- https://nielseniq.com/global/en/legal/annual-privacy-request-metrics/
+- https://nielseniq.com/global/en/legal/niq-discover-platform-privacy-notice/
+signals:
+  data_subject_request:
+    url: https://nielseniq.com/global/en/legal/privacy-policy/
+    section: Meaningful notice and choice
+    note: Rights are exercised per-notice, via the "Your Privacy Rights" footer link or connect.privacy@nielseniq.com; the
+      B2B platform notice routes requests through the account rep, Contact Us webform or support site, with identity verification.
+    evidence:
+    - source: https://nielseniq.com/global/en/legal/privacy-policy/
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: We support and facilitate the exercise of privacy rights and choices. Individuals may request or assert any of
+        their privacy rights by following the directions in their privacy notice or by selecting
+    - source: https://nielseniq.com/global/en/legal/product-platforms-privacy-notice/
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: Otherwise, if you are interested in exercising one or more of your rights, please contact your NIQ account representative
+        or support agent directly.
+    - source: https://nielseniq.com/global/en/legal/product-platforms-privacy-notice/
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: Though, because we do not sell or share Personal Data, nor do we permit its use for targeted advertising, we
+        do not offer an ability to opt out/withdraw consent from such data processing.
+  global_privacy_control:
+    url: https://nielseniq.com/global/en/legal/cookies-and-other-tracking-technologies/
+    section: A. Opting Out of Sales, Sharing, and Targeted Advertising
+    note: GPC is honoured "where required" as an opt-out of sale/sharing for the browser; the platform notices repeat the
+      commitment.
+    evidence:
+    - source: https://nielseniq.com/global/en/legal/cookies-and-other-tracking-technologies/
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: Where required, we will process requests sent through the GPC signal as a valid request to opt out of the sale
+        or sharing of personal information linked to that browser and any consumer profile we have associated with that browser.
+    - source: https://nielseniq.com/global/en/legal/product-platforms-privacy-notice/
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: Where required, we will process the GPC signal as a valid privacy request.
+  data_retention:
+    url: https://nielseniq.com/global/en/legal/privacy-policy/
+    section: Limited collection, storage, and use
+    note: Purpose-based retention with no stated periods; the same wording appears in the product platforms notice.
+    evidence:
+    - source: https://nielseniq.com/global/en/legal/privacy-policy/
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: We retain personal data for as long as reasonably necessary to fulfill the purposes described in our privacy
+        notices, or to comply with our legal obligations, resolve disputes, and enforce our agreements.
+    - source: https://nielseniq.com/global/en/legal/product-platforms-privacy-notice/
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: We will retain your Personal Data for as long as reasonably necessary to fulfill the purposes described in this
+        Notice, or to comply with our legal obligations, resolve disputes, and enforce our agreements.
+  data_residency:
+    url: https://nielseniq.com/global/en/legal/product-platforms-privacy-notice/
+    section: Transfers of personal data
+    note: 'No residency commitment: the notice states data may leave the user''s jurisdiction, relying on an intra-group transfer
+      agreement with SCCs. Recorded as the absence of a residency guarantee.'
+    evidence:
+    - source: https://nielseniq.com/global/en/legal/product-platforms-privacy-notice/
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: Due to the international nature of our business, it may be necessary for us to transfer your Personal Data to
+        other companies within the NIQ Group and to third parties outside the jurisdiction in which you reside.
+    - source: https://nielseniq.com/global/en/legal/product-platforms-privacy-notice/
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: Within the NIQ Group, we have concluded an intra-group data transfer agreement with the relevant transfer mechanisms
+        (for example, standard contractual clauses of the European Commission) and additional safeguards, if necessary, to
+        ensure an adequate level of protection for your Personal Data when it is transferred to Third Countries.
+  transparency_report:
+    url: https://nielseniq.com/global/en/legal/annual-privacy-request-metrics/
+    section: 2025 Consumer Requests Report
+    note: Annual privacy-request metrics (received/completed/denied by request type) published under US state privacy laws,
+      covering the NIQ Group. This is a privacy-request report, not a government/takedown transparency report.
+    evidence:
+    - source: https://nielseniq.com/global/en/legal/annual-privacy-request-metrics/
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: In calendar year 2025, we received and responded to privacy requests as set forth in the table below.
+    - source: https://nielseniq.com/global/en/legal/annual-privacy-request-metrics/
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: This data reflects requests received in 2025 from all individuals and is inclusive of companies within the NIQ
+        Group.
+  ai_transparency:
+    url: https://nielseniq.com/global/en/legal/product-platforms-privacy-notice/
+    section: Personal Data we collect
+    note: 'The only AI-related disclosure found in the legal pages: the platform notice lists user prompts and conversations
+      with NIQ AI technology as a collected data category. No AI transparency statement as such.'
+    evidence:
+    - source: https://nielseniq.com/global/en/legal/product-platforms-privacy-notice/
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: collected from you when using our artificial intelligence (AI) technology, linked to your Platform User account.
+  subprocessors:
+    url: https://nielseniq.com/global/en/legal/product-platforms-privacy-notice/
+    note: Recipients are disclosed only by category; the Discover platform notice names individual processors (e.g. Amplitude)
+      inline. No standalone dated subprocessor list was found.
+    evidence:
+    - source: https://nielseniq.com/global/en/legal/product-platforms-privacy-notice/
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: We may transfer Personal Data to recipients, who are typically processors handling the Personal Data only in
+        accordance with our instructions.
+    - source: https://nielseniq.com/global/en/legal/niq-discover-platform-privacy-notice/
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: Amplitude, Inc. located in the USA acts as our data processor under the safeguard of Standard Contractual Clauses.
+probed_pages:
+- url: https://nielseniq.com/global/en/legal/privacy-policy/
+  status: 200
+- url: https://nielseniq.com/global/en/legal/product-platforms-privacy-notice/
+  status: 200
+- url: https://nielseniq.com/global/en/legal/cookies-and-other-tracking-technologies/
+  status: 200
+- url: https://nielseniq.com/global/en/legal/annual-privacy-request-metrics/
+  status: 200
+- url: https://nielseniq.com/global/en/legal/niq-discover-platform-privacy-notice/
+  status: 200
+- url: https://nielseniq.com/global/en/legal/niq-suppliers/
+  status: 200
+not_found: No incident/breach-notification commitment, exit assistance, accessibility conformance statement, SBOM, or age-assurance
+  language appeared on the pages read.

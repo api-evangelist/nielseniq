@@ -1,0 +1,164 @@
+openapi: 3.0.1
+info:
+  title: CDAR BARTER
+  description: BARTER
+  version: '1.0'
+servers:
+  - url: https://api.developer.nielseniq.com/Barter
+paths:
+  /barter-backend-service/btr/api/*:
+    post:
+      tags:
+        - cdarbarter-controller
+      summary: postBarterResp
+      description: postBarterResp
+      operationId: postBarterRespUsingPOST
+      parameters:
+        - name: X-NIQ-CLIENT-TOKEN
+          in: header
+          description: X-NIQ-CLIENT-TOKEN
+          required: true
+          schema:
+            type: string
+        - name: content-type
+          in: header
+          description: content-type
+          required: true
+          schema:
+            type: string
+        - name: x-auth-app-id
+          in: header
+          description: x-auth-app-id
+          required: true
+          schema:
+            type: string
+        - name: x-auth-device-serial-no
+          in: header
+          description: x-auth-device-serial-no
+          required: true
+          schema:
+            type: string
+        - name: x-auth-token
+          in: header
+          description: x-auth-token
+          required: true
+          schema:
+            type: string
+        - name: x-auth-user-name
+          in: header
+          description: x-auth-user-name
+          required: true
+          schema:
+            type: string
+        - name: x-auth-user-type
+          in: header
+          description: x-auth-user-type
+          required: true
+          schema:
+            type: string
+        - name: x-cloud-common-auth
+          in: header
+          description: x-cloud-common-auth
+          required: true
+          schema:
+            type: string
+        - name: x-country-id
+          in: header
+          description: x-country-id
+          required: true
+          schema:
+            type: string
+        - name: x-region-id
+          in: header
+          description: x-region-id
+          required: true
+          schema:
+            type: string
+        - name: x-store-id
+          in: header
+          description: x-store-id
+          required: true
+          schema:
+            type: string
+        - name: x-ttr-role
+          in: header
+          description: x-ttr-role
+          required: true
+          schema:
+            type: string
+        - name: x-client-id
+          in: header
+          description: x-client-id
+          required: true
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          schema:
+            type: string
+        - name: x-vendor-id
+          in: header
+          description: x-client-id
+          required: true
+          schema:
+            type: string
+        - name: subscription-key
+          in: header
+          description: subscription-key
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BarterRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BarterResp'
+        '401':
+          description: Unauthorized
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '404':
+          description: Not found
+          content:
+            application/json: { }
+        '500':
+          description: Failure
+          content:
+            application/json: { }
+components:
+  schemas:
+    BarterRequest:
+      title: BarterRequest
+      type: object
+    BarterResp:
+      title: BarterResp
+      type: object
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: subscription-key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: subscription-key
+      in: query
+security:
+  - apiKeyHeader: [ ]
+  - apiKeyQuery: [ ]
+tags:
+  - name: cdarbarter-controller
+    description: CDARBARTER Controller

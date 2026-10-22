@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/nielseniq/main/json-schema/nielseniq-post-create-product-request-schema.json",
+  "title": "Content",
+  "x-generated": "2026-10-18",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/nielseniq-rdecosystem-openapi.yml#/components/schemas/postCreateProductRequest",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object",
+      "items": {
+        "$ref": "#/$defs/CreateProduct"
+      }
+    }
+  },
+  "$defs": {
+    "CreateProduct": {
+      "title": "Content",
+      "type": "object",
+      "properties": {
+        "upc": {
+          "type": "string"
+        },
+        "productId": {
+          "type": "integer"
+        },
+        "gtinFormats": {
+          "type": "object",
+          "items": {
+            "$ref": "#/$defs/GtinFormats"
+          }
+        },
+        "syndicatedChars": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SyndicatedChars"
+          }
+        }
+      }
+    },
+    "GtinFormats": {
+      "title": "GtinFormats",
+      "type": "object",
+      "properties": {
+        "UPC_A": {
+          "type": "string"
+        },
+        "ON_PACK": {
+          "type": "string"
+        },
+        "NO_CHECK_DIGIT": {
+          "type": "string"
+        },
+        "GTIN_14": {
+          "type": "string"
+        }
+      }
+    },
+    "SyndicatedChars": {
+      "title": "SyndicatedChars",
+      "type": "object",
+      "properties": {
+        "SyndicatedCharsObj": {
+          "type": "object",
+          "items": {
+            "$ref": "#/$defs/SyndicatedCharsObj"
+          }
+        }
+      }
+    },
+    "SyndicatedCharsObj": {
+      "title": "SyndicatedCharsObj",
+      "type": "object",
+      "properties": {
+        "characteristic": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

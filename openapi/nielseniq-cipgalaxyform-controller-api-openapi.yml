@@ -1,0 +1,75 @@
+openapi: 3.2.0
+info:
+  title: CIP Galaxy Form Proxy Cipgalaxyform Controller API
+  description: CIP Galaxy Form Proxy
+  version: '1.0'
+servers:
+- url: https://api.developer.nielseniq.com/cipgalaxyform
+security:
+- apiKeyHeader: []
+- apiKeyQuery: []
+tags:
+- name: cipgalaxyform-controller
+  description: CIP GALAXY FORM Controller
+paths:
+  /*:
+    get:
+      tags:
+      - cipgalaxyform-controller
+      summary: getFormFunctionResp
+      operationId: getFormFunctionRespUsingGET
+      parameters:
+      - name: cipinstance
+        in: query
+        description: cipinstance
+        schema:
+          type: string
+      - name: subscription-key
+        in: header
+        description: subscription-key
+        required: true
+        schema:
+          type: string
+      - name: X-NIQ-CLIENT-TOKEN
+        in: header
+        description: X-NIQ-CLIENT-TOKEN
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FunctionResp'
+        '401':
+          description: Unauthorized
+          content:
+            application/json: {}
+        '403':
+          description: Forbidden
+          content:
+            application/json: {}
+        '404':
+          description: Not found
+          content:
+            application/json: {}
+        '500':
+          description: Failure
+          content:
+            application/json: {}
+components:
+  schemas:
+    FunctionResp:
+      title: FunctionResp
+      type: object
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: subscription-key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: subscription-key
+      in: query

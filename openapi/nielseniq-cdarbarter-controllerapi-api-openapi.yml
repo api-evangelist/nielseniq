@@ -1,0 +1,127 @@
+openapi: 3.2.0
+info:
+  title: CDAR BARTER Cdarbarter Controllerapi API
+  description: BARTERAPI
+  version: '1.0'
+servers:
+- url: https://api.developer.nielseniq.com/Barterapi
+security:
+- apiKeyHeader: []
+- apiKeyQuery: []
+tags:
+- name: cdarbarter-controllerapi
+  description: CDARBARTER ControllerApi
+paths:
+  /barter-backend-service/btr/api/*:
+    post:
+      tags:
+      - cdarbarter-controllerapi
+      summary: postBarterRespapi
+      operationId: postBarterRespUsingPOSTApi
+      parameters:
+      - name: apiKey
+        in: header
+        description: apiKey
+        required: true
+        schema:
+          type: string
+      - name: content-type
+        in: header
+        description: content-type
+        required: true
+        schema:
+          type: string
+      - name: clientEmail
+        in: header
+        description: clientEmail
+        required: true
+        schema:
+          type: string
+      - name: applicationName
+        in: header
+        description: applicationName
+        required: true
+        schema:
+          type: string
+      - name: x-auth-user-type
+        in: header
+        description: x-auth-user-type
+        required: true
+        schema:
+          type: string
+      - name: x-region-id
+        in: header
+        description: x-region-id
+        required: true
+        schema:
+          type: string
+      - name: x-store-id
+        in: header
+        description: x-store-id
+        required: true
+        schema:
+          type: string
+      - name: x-vendor-id
+        in: header
+        description: x-vendor-id
+        required: true
+        schema:
+          type: string
+      - name: x-client-id
+        in: header
+        description: x-client-id
+        required: true
+        schema:
+          type: string
+      - name: subscription-key
+        in: header
+        description: subscription-key
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BarterRequestApi'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BarterRespApi'
+        '401':
+          description: Unauthorized
+          content:
+            application/json: {}
+        '403':
+          description: Forbidden
+          content:
+            application/json: {}
+        '404':
+          description: Not found
+          content:
+            application/json: {}
+        '500':
+          description: Failure
+          content:
+            application/json: {}
+components:
+  schemas:
+    BarterRequestApi:
+      title: BarterRequestApi
+      type: object
+    BarterRespApi:
+      title: BarterRespApi
+      type: object
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: subscription-key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: subscription-key
+      in: query

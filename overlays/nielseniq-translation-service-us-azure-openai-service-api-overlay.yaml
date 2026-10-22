@@ -1,0 +1,203 @@
+overlay: 1.0.0
+info:
+  title: NielsenIQ Translation Service US Azure OpenAI Service API overlay
+  version: 1.0.0
+extends: openapi/nielseniq-translation-service-us-azure-openai-service-api-openapi.yml
+x-generated: '2026-10-18'
+x-method: generated
+actions:
+- target: $.info
+  description: Provider context added by API Evangelist
+  update:
+    x-provider: NielsenIQ
+    x-apis-json: https://raw.githubusercontent.com/api-evangelist/nielseniq/refs/heads/main/apis.yml
+    x-developer-portal: https://portal.developer.nielseniq.com/
+- target: $.paths['/deployments/{deployment-id}/chat/completions'].post
+  description: Agent hints for 688cd23dbe4114127cd8747c
+  update:
+    x-agent-hints:
+      safe: false
+      idempotent: false
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/deployments/{deployment-id}/completions'].post
+  description: Agent hints for 688cd23dbe4114127cd8747d
+  update:
+    x-agent-hints:
+      safe: false
+      idempotent: false
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/deployments/{deployment-id}/embeddings'].post
+  description: Agent hints for 688cd23dbe4114127cd8747e
+  update:
+    x-agent-hints:
+      safe: false
+      idempotent: false
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/batches'].get
+  description: Agent hints for 688cd23dbe4114127cd8747f
+  update:
+    x-agent-hints:
+      safe: true
+      idempotent: true
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/batches'].post
+  description: Agent hints for 688cd23dbe4114127cd87480
+  update:
+    x-agent-hints:
+      safe: false
+      idempotent: false
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/batches/{batch-id}'].get
+  description: Agent hints for 688cd23dbe4114127cd87481
+  update:
+    x-agent-hints:
+      safe: true
+      idempotent: true
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/batches/{batch-id}/cancel'].post
+  description: Agent hints for 688cd23dbe4114127cd87482
+  update:
+    x-agent-hints:
+      safe: false
+      idempotent: false
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/files'].get
+  description: Agent hints for 688cd23dbe4114127cd87483
+  update:
+    x-agent-hints:
+      safe: true
+      idempotent: true
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/files'].post
+  description: Agent hints for 688cd23dbe4114127cd87484
+  update:
+    x-agent-hints:
+      safe: false
+      idempotent: false
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/files/{file-id}'].get
+  description: Agent hints for 688cd23dbe4114127cd87485
+  update:
+    x-agent-hints:
+      safe: true
+      idempotent: true
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/files/{file-id}/content'].get
+  description: Agent hints for 688cd23dbe4114127cd87486
+  update:
+    x-agent-hints:
+      safe: true
+      idempotent: true
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/files/import'].post
+  description: Agent hints for 688cd23dbe4114127cd87487
+  update:
+    x-agent-hints:
+      safe: false
+      idempotent: false
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/fine_tuning/jobs'].get
+  description: Agent hints for 688cd23dbe4114127cd87488
+  update:
+    x-agent-hints:
+      safe: true
+      idempotent: true
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/fine_tuning/jobs/{fine-tuning-job-id}'].get
+  description: Agent hints for 688cd23dbe4114127cd87489
+  update:
+    x-agent-hints:
+      safe: true
+      idempotent: true
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/fine_tuning/jobs/{fine-tuning-job-id}'].delete
+  description: Agent hints for 688cd23dbe4114127cd8748a
+  update:
+    x-agent-hints:
+      safe: false
+      idempotent: true
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/fine_tuning/jobs/{fine-tuning-job-id}/events'].get
+  description: Agent hints for 688cd23dbe4114127cd8748b
+  update:
+    x-agent-hints:
+      safe: true
+      idempotent: true
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/fine_tuning/jobs/{fine-tuning-job-id}/cancel'].post
+  description: Agent hints for 688cd23dbe4114127cd8748c
+  update:
+    x-agent-hints:
+      safe: false
+      idempotent: false
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/fine_tuning/jobs/{fine-tuning-job-id}/checkpoints'].get
+  description: Agent hints for 688cd23dbe4114127cd8748d
+  update:
+    x-agent-hints:
+      safe: true
+      idempotent: true
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/models'].get
+  description: Agent hints for 688cd23dbe4114127cd8748e
+  update:
+    x-agent-hints:
+      safe: true
+      idempotent: true
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/models/{model-id}'].get
+  description: Agent hints for 688cd23dbe4114127cd8748f
+  update:
+    x-agent-hints:
+      safe: true
+      idempotent: true
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/uploads'].post
+  description: Agent hints for 688cd23dbe4114127cd87490
+  update:
+    x-agent-hints:
+      safe: false
+      idempotent: false
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/uploads/{upload-id}/parts'].post
+  description: Agent hints for 688cd23dbe4114127cd87491
+  update:
+    x-agent-hints:
+      safe: false
+      idempotent: false
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/uploads/{upload-id}/complete'].post
+  description: Agent hints for 688cd23dbe4114127cd87492
+  update:
+    x-agent-hints:
+      safe: false
+      idempotent: false
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/uploads/{upload-id}/cancel'].post
+  description: Agent hints for 688cd23dbe4114127cd87493
+  update:
+    x-agent-hints:
+      safe: false
+      idempotent: false
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/deployments/{deployment-id}/images/generations'].post
+  description: Agent hints for 688cd23dbe4114127cd87494
+  update:
+    x-agent-hints:
+      safe: false
+      idempotent: false
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/deployments/{deployment-id}/audio/translations'].post
+  description: Agent hints for 688cd23dbe4114127cd87495
+  update:
+    x-agent-hints:
+      safe: false
+      idempotent: false
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/deployments/{deployment-id}/audio/transcriptions'].post
+  description: Agent hints for 688cd23dbe4114127cd87496
+  update:
+    x-agent-hints:
+      safe: false
+      idempotent: false
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency

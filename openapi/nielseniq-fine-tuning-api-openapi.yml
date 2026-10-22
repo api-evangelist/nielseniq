@@ -1,0 +1,208 @@
+openapi: 3.2.0
+info:
+  title: Translation Service US Azure OpenAI Service Fine Tuning API
+  description: Azure OpenAI APIs for completions and search
+  version: '1.0'
+servers:
+- url: https://api.developer.nielseniq.com/cis/us/translation/openai
+tags:
+- name: Fine Tuning
+paths:
+  /fine_tuning/jobs:
+    get:
+      summary: Gets a list of all fine-tune jobs owned by the Azure OpenAI resource.
+      operationId: 688cd23dbe4114127cd87488
+      parameters:
+      - name: api-version
+        in: query
+        description: The requested API version.
+        required: true
+        schema:
+          type: string
+      - name: after
+        in: query
+        description: Identifier for the last event from the previous pagination request.
+        schema:
+          type: string
+      - name: limit
+        in: query
+        description: Number of events to retrieve. Defaults to 20.
+        schema:
+          enum:
+          - 20
+          type: integer
+          default: 20
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json: {}
+        '400':
+          description: An error occurred.
+          content:
+            application/json: {}
+      tags:
+      - Fine Tuning
+  /fine_tuning/jobs/{fine-tuning-job-id}:
+    get:
+      summary: Gets details for a single fine-tune job specified by the given fine-tune-id.
+      operationId: 688cd23dbe4114127cd87489
+      parameters:
+      - name: fine-tuning-job-id
+        in: path
+        description: The identifier of the fine-tune job.
+        required: true
+        schema:
+          type: string
+      - name: api-version
+        in: query
+        description: The requested API version.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json: {}
+        '400':
+          description: An error occurred.
+          content:
+            application/json: {}
+      tags:
+      - Fine Tuning
+    delete:
+      summary: Deletes the fine-tune job specified by the given fine-tune-id
+      operationId: 688cd23dbe4114127cd8748a
+      parameters:
+      - name: fine-tuning-job-id
+        in: path
+        description: The identifier of the fine-tune job.
+        required: true
+        schema:
+          type: string
+      - name: api-version
+        in: query
+        description: The requested API version.
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: The fine tune was successfully deleted.
+        '400':
+          description: An error occurred.
+          content:
+            application/json: {}
+      tags:
+      - Fine Tuning
+  /fine_tuning/jobs/{fine-tuning-job-id}/events:
+    get:
+      summary: Gets the events for the fine-tune job specified by the given fine-tune-id.
+      operationId: 688cd23dbe4114127cd8748b
+      parameters:
+      - name: fine-tuning-job-id
+        in: path
+        description: The identifier of the fine-tune job.
+        required: true
+        schema:
+          type: string
+      - name: api-version
+        in: query
+        description: The requested API version.
+        required: true
+        schema:
+          type: string
+      - name: after
+        in: query
+        description: Identifier for the last event from the previous pagination request.
+        schema:
+          type: string
+      - name: limit
+        in: query
+        description: Number of events to retrieve. Defaults to 20.
+        schema:
+          enum:
+          - 20
+          type: integer
+          default: 20
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json: {}
+        '400':
+          description: An error occurred.
+          content:
+            application/json: {}
+      tags:
+      - Fine Tuning
+  /fine_tuning/jobs/{fine-tuning-job-id}/cancel:
+    post:
+      summary: Cancels the processing of the fine-tune job specified by the given fine-tune-id
+      operationId: 688cd23dbe4114127cd8748c
+      parameters:
+      - name: fine-tuning-job-id
+        in: path
+        description: The identifier of the fine-tune job.
+        required: true
+        schema:
+          type: string
+      - name: api-version
+        in: query
+        description: The requested API version.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: The fine tune has been successfully canceled
+          content:
+            application/json: {}
+        '400':
+          description: An error occurred.
+          content:
+            application/json: {}
+      tags:
+      - Fine Tuning
+  /fine_tuning/jobs/{fine-tuning-job-id}/checkpoints:
+    get:
+      summary: Gets the checkpoints for the fine-tune job specified by the given fine-tune-id.
+      operationId: 688cd23dbe4114127cd8748d
+      parameters:
+      - name: fine-tuning-job-id
+        in: path
+        description: The identifier of the fine-tune job.
+        required: true
+        schema:
+          type: string
+      - name: api-version
+        in: query
+        description: The requested API version.
+        required: true
+        schema:
+          type: string
+      - name: after
+        in: query
+        description: Identifier for the last checkpoint ID from the previous pagination request.
+        schema:
+          type: string
+      - name: limit
+        in: query
+        description: Number of checkpoints to retrieve. Defaults to 10.
+        schema:
+          enum:
+          - 10
+          type: integer
+          default: 10
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json: {}
+        '400':
+          description: An error occurred.
+          content:
+            application/json: {}
+      tags:
+      - Fine Tuning

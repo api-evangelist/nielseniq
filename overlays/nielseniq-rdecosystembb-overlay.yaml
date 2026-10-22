@@ -1,0 +1,42 @@
+overlay: 1.0.0
+info:
+  title: NielsenIQ RdecosystemBB overlay
+  version: 1.0.0
+extends: ../openapi/_original/nielseniq-rdecosystembb-openapi.yml
+x-generated: '2026-10-18'
+x-method: generated
+actions:
+- target: $.info
+  description: Provider context added by API Evangelist
+  update:
+    x-provider: NielsenIQ
+    x-apis-json: https://raw.githubusercontent.com/api-evangelist/nielseniq/refs/heads/main/apis.yml
+    x-developer-portal: https://portal.developer.nielseniq.com/
+- target: $.paths['/rdfoundationalfeed'].get
+  description: Agent hints for getRdFoundationalFeedRespUsingGET
+  update:
+    x-agent-hints:
+      safe: true
+      idempotent: true
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/updateBbProcessingStatus'].post
+  description: Agent hints for updateBbProcessingStatusRespUsingPOST
+  update:
+    x-agent-hints:
+      safe: false
+      idempotent: false
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/resetBbProcessingStatus'].post
+  description: Agent hints for resetBbProcessingStatusRespUsingPOST
+  update:
+    x-agent-hints:
+      safe: false
+      idempotent: false
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency
+- target: $.paths['/rdimagedispatch'].get
+  description: Agent hints for getRdimageDispatchRespUsingGET
+  update:
+    x-agent-hints:
+      safe: true
+      idempotent: true
+      basis: HTTP method semantics (RFC 9110); the spec itself states nothing about idempotency

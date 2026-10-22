@@ -1,0 +1,110 @@
+openapi: 3.0.1
+info:
+  title: CDAR GNIC
+  description: GNIC
+  version: '1.0'
+servers:
+  - url: https://api.developer.nielseniq.com/gnic-ext
+paths:
+  /na/ext/extvendorservice/rest/*:
+    post:
+      tags:
+        - cdargnic-controller
+      summary: postGnicResp
+      description: postGnicResp
+      operationId: postGnicRespUsingPOST
+      parameters:
+        - name: x-region-id
+          in: header
+          description: x-region-id
+          required: true
+          schema:
+            type: string
+        - name: x-client-id
+          in: header
+          description: x-client-id
+          required: true
+          schema:
+            type: string
+        - name: x-country-id
+          in: header
+          description: x-country-id
+          required: true
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          schema:
+            type: string
+        - name: content-type
+          in: header
+          description: content-type
+          required: true
+          schema:
+            type: string
+        - name: subscription-key
+          in: header
+          description: subscription-key
+          required: true
+          schema:
+            type: string
+        - name: X-NIQ-CLIENT-TOKEN
+          in: header
+          description: X-NIQ-CLIENT-TOKEN
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GnicRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GnicResp'
+        '401':
+          description: Unauthorized
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '404':
+          description: Not found
+          content:
+            application/json: { }
+        '500':
+          description: Failure
+          content:
+            application/json: { }
+components:
+  schemas:
+    GnicRequest:
+      title: GnicRequest
+      type: object
+    GnicResp:
+      title: GnicResp
+      type: object
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: subscription-key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: subscription-key
+      in: query
+security:
+  - apiKeyHeader: [ ]
+  - apiKeyQuery: [ ]
+tags:
+  - name: cdargnic-controller
+    description: CDARGNIC Controller

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/nielseniq/main/json-schema/nielseniq-gnic-request-usapi-schema.json",
+  "title": "GnicRequestUSApi",
+  "x-generated": "2026-10-18",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/nielseniq-cdar-gnicusapi-openapi.yml#/components/schemas/GnicRequestUSApi",
+  "type": "object"
+}

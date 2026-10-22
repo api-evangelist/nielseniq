@@ -1,0 +1,232 @@
+name: NielsenIQ MCP
+type: MCPServer
+generated: '2026-10-18'
+method: searched
+source:
+- https://nielseniq.com/global/en/legal/niq-connect-ai-terms-and-conditions/
+- https://nielseniq.com/global/en/products/optiq/
+- https://nielseniq.com/global/en/news-center/2026/niq-deployco-consumer-intelligence-enterprise-workflows/
+official_server:
+  name: NIQ Optiq Bridge (MCP Connector)
+  exists: true
+  evidence: 'NIQ ConnectAI Terms and Conditions (HTTP 200, fetched 2026-10-18): "“Optiq Bridge” (MCP Connector) means NIQ’s
+    branded implementation of a Model Context Protocol (MCP) server enabling Authorized AI Platforms to connect to Optiq and
+    to submit prompts or queries to, and receive Output from, Optiq programmatically via API access." Authorized AI Platforms
+    are listed as Microsoft Copilot, OpenAI ChatGPT, Google Gemini and Anthropic Claude.'
+  evidence_url: https://nielseniq.com/global/en/legal/niq-connect-ai-terms-and-conditions/
+  access: Contracted enterprise product (Optiq Suite, under an SOW); usable only through NIQ-approved authentication and within
+    NIQ rate limits (Terms §8.7).
+  availability: NIQ newsroom (2026) says expanded Optiq Bridge versions were scheduled for early September 2026.
+  endpoint_published: false
+  tools_published: false
+  note: 'NIQ publishes no endpoint URL, no tool list and no install package. Probes on 2026-10-18: portal.developer.nielseniq.com/.well-known/mcp.json
+    -> 404; mcp.nielseniq.com did not resolve (connection failed, status 000). Optiq Bridge queries Optiq (the Discover conversational
+    layer), not the Azure API Management APIs in openapi/.'
+deployment:
+  mode: none
+  auth: unknown
+  verified: searched
+  note: An official MCP server (Optiq Bridge) exists, but NIQ publishes no endpoint, so no remote endpoint is recorded. The
+    tools below are a candidate list DERIVED from the OpenAPI contracts; nobody ships them.
+tools:
+- name: getRdDispatchRespUsingGET
+  description: getRdDispatchResp
+  operation:
+    spec: openapi/nielseniq-rdecosystem-openapi.yml
+    method: GET
+    path: /rddispatch
+    operationId: getRdDispatchRespUsingGET
+  readOnly: true
+  status: candidate
+- name: getRdimageDispatchRespUsingGET
+  description: getRdimageDispatchResp
+  operation:
+    spec: openapi/nielseniq-rdecosystem-openapi.yml
+    method: GET
+    path: /rdimagedispatch
+    operationId: getRdimageDispatchRespUsingGET
+  readOnly: true
+  status: candidate
+- name: rejectImageRespUsingPOST
+  description: rejectImageResp
+  operation:
+    spec: openapi/nielseniq-rdecosystem-openapi.yml
+    method: POST
+    path: /rejectImage
+    operationId: rejectImageRespUsingPOST
+  readOnly: false
+  status: candidate
+- name: getRdICVDispatchforNanKeyRespUsingGET
+  description: getRdICVDispatchforNanKeyResp
+  operation:
+    spec: openapi/nielseniq-rdecosystem-openapi.yml
+    method: GET
+    path: /rddispatch/icv/nankey/{id}
+    operationId: getRdICVDispatchforNanKeyRespUsingGET
+  readOnly: true
+  status: candidate
+- name: getRdICVDispatchforExtrncodeRespUsingGET
+  description: getRdICVDispatchforExtrncodeResp
+  operation:
+    spec: openapi/nielseniq-rdecosystem-openapi.yml
+    method: GET
+    path: /rddispatch/icv/extrncd/{id}
+    operationId: getRdICVDispatchforExtrncodeRespUsingGET
+  readOnly: true
+  status: candidate
+- name: postackRdICVDispatchforIDRespUsingPOST
+  description: postackRdICVDispatchforIDResp
+  operation:
+    spec: openapi/nielseniq-rdecosystem-openapi.yml
+    method: POST
+    path: /rddispatch/icv/ack/id/{id}
+    operationId: postackRdICVDispatchforIDRespUsingPOST
+  readOnly: false
+  status: candidate
+- name: postackRdICVDispatchRespUsingPOST
+  description: postackRdICVDispatchResp
+  operation:
+    spec: openapi/nielseniq-rdecosystem-openapi.yml
+    method: POST
+    path: /rddispatch/icv/ack
+    operationId: postackRdICVDispatchRespUsingPOST
+  readOnly: false
+  status: candidate
+- name: getRdICVDispatchRespUsingGET
+  description: getRdICVDispatchResp
+  operation:
+    spec: openapi/nielseniq-rdecosystem-openapi.yml
+    method: GET
+    path: /rddispatch/icv
+    operationId: getRdICVDispatchRespUsingGET
+  readOnly: true
+  status: candidate
+- name: postCreateProductRespUsingPOST
+  description: postCreateProductResp
+  operation:
+    spec: openapi/nielseniq-rdecosystem-openapi.yml
+    method: POST
+    path: /rddispatch/product/create
+    operationId: postCreateProductRespUsingPOST
+  readOnly: false
+  status: candidate
+- name: getRdFoundationalFeedRespUsingGET
+  description: getRdFoundationalFeedResp
+  operation:
+    spec: openapi/nielseniq-rdecosystembb-openapi.yml
+    method: GET
+    path: /rdfoundationalfeed
+    operationId: getRdFoundationalFeedRespUsingGET
+  readOnly: true
+  status: candidate
+- name: updateBbProcessingStatusRespUsingPOST
+  description: updateBbProcessingStatusResp
+  operation:
+    spec: openapi/nielseniq-rdecosystembb-openapi.yml
+    method: POST
+    path: /updateBbProcessingStatus
+    operationId: updateBbProcessingStatusRespUsingPOST
+  readOnly: false
+  status: candidate
+- name: resetBbProcessingStatusRespUsingPOST
+  description: resetBbProcessingStatusResp
+  operation:
+    spec: openapi/nielseniq-rdecosystembb-openapi.yml
+    method: POST
+    path: /resetBbProcessingStatus
+    operationId: resetBbProcessingStatusRespUsingPOST
+  readOnly: false
+  status: candidate
+- name: getRdimageDispatchRespUsingGET
+  description: getRdimageDispatchResp
+  operation:
+    spec: openapi/nielseniq-rdecosystembb-openapi.yml
+    method: GET
+    path: /rdimagedispatch
+    operationId: getRdimageDispatchRespUsingGET
+  readOnly: true
+  status: candidate
+- name: getBatchStoreAvailabilityRespUsingPOST
+  description: getBatchStoreAvailabilityResp
+  operation:
+    spec: openapi/nielseniq-store-availability-bulk-openapi.yml
+    method: POST
+    path: /batchStoreAvailability
+    operationId: getBatchStoreAvailabilityRespUsingPOST
+  readOnly: false
+  status: candidate
+- name: getAddCheckDigitRespUsingPOST
+  description: getAddCheckDigitResp
+  operation:
+    spec: openapi/nielseniq-store-availability-bulk-openapi.yml
+    method: POST
+    path: /addCheckDigit
+    operationId: getAddCheckDigitRespUsingPOST
+  readOnly: false
+  status: candidate
+- name: getJobStatusRespUsingGET
+  description: getJobStatusResp
+  operation:
+    spec: openapi/nielseniq-store-availability-bulk-openapi.yml
+    method: GET
+    path: /getJobStatus
+    operationId: getJobStatusRespUsingGET
+  readOnly: true
+  status: candidate
+- name: getCataloguesRespUsingPOST
+  description: getCataloguesResp
+  operation:
+    spec: openapi/nielseniq-buy-data-access-catalogues-api-openapi.yml
+    method: POST
+    path: /Catalogues
+    operationId: getCataloguesRespUsingPOST
+  readOnly: false
+  status: candidate
+- name: getAuditSummaryReportRespUsingGET
+  description: getAuditSummaryReportResp
+  operation:
+    spec: openapi/nielseniq-cdar-vendor-reports-openapi.yml
+    method: GET
+    path: /nso-scheduler/nso/fs/vendorReports/getAuditSummaryReport
+    operationId: getAuditSummaryReportRespUsingGET
+  readOnly: true
+  status: candidate
+- name: postJIRAUpdatesRespUsingPOST
+  description: postJIRAUpdatesResp
+  operation:
+    spec: openapi/nielseniq-crmcasetrackapi-openapi.yml
+    method: POST
+    path: /jiraevents/jiraupdate
+    operationId: postJIRAUpdatesRespUsingPOST
+  readOnly: false
+  status: candidate
+- name: postDISCOVERNotificationRespUsingPOST
+  description: postDISCOVERNotificationResp
+  operation:
+    spec: openapi/nielseniq-crmcasetrackapi-openapi.yml
+    method: POST
+    path: /discoverdmevents/notification
+    operationId: postDISCOVERNotificationRespUsingPOST
+  readOnly: false
+  status: candidate
+- name: postGettokenRespUsingPOST
+  description: postGettokenResp
+  operation:
+    spec: openapi/nielseniq-cdar-gettoken-openapi.yml
+    method: POST
+    path: /common-auth-service/externalVendors/getAuthToken
+    operationId: postGettokenRespUsingPOST
+  readOnly: false
+  status: candidate
+- name: postGettokenprodnaRespUsingPOST
+  description: postGettokenprodnaResp
+  operation:
+    spec: openapi/nielseniq-cdar-gettokenprodna-openapi.yml
+    method: POST
+    path: /na/common-auth-service/externalVendors/getAuthToken
+    operationId: postGettokenprodnaRespUsingPOST
+  readOnly: false
+  status: candidate
+excluded_from_candidates:
+- 'Azure OpenAI proxy specs (docusearch, translation-service): pass-through LLM endpoints, not NIQ data operations'
+- 'Wildcard-path proxies (CDAR BARTER/GNIC/ECOLLECTION, CIP Galaxy): the backend route is "*" and undescribed'

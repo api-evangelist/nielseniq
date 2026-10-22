@@ -1,0 +1,171 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/nielseniq/main/json-schema/nielseniq-content-filter-choice-results-schema.json",
+  "title": "contentFilterChoiceResults",
+  "description": "Information about the content filtering category (hate, sexual, violence, self_harm), if it has been detected, as well as the severity level (very_low, low, medium, high-scale that determines the intensity and risk level of harmful content) and if it has been filtered or not. Information about third party text and profanity, if it has been detected, and if it has been filtered or not. And information about customer block list, if it has been filtered and its id.",
+  "x-generated": "2026-10-18",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/nielseniq-docusearch-us-azure-openai-service-api-openapi.yml#/components/schemas/contentFilterChoiceResults",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "#/$defs/contentFilterResultsBase"
+    },
+    {
+      "properties": {
+        "protected_material_text": {
+          "$ref": "#/$defs/contentFilterDetectedResult"
+        }
+      }
+    },
+    {
+      "properties": {
+        "protected_material_code": {
+          "$ref": "#/$defs/contentFilterDetectedWithCitationResult"
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "contentFilterDetectedResult": {
+      "required": [
+        "detected",
+        "filtered"
+      ],
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/$defs/contentFilterResultBase"
+        },
+        {
+          "properties": {
+            "detected": {
+              "type": "boolean"
+            }
+          }
+        }
+      ]
+    },
+    "contentFilterDetectedWithCitationResult": {
+      "required": [
+        "detected",
+        "filtered"
+      ],
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/$defs/contentFilterDetectedResult"
+        },
+        {
+          "properties": {
+            "citation": {
+              "type": "object",
+              "properties": {
+                "URL": {
+                  "type": "string"
+                },
+                "license": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "contentFilterResultBase": {
+      "required": [
+        "filtered"
+      ],
+      "type": "object",
+      "properties": {
+        "filtered": {
+          "type": "boolean"
+        }
+      }
+    },
+    "contentFilterResultsBase": {
+      "type": "object",
+      "properties": {
+        "sexual": {
+          "$ref": "#/$defs/contentFilterSeverityResult"
+        },
+        "violence": {
+          "$ref": "#/$defs/contentFilterSeverityResult"
+        },
+        "hate": {
+          "$ref": "#/$defs/contentFilterSeverityResult"
+        },
+        "self_harm": {
+          "$ref": "#/$defs/contentFilterSeverityResult"
+        },
+        "profanity": {
+          "$ref": "#/$defs/contentFilterDetectedResult"
+        },
+        "error": {
+          "$ref": "#/$defs/errorBase"
+        }
+      },
+      "description": "Information about the content filtering results."
+    },
+    "contentFilterSeverityResult": {
+      "required": [
+        "severity",
+        "filtered"
+      ],
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/$defs/contentFilterResultBase"
+        },
+        {
+          "properties": {
+            "severity": {
+              "enum": [
+                "safe",
+                "low",
+                "medium",
+                "high"
+              ],
+              "type": "string",
+              "x-ms-enum": {
+                "name": "ContentFilterSeverity",
+                "modelAsString": true,
+                "values": [
+                  {
+                    "value": "safe",
+                    "description": "General content or related content in generic or non-harmful contexts."
+                  },
+                  {
+                    "value": "low",
+                    "description": "Harmful content at a low intensity and risk level."
+                  },
+                  {
+                    "value": "medium",
+                    "description": "Harmful content at a medium intensity and risk level."
+                  },
+                  {
+                    "value": "high",
+                    "description": "Harmful content at a high intensity and risk level."
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "errorBase": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

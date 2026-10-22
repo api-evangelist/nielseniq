@@ -1,0 +1,118 @@
+generated: '2026-10-18'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 9
+  own: 6
+  other_domain: 0
+  platform: 3
+  roles:
+  - api
+  - other
+  - portal
+  - website
+hosts:
+- host: api.developer.nielseniq.com
+  found_by:
+  - apis[]
+  types: []
+  serves:
+  - api
+  registrable_domain: nielseniq.com
+  role: api
+  relation: own
+- host: api.nielseniq.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: nielseniq.com
+  role: api
+  relation: own
+- host: investors.nielseniq.com
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types:
+  - InvestorRelations
+  serves: []
+  registrable_domain: nielseniq.com
+  role: other
+  relation: own
+- host: nielseniq.com
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  types:
+  - Security
+  - Pricing
+  - Website
+  - Blog
+  - Newsroom
+  - Support
+  - Login
+  - About
+  - Leadership
+  - Careers
+  - TermsOfService
+  - PrivacyPolicy
+  serves: []
+  registrable_domain: nielseniq.com
+  role: website
+  relation: own
+- host: portal.developer.nielseniq.com
+  found_by:
+  - pointer
+  - apis[]
+  types:
+  - DeveloperPortal
+  - Documentation
+  serves:
+  - docs
+  registrable_domain: nielseniq.com
+  role: portal
+  relation: own
+- host: vdp.nielseniq.com
+  found_by:
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: nielseniq.com
+  role: other
+  relation: own
+- host: www.linkedin.com
+  found_by:
+  - pointer
+  types:
+  - LinkedIn
+  serves: []
+  registrable_domain: linkedin.com
+  role: other
+  relation: platform
+- host: www.x.com
+  found_by:
+  - pointer
+  types:
+  - X
+  serves: []
+  registrable_domain: x.com
+  role: other
+  relation: platform
+- host: www.youtube.com
+  found_by:
+  - pointer
+  types:
+  - YouTube
+  serves: []
+  registrable_domain: youtube.com
+  role: other
+  relation: platform

@@ -1,0 +1,838 @@
+{
+  "@context": {
+    "@vocab": "https://nielseniq.com/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "nielseniq": "https://nielseniq.com/schema#",
+    "errorResponse": "nielseniq:errorResponse",
+    "error": {
+      "@id": "nielseniq:error",
+      "@type": "@id"
+    },
+    "errorBase": "nielseniq:errorBase",
+    "code": {
+      "@id": "nielseniq:code",
+      "@type": "xsd:string"
+    },
+    "message": {
+      "@id": "nielseniq:message",
+      "@type": "xsd:string"
+    },
+    "innerError": "nielseniq:innerError",
+    "content_filter_results": {
+      "@id": "nielseniq:content_filter_results",
+      "@type": "@id"
+    },
+    "innerErrorCode": "nielseniq:innerErrorCode",
+    "dalleErrorResponse": "nielseniq:dalleErrorResponse",
+    "dalleError": "nielseniq:dalleError",
+    "param": {
+      "@id": "nielseniq:param",
+      "@type": "xsd:string"
+    },
+    "type": {
+      "@id": "nielseniq:type",
+      "@type": "xsd:string"
+    },
+    "inner_error": {
+      "@id": "nielseniq:inner_error",
+      "@type": "@id"
+    },
+    "dalleInnerError": "nielseniq:dalleInnerError",
+    "revised_prompt": {
+      "@id": "nielseniq:revised_prompt",
+      "@type": "xsd:string"
+    },
+    "contentFilterResultBase": "nielseniq:contentFilterResultBase",
+    "filtered": {
+      "@id": "nielseniq:filtered",
+      "@type": "xsd:boolean"
+    },
+    "contentFilterResultsBase": "nielseniq:contentFilterResultsBase",
+    "sexual": {
+      "@id": "nielseniq:sexual",
+      "@type": "@id"
+    },
+    "violence": {
+      "@id": "nielseniq:violence",
+      "@type": "@id"
+    },
+    "hate": {
+      "@id": "nielseniq:hate",
+      "@type": "@id"
+    },
+    "self_harm": {
+      "@id": "nielseniq:self_harm",
+      "@type": "@id"
+    },
+    "profanity": {
+      "@id": "nielseniq:profanity",
+      "@type": "@id"
+    },
+    "promptFilterResult": "nielseniq:promptFilterResult",
+    "prompt_index": {
+      "@id": "nielseniq:prompt_index",
+      "@type": "xsd:integer"
+    },
+    "dalleContentFilterResults": "nielseniq:dalleContentFilterResults",
+    "chatCompletionsRequestCommon": "nielseniq:chatCompletionsRequestCommon",
+    "temperature": {
+      "@id": "nielseniq:temperature",
+      "@type": "xsd:decimal"
+    },
+    "top_p": {
+      "@id": "nielseniq:top_p",
+      "@type": "xsd:decimal"
+    },
+    "stream": {
+      "@id": "nielseniq:stream",
+      "@type": "xsd:boolean"
+    },
+    "stop": {
+      "@id": "nielseniq:stop"
+    },
+    "max_tokens": {
+      "@id": "nielseniq:max_tokens",
+      "@type": "xsd:integer"
+    },
+    "presence_penalty": {
+      "@id": "nielseniq:presence_penalty",
+      "@type": "xsd:decimal"
+    },
+    "frequency_penalty": {
+      "@id": "nielseniq:frequency_penalty",
+      "@type": "xsd:decimal"
+    },
+    "logit_bias": {
+      "@id": "nielseniq:logit_bias"
+    },
+    "user": {
+      "@id": "nielseniq:user",
+      "@type": "xsd:string"
+    },
+    "chatCompletionResponseFormat": "nielseniq:chatCompletionResponseFormat",
+    "chatCompletionFunction": "nielseniq:chatCompletionFunction",
+    "name": {
+      "@id": "nielseniq:name",
+      "@type": "xsd:string"
+    },
+    "description": {
+      "@id": "nielseniq:description",
+      "@type": "xsd:string"
+    },
+    "parameters": {
+      "@id": "nielseniq:parameters",
+      "@type": "@id"
+    },
+    "chatCompletionRequestMessage": "nielseniq:chatCompletionRequestMessage",
+    "role": {
+      "@id": "nielseniq:role",
+      "@type": "@id"
+    },
+    "chatCompletionRequestMessageRole": "nielseniq:chatCompletionRequestMessageRole",
+    "chatCompletionRequestMessageContentPart": "nielseniq:chatCompletionRequestMessageContentPart",
+    "chatCompletionRequestMessageContentPartType": "nielseniq:chatCompletionRequestMessageContentPartType",
+    "imageDetailLevel": "nielseniq:imageDetailLevel",
+    "azureChatExtensionConfiguration": "nielseniq:azureChatExtensionConfiguration",
+    "azureChatExtensionType": "nielseniq:azureChatExtensionType",
+    "azureSearchChatExtensionParameters": "nielseniq:azureSearchChatExtensionParameters",
+    "authentication": {
+      "@id": "nielseniq:authentication"
+    },
+    "top_n_documents": {
+      "@id": "nielseniq:top_n_documents",
+      "@type": "xsd:integer"
+    },
+    "in_scope": {
+      "@id": "nielseniq:in_scope",
+      "@type": "xsd:boolean"
+    },
+    "strictness": {
+      "@id": "nielseniq:strictness",
+      "@type": "xsd:integer"
+    },
+    "role_information": {
+      "@id": "nielseniq:role_information",
+      "@type": "xsd:string"
+    },
+    "endpoint": {
+      "@id": "nielseniq:endpoint",
+      "@type": "@id"
+    },
+    "index_name": {
+      "@id": "nielseniq:index_name",
+      "@type": "xsd:string"
+    },
+    "fields_mapping": {
+      "@id": "nielseniq:fields_mapping",
+      "@type": "@id"
+    },
+    "query_type": {
+      "@id": "nielseniq:query_type",
+      "@type": "@id"
+    },
+    "semantic_configuration": {
+      "@id": "nielseniq:semantic_configuration",
+      "@type": "xsd:string"
+    },
+    "filter": {
+      "@id": "nielseniq:filter",
+      "@type": "xsd:string"
+    },
+    "embedding_dependency": {
+      "@id": "nielseniq:embedding_dependency"
+    },
+    "azureSearchIndexFieldMappingOptions": "nielseniq:azureSearchIndexFieldMappingOptions",
+    "title_field": {
+      "@id": "nielseniq:title_field",
+      "@type": "xsd:string"
+    },
+    "url_field": {
+      "@id": "nielseniq:url_field",
+      "@type": "xsd:string"
+    },
+    "filepath_field": {
+      "@id": "nielseniq:filepath_field",
+      "@type": "xsd:string"
+    },
+    "content_fields": {
+      "@id": "nielseniq:content_fields",
+      "@container": "@list"
+    },
+    "content_fields_separator": {
+      "@id": "nielseniq:content_fields_separator",
+      "@type": "xsd:string"
+    },
+    "vector_fields": {
+      "@id": "nielseniq:vector_fields",
+      "@container": "@list"
+    },
+    "azureSearchQueryType": "nielseniq:azureSearchQueryType",
+    "azureCosmosDBChatExtensionParameters": "nielseniq:azureCosmosDBChatExtensionParameters",
+    "database_name": {
+      "@id": "nielseniq:database_name",
+      "@type": "xsd:string"
+    },
+    "container_name": {
+      "@id": "nielseniq:container_name",
+      "@type": "xsd:string"
+    },
+    "azureCosmosDBFieldMappingOptions": "nielseniq:azureCosmosDBFieldMappingOptions",
+    "onYourDataAuthenticationOptions": "nielseniq:onYourDataAuthenticationOptions",
+    "onYourDataAuthenticationType": "nielseniq:onYourDataAuthenticationType",
+    "onYourDataVectorizationSource": "nielseniq:onYourDataVectorizationSource",
+    "onYourDataVectorizationSourceType": "nielseniq:onYourDataVectorizationSourceType",
+    "azureChatExtensionsMessageContext": "nielseniq:azureChatExtensionsMessageContext",
+    "citations": {
+      "@id": "nielseniq:citations",
+      "@container": "@list"
+    },
+    "intent": {
+      "@id": "nielseniq:intent",
+      "@type": "xsd:string"
+    },
+    "citation": "nielseniq:citation",
+    "content": {
+      "@id": "nielseniq:content",
+      "@type": "xsd:string"
+    },
+    "title": {
+      "@id": "nielseniq:title",
+      "@type": "xsd:string"
+    },
+    "url": {
+      "@id": "nielseniq:url",
+      "@type": "xsd:string"
+    },
+    "filepath": {
+      "@id": "nielseniq:filepath",
+      "@type": "xsd:string"
+    },
+    "chunk_id": {
+      "@id": "nielseniq:chunk_id",
+      "@type": "xsd:string"
+    },
+    "chatCompletionMessageToolCall": "nielseniq:chatCompletionMessageToolCall",
+    "id": {
+      "@id": "nielseniq:id",
+      "@type": "xsd:string"
+    },
+    "function": {
+      "@id": "nielseniq:function"
+    },
+    "toolCallType": "nielseniq:toolCallType",
+    "chatCompletionResponseMessage": "nielseniq:chatCompletionResponseMessage",
+    "tool_calls": {
+      "@id": "nielseniq:tool_calls",
+      "@container": "@list"
+    },
+    "function_call": {
+      "@id": "nielseniq:function_call",
+      "@type": "@id"
+    },
+    "context": {
+      "@id": "nielseniq:context",
+      "@type": "@id"
+    },
+    "chatCompletionResponseMessageRole": "nielseniq:chatCompletionResponseMessageRole",
+    "chatCompletionNamedToolChoice": "nielseniq:chatCompletionNamedToolChoice",
+    "chatCompletionFunctionCall": "nielseniq:chatCompletionFunctionCall",
+    "arguments": {
+      "@id": "nielseniq:arguments",
+      "@type": "xsd:string"
+    },
+    "chatCompletionsResponseCommon": "nielseniq:chatCompletionsResponseCommon",
+    "object": {
+      "@id": "nielseniq:object",
+      "@type": "@id"
+    },
+    "created": {
+      "@id": "nielseniq:created",
+      "@type": "xsd:integer"
+    },
+    "model": {
+      "@id": "nielseniq:model",
+      "@type": "xsd:string"
+    },
+    "usage": {
+      "@id": "nielseniq:usage",
+      "@type": "@id"
+    },
+    "system_fingerprint": {
+      "@id": "nielseniq:system_fingerprint",
+      "@type": "xsd:string"
+    },
+    "chatCompletionResponseObject": "nielseniq:chatCompletionResponseObject",
+    "completionUsage": "nielseniq:completionUsage",
+    "prompt_tokens": {
+      "@id": "nielseniq:prompt_tokens",
+      "@type": "xsd:integer"
+    },
+    "completion_tokens": {
+      "@id": "nielseniq:completion_tokens",
+      "@type": "xsd:integer"
+    },
+    "total_tokens": {
+      "@id": "nielseniq:total_tokens",
+      "@type": "xsd:integer"
+    },
+    "chatCompletionTool": "nielseniq:chatCompletionTool",
+    "chatCompletionToolType": "nielseniq:chatCompletionToolType",
+    "chatCompletionChoiceCommon": "nielseniq:chatCompletionChoiceCommon",
+    "index": {
+      "@id": "nielseniq:index",
+      "@type": "xsd:integer"
+    },
+    "finish_reason": {
+      "@id": "nielseniq:finish_reason",
+      "@type": "xsd:string"
+    },
+    "createTranslationRequest": "nielseniq:createTranslationRequest",
+    "file": {
+      "@id": "nielseniq:file",
+      "@type": "xsd:string"
+    },
+    "prompt": {
+      "@id": "nielseniq:prompt",
+      "@type": "xsd:string"
+    },
+    "response_format": {
+      "@id": "nielseniq:response_format",
+      "@type": "@id"
+    },
+    "audioResponse": "nielseniq:audioResponse",
+    "text": {
+      "@id": "nielseniq:text",
+      "@type": "xsd:string"
+    },
+    "audioResponseFormat": "nielseniq:audioResponseFormat",
+    "createTranscriptionRequest": "nielseniq:createTranscriptionRequest",
+    "language": {
+      "@id": "nielseniq:language",
+      "@type": "xsd:string"
+    },
+    "audioSegment": "nielseniq:audioSegment",
+    "seek": {
+      "@id": "nielseniq:seek",
+      "@type": "xsd:decimal"
+    },
+    "start": {
+      "@id": "nielseniq:start",
+      "@type": "xsd:decimal"
+    },
+    "end": {
+      "@id": "nielseniq:end",
+      "@type": "xsd:decimal"
+    },
+    "tokens": {
+      "@id": "nielseniq:tokens",
+      "@container": "@list"
+    },
+    "avg_logprob": {
+      "@id": "nielseniq:avg_logprob",
+      "@type": "xsd:decimal"
+    },
+    "compression_ratio": {
+      "@id": "nielseniq:compression_ratio",
+      "@type": "xsd:decimal"
+    },
+    "no_speech_prob": {
+      "@id": "nielseniq:no_speech_prob",
+      "@type": "xsd:decimal"
+    },
+    "imageQuality": "nielseniq:imageQuality",
+    "imagesResponseFormat": "nielseniq:imagesResponseFormat",
+    "imageSize": "nielseniq:imageSize",
+    "imageStyle": "nielseniq:imageStyle",
+    "imageGenerationsRequest": "nielseniq:imageGenerationsRequest",
+    "n": {
+      "@id": "nielseniq:n",
+      "@type": "xsd:integer"
+    },
+    "size": {
+      "@id": "nielseniq:size",
+      "@type": "@id"
+    },
+    "quality": {
+      "@id": "nielseniq:quality",
+      "@type": "@id"
+    },
+    "style": {
+      "@id": "nielseniq:style",
+      "@type": "@id"
+    },
+    "generateImagesResponse": "nielseniq:generateImagesResponse",
+    "data": {
+      "@id": "nielseniq:data",
+      "@container": "@list"
+    },
+    "imageResult": "nielseniq:imageResult",
+    "b64_json": {
+      "@id": "nielseniq:b64_json",
+      "@type": "xsd:string"
+    },
+    "prompt_filter_results": {
+      "@id": "nielseniq:prompt_filter_results",
+      "@type": "@id"
+    },
+    "postCreateProductRequest": "nielseniq:postCreateProductRequest",
+    "CreateProduct": "nielseniq:CreateProduct",
+    "upc": {
+      "@id": "nielseniq:upc",
+      "@type": "xsd:string"
+    },
+    "productId": {
+      "@id": "nielseniq:productId",
+      "@type": "xsd:integer"
+    },
+    "gtinFormats": {
+      "@id": "nielseniq:gtinFormats"
+    },
+    "syndicatedChars": {
+      "@id": "nielseniq:syndicatedChars",
+      "@container": "@list"
+    },
+    "GtinFormats": "nielseniq:GtinFormats",
+    "UPC_A": {
+      "@id": "nielseniq:UPC_A",
+      "@type": "xsd:string"
+    },
+    "ON_PACK": {
+      "@id": "nielseniq:ON_PACK",
+      "@type": "xsd:string"
+    },
+    "NO_CHECK_DIGIT": {
+      "@id": "nielseniq:NO_CHECK_DIGIT",
+      "@type": "xsd:string"
+    },
+    "GTIN_14": {
+      "@id": "nielseniq:GTIN_14",
+      "@type": "xsd:string"
+    },
+    "SyndicatedChars": "nielseniq:SyndicatedChars",
+    "SyndicatedCharsObj": {
+      "@id": "nielseniq:SyndicatedCharsObj"
+    },
+    "rejectImageRequest": "nielseniq:rejectImageRequest",
+    "dispatchStatus": {
+      "@id": "nielseniq:dispatchStatus",
+      "@type": "xsd:string"
+    },
+    "dateEntered": {
+      "@id": "nielseniq:dateEntered",
+      "@type": "xsd:string"
+    },
+    "dispatchId": {
+      "@id": "nielseniq:dispatchId",
+      "@type": "xsd:string"
+    },
+    "nielsenExternalCode": {
+      "@id": "nielseniq:nielsenExternalCode",
+      "@type": "xsd:string"
+    },
+    "rejectedReason": {
+      "@id": "nielseniq:rejectedReason",
+      "@type": "xsd:string"
+    },
+    "RdecosystemRdICVdispatchResponse": "nielseniq:RdecosystemRdICVdispatchResponse",
+    "hasMoreRecords": {
+      "@id": "nielseniq:hasMoreRecords",
+      "@type": "xsd:boolean"
+    },
+    "RdecosystemAckRdICVdispatchResponse": "nielseniq:RdecosystemAckRdICVdispatchResponse",
+    "ids": {
+      "@id": "nielseniq:ids",
+      "@container": "@list"
+    },
+    "RdDispatchResp": "nielseniq:RdDispatchResp",
+    "RdecosystemRdICVdispatch": "nielseniq:RdecosystemRdICVdispatch",
+    "country": {
+      "@id": "nielseniq:country",
+      "@type": "xsd:string"
+    },
+    "extrnCode": {
+      "@id": "nielseniq:extrnCode",
+      "@type": "xsd:string"
+    },
+    "nanKey": {
+      "@id": "nielseniq:nanKey",
+      "@type": "xsd:string"
+    },
+    "gic": {
+      "@id": "nielseniq:gic",
+      "@type": "xsd:integer"
+    },
+    "cntlChr": {
+      "@id": "nielseniq:cntlChr"
+    },
+    "chrs": {
+      "@id": "nielseniq:chrs",
+      "@container": "@list"
+    },
+    "itmCrtDttm": {
+      "@id": "nielseniq:itmCrtDttm",
+      "@type": "xsd:string"
+    },
+    "itmUpdDttm": {
+      "@id": "nielseniq:itmUpdDttm",
+      "@type": "xsd:string"
+    },
+    "updDttm": {
+      "@id": "nielseniq:updDttm",
+      "@type": "xsd:string"
+    },
+    "CntlChr": "nielseniq:CntlChr",
+    "chrCd": {
+      "@id": "nielseniq:chrCd",
+      "@type": "xsd:integer"
+    },
+    "chrLclCd": {
+      "@id": "nielseniq:chrLclCd",
+      "@type": "xsd:string"
+    },
+    "chrDscr": {
+      "@id": "nielseniq:chrDscr",
+      "@type": "xsd:string"
+    },
+    "chrVal": {
+      "@id": "nielseniq:chrVal"
+    },
+    "ChrVal": "nielseniq:ChrVal",
+    "chrValCd": {
+      "@id": "nielseniq:chrValCd",
+      "@type": "xsd:integer"
+    },
+    "chrValLclCd": {
+      "@id": "nielseniq:chrValLclCd",
+      "@type": "xsd:string"
+    },
+    "chrValDscr": {
+      "@id": "nielseniq:chrValDscr",
+      "@type": "xsd:string"
+    },
+    "seq": {
+      "@id": "nielseniq:seq",
+      "@type": "xsd:integer"
+    },
+    "Chrs": "nielseniq:Chrs",
+    "ChrsContent": {
+      "@id": "nielseniq:ChrsContent"
+    },
+    "RdDispatch": "nielseniq:RdDispatch",
+    "dispatchDate": {
+      "@id": "nielseniq:dispatchDate",
+      "@type": "xsd:string"
+    },
+    "commodityGroup": {
+      "@id": "nielseniq:commodityGroup",
+      "@type": "xsd:string"
+    },
+    "images": {
+      "@id": "nielseniq:images",
+      "@container": "@list"
+    },
+    "imageSource": {
+      "@id": "nielseniq:imageSource",
+      "@type": "xsd:string"
+    },
+    "Images": "nielseniq:Images",
+    "imgId": {
+      "@id": "nielseniq:imgId",
+      "@type": "xsd:string"
+    },
+    "imgUrl": {
+      "@id": "nielseniq:imgUrl",
+      "@type": "xsd:string"
+    },
+    "imgSourcedDate": {
+      "@id": "nielseniq:imgSourcedDate",
+      "@type": "xsd:string"
+    },
+    "updateBbProcessingStatusRequest": "nielseniq:updateBbProcessingStatusRequest",
+    "updateBbProcessingStatusResp": "nielseniq:updateBbProcessingStatusResp",
+    "updatedStatus": {
+      "@id": "nielseniq:updatedStatus",
+      "@type": "xsd:string"
+    },
+    "resetBbProcessingStatusRequest": "nielseniq:resetBbProcessingStatusRequest",
+    "resetBbProcessingStatusResp": "nielseniq:resetBbProcessingStatusResp",
+    "RdFoundationalFeedResp": "nielseniq:RdFoundationalFeedResp",
+    "RdFoundationalFeed": "nielseniq:RdFoundationalFeed",
+    "dateReceived": {
+      "@id": "nielseniq:dateReceived",
+      "@type": "xsd:string"
+    },
+    "dateUpdated": {
+      "@id": "nielseniq:dateUpdated",
+      "@type": "xsd:string"
+    },
+    "isPremovement": {
+      "@id": "nielseniq:isPremovement",
+      "@type": "xsd:string"
+    },
+    "provider": {
+      "@id": "nielseniq:provider",
+      "@type": "xsd:string"
+    },
+    "version": {
+      "@id": "nielseniq:version",
+      "@type": "xsd:string"
+    },
+    "fndtnRaw": {
+      "@id": "nielseniq:fndtnRaw"
+    },
+    "bbProcessingStatus": {
+      "@id": "nielseniq:bbProcessingStatus",
+      "@type": "xsd:string"
+    },
+    "IngredientDeclaration": "nielseniq:IngredientDeclaration",
+    "ingredients": {
+      "@id": "nielseniq:ingredients",
+      "@type": "xsd:string"
+    },
+    "ProductCategorization": "nielseniq:ProductCategorization",
+    "aisle": {
+      "@id": "nielseniq:aisle",
+      "@type": "xsd:string"
+    },
+    "category": {
+      "@id": "nielseniq:category",
+      "@type": "xsd:string"
+    },
+    "shelf": {
+      "@id": "nielseniq:shelf",
+      "@type": "xsd:string"
+    },
+    "FndtnRaw": "nielseniq:FndtnRaw",
+    "productSizeTextOnPack": {
+      "@id": "nielseniq:productSizeTextOnPack",
+      "@type": "xsd:string"
+    },
+    "productSize": {
+      "@id": "nielseniq:productSize",
+      "@type": "xsd:string"
+    },
+    "importedBy": {
+      "@id": "nielseniq:importedBy",
+      "@type": "xsd:string"
+    },
+    "manufacturer": {
+      "@id": "nielseniq:manufacturer",
+      "@type": "xsd:string"
+    },
+    "specs": {
+      "@id": "nielseniq:specs",
+      "@container": "@list"
+    },
+    "dateCreated": {
+      "@id": "nielseniq:dateCreated",
+      "@type": "xsd:string"
+    },
+    "nielsenUpc": {
+      "@id": "nielseniq:nielsenUpc",
+      "@type": "xsd:string"
+    },
+    "noProductSize": {
+      "@id": "nielseniq:noProductSize",
+      "@type": "xsd:boolean"
+    },
+    "brand": {
+      "@id": "nielseniq:brand",
+      "@type": "xsd:string"
+    },
+    "productCategorization": {
+      "@id": "nielseniq:productCategorization"
+    },
+    "productType": {
+      "@id": "nielseniq:productType",
+      "@type": "xsd:string"
+    },
+    "productSize3": {
+      "@id": "nielseniq:productSize3",
+      "@type": "xsd:string"
+    },
+    "productSize2": {
+      "@id": "nielseniq:productSize2",
+      "@type": "xsd:string"
+    },
+    "dateAttributesModified": {
+      "@id": "nielseniq:dateAttributesModified",
+      "@type": "xsd:string"
+    },
+    "dateModified": {
+      "@id": "nielseniq:dateModified",
+      "@type": "xsd:string"
+    },
+    "dateLive": {
+      "@id": "nielseniq:dateLive",
+      "@type": "xsd:string"
+    },
+    "distributor": {
+      "@id": "nielseniq:distributor",
+      "@type": "xsd:string"
+    },
+    "productTitle": {
+      "@id": "nielseniq:productTitle",
+      "@type": "xsd:string"
+    },
+    "multiPackagingType": {
+      "@id": "nielseniq:multiPackagingType",
+      "@type": "xsd:string"
+    },
+    "netWeight3": {
+      "@id": "nielseniq:netWeight3",
+      "@type": "xsd:string"
+    },
+    "netWeight1": {
+      "@id": "nielseniq:netWeight1",
+      "@type": "xsd:string"
+    },
+    "countryOfOrigin": {
+      "@id": "nielseniq:countryOfOrigin",
+      "@type": "xsd:string"
+    },
+    "netWeight2": {
+      "@id": "nielseniq:netWeight2",
+      "@type": "xsd:string"
+    },
+    "ingredientDeclaration": {
+      "@id": "nielseniq:ingredientDeclaration"
+    },
+    "Specs": "nielseniq:Specs",
+    "certification": {
+      "@id": "nielseniq:certification",
+      "@container": "@list"
+    },
+    "Certification": "nielseniq:Certification",
+    "value": {
+      "@id": "nielseniq:value",
+      "@type": "xsd:string"
+    },
+    "characteristic": {
+      "@id": "nielseniq:characteristic",
+      "@type": "xsd:string"
+    },
+    "segment": {
+      "@id": "nielseniq:segment",
+      "@type": "xsd:string"
+    },
+    "DetImages": "nielseniq:DetImages",
+    "imgRawUrl": {
+      "@id": "nielseniq:imgRawUrl",
+      "@type": "xsd:string"
+    },
+    "vignette": {
+      "@id": "nielseniq:vignette",
+      "@type": "xsd:string"
+    },
+    "rating": {
+      "@id": "nielseniq:rating"
+    },
+    "BatchStoreAvailability": "nielseniq:BatchStoreAvailability",
+    "summary": {
+      "@id": "nielseniq:summary"
+    },
+    "locale": "nielseniq:locale",
+    "BatchStoreAvailabilityRequest": "nielseniq:BatchStoreAvailabilityRequest",
+    "criteria": {
+      "@id": "nielseniq:criteria"
+    },
+    "product": "nielseniq:product",
+    "JobStatus": "nielseniq:JobStatus",
+    "API-Version": {
+      "@id": "nielseniq:API-Version",
+      "@type": "xsd:string"
+    },
+    "API-Name": {
+      "@id": "nielseniq:API-Name",
+      "@type": "xsd:string"
+    },
+    "Date": {
+      "@id": "nielseniq:Date",
+      "@type": "xsd:string"
+    },
+    "JobId": {
+      "@id": "nielseniq:JobId",
+      "@type": "xsd:string"
+    },
+    "Status": {
+      "@id": "nielseniq:Status",
+      "@type": "xsd:string"
+    },
+    "AddCheckDigit": "nielseniq:AddCheckDigit",
+    "Data": {
+      "@id": "nielseniq:Data"
+    },
+    "checkdigitsummary": "nielseniq:checkdigitsummary",
+    "rowCount": {
+      "@id": "nielseniq:rowCount",
+      "@type": "xsd:string"
+    },
+    "checkdigitdata": "nielseniq:checkdigitdata",
+    "Header": {
+      "@id": "nielseniq:Header",
+      "@container": "@list"
+    },
+    "Record": {
+      "@id": "nielseniq:Record",
+      "@container": "@list"
+    },
+    "recordval": "nielseniq:recordval",
+    "rec": {
+      "@id": "nielseniq:rec",
+      "@type": "xsd:string"
+    }
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "NielsenIQ API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects NielsenIQ's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-10-18) from openapi/nielseniq-buy-data-access-catalogues-api-openapi.yml, openapi/nielseniq-cdar-barter-openapi.yml, openapi/nielseniq-cdar-barterapi-openapi.yml.",
+  "dcterms:created": "2026-10-18",
+  "dcterms:source": [
+    "openapi/nielseniq-buy-data-access-catalogues-api-openapi.yml",
+    "openapi/nielseniq-cdar-barter-openapi.yml",
+    "openapi/nielseniq-cdar-barterapi-openapi.yml",
+    "openapi/nielseniq-cdar-ecollection-openapi.yml",
+    "openapi/nielseniq-cdar-ecollectionapi-openapi.yml"
+  ]
+}

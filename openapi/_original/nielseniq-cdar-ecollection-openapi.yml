@@ -1,0 +1,91 @@
+# x-archived-from: nielseniq-cdar-ecollection-openapi.yml
+# x-archived-on: 2026-10-18
+openapi: 3.0.1
+info:
+  title: CDAR ECOLLECTION
+  description: ECOLLECTION
+  version: '1.0'
+servers:
+  - url: https://api.developer.nielseniq.com/Ecollection
+paths:
+  /na/vendor-report-api/*:
+    get:
+      tags:
+        - cdarecollection-controller
+      summary: getEcollectionResp
+      description: getEcollectionResp
+      operationId: getEcollectionRespUsingGET
+      parameters:
+        - name: x-client-id
+          in: header
+          description: x-client-id
+          required: true
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: true
+          schema:
+            type: string
+        - name: content-type
+          in: header
+          description: content-type
+          required: true
+          schema:
+            type: string
+        - name: subscription-key
+          in: header
+          description: subscription-key
+          required: true
+          schema:
+            type: string
+        - name: X-NIQ-CLIENT-TOKEN
+          in: header
+          description: X-NIQ-CLIENT-TOKEN
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EcollectionResp'
+        '401':
+          description: Unauthorized
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json: { }
+        '404':
+          description: Not found
+          content:
+            application/json: { }
+        '500':
+          description: Failure
+          content:
+            application/json: { }
+components:
+  schemas:
+    EcollectionResp:
+      title: EcollectionResp
+      type: object
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: subscription-key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: subscription-key
+      in: query
+security:
+  - apiKeyHeader: [ ]
+  - apiKeyQuery: [ ]
+tags:
+  - name: cdarecollection-controller
+    description: CDARECOLLECTION Controller

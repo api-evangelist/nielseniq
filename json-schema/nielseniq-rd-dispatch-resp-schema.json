@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/nielseniq/main/json-schema/nielseniq-rd-dispatch-resp-schema.json",
+  "title": "Content",
+  "x-generated": "2026-10-18",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/nielseniq-rdecosystem-openapi.yml#/components/schemas/RdDispatchResp",
+  "type": "object",
+  "properties": {
+    "user": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/RdDispatch"
+      }
+    }
+  },
+  "$defs": {
+    "Images": {
+      "title": "Images",
+      "type": "object",
+      "properties": {
+        "imgId": {
+          "type": "string"
+        },
+        "imgUrl": {
+          "type": "string"
+        },
+        "imgSourcedDate": {
+          "type": "string"
+        }
+      }
+    },
+    "RdDispatch": {
+      "title": "RdDispatch",
+      "type": "object",
+      "properties": {
+        "nielsenExternalCode": {
+          "type": "string"
+        },
+        "dispatchDate": {
+          "type": "string"
+        },
+        "dispatchId": {
+          "type": "string"
+        },
+        "commodityGroup": {
+          "type": "string"
+        },
+        "images": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Images"
+          }
+        },
+        "imageSource": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

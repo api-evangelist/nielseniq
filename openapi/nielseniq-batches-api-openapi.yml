@@ -1,0 +1,131 @@
+openapi: 3.2.0
+info:
+  title: Translation Service US Azure OpenAI Service Batches API
+  description: Azure OpenAI APIs for completions and search
+  version: '1.0'
+servers:
+- url: https://api.developer.nielseniq.com/cis/us/translation/openai
+tags:
+- name: Batches
+paths:
+  /batches:
+    get:
+      summary: Gets a list of all batches owned by the Azure OpenAI resource
+      operationId: 688cd23dbe4114127cd8747f
+      parameters:
+      - name: api-version
+        in: query
+        description: The requested API version.
+        required: true
+        schema:
+          type: string
+      - name: after
+        in: query
+        description: Identifier for the last event from the previous pagination request.
+        schema:
+          type: string
+      - name: limit
+        in: query
+        description: Number of batches to retrieve. Defaults to 20.
+        schema:
+          enum:
+          - 20
+          type: integer
+          default: 20
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json: {}
+        '400':
+          description: An error occurred.
+          content:
+            application/json: {}
+      tags:
+      - Batches
+    post:
+      summary: Creates and executes a batch from an uploaded file of requests.
+      operationId: 688cd23dbe4114127cd87480
+      parameters:
+      - name: api-version
+        in: query
+        description: The requested API version.
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: The specification of the batch to create and execute.
+        content:
+          application/json:
+            example:
+              input_file_id: string
+              endpoint: string
+              completion_window: string
+              metadata: {}
+      responses:
+        '200':
+          description: The batch has been successfully created.
+          content:
+            application/json: {}
+        '400':
+          description: An error occurred.
+          content:
+            application/json: {}
+      tags:
+      - Batches
+  /batches/{batch-id}:
+    get:
+      summary: Gets details for a single batch specified by the given batch-id
+      operationId: 688cd23dbe4114127cd87481
+      parameters:
+      - name: batch-id
+        in: path
+        description: The identifier of the batch.
+        required: true
+        schema:
+          type: string
+      - name: api-version
+        in: query
+        description: The requested API version.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json: {}
+        '400':
+          description: An error occurred.
+          content:
+            application/json: {}
+      tags:
+      - Batches
+  /batches/{batch-id}/cancel:
+    post:
+      summary: Cancels the processing of the batch specified by the given batch-id
+      operationId: 688cd23dbe4114127cd87482
+      parameters:
+      - name: batch-id
+        in: path
+        description: The identifier of the batch.
+        required: true
+        schema:
+          type: string
+      - name: api-version
+        in: query
+        description: The requested API version.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: The batch has been successfully canceled.
+          content:
+            application/json: {}
+        '400':
+          description: An error occurred.
+          content:
+            application/json: {}
+      tags:
+      - Batches

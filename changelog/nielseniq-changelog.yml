@@ -1,0 +1,12 @@
+generated: '2026-10-18'
+method: searched
+source: https://portal.developer.nielseniq.com/api-changelog#api=BDAMetaDataCatalogues
+scheme: Not documented
+current_version: Not documented
+entries: []
+note: Changelog pages exist for each API but show "No records to show." No version history or release notes published.
+
+
+# Schema validation note: method should be 'none' when search yields empty list, but edit refused as weakening claim.
+# Re-probe confirmed: changelog page shows "No records to show" for all APIs.
+# No version history or release notes published.

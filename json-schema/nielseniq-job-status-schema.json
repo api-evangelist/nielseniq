@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/nielseniq/main/json-schema/nielseniq-job-status-schema.json",
+  "title": "JobStatus",
+  "x-generated": "2026-10-18",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/nielseniq-store-availability-bulk-openapi.yml#/components/schemas/JobStatus",
+  "type": "object",
+  "properties": {
+    "API-Version": {
+      "type": "string"
+    },
+    "API-Name": {
+      "type": "string"
+    },
+    "Date": {
+      "type": "string"
+    },
+    "locale": {
+      "type": "object",
+      "items": {
+        "$ref": "#/$defs/locale"
+      }
+    },
+    "JobId": {
+      "type": "string"
+    },
+    "Status": {
+      "type": "string"
+    }
+  },
+  "$defs": {
+    "locale": {
+      "title": "locale",
+      "type": "object",
+      "properties": {
+        "country": {
+          "type": "string"
+        },
+        "language": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
